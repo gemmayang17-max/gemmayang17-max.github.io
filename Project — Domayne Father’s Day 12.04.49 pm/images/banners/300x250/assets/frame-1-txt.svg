@@ -1,0 +1,21 @@
+<svg id="frame-1-txt.svg" xmlns="http://www.w3.org/2000/svg" width="300" height="61" viewBox="0 0 300 61">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fd8afd;
+        fill-opacity: 0;
+      }
+
+      .cls-2 {
+        font-size: 10.879px;
+        fill: #fff;
+        text-anchor: middle;
+        font-family: "Brandon Grotesque";
+        font-weight: 800;
+        text-transform: uppercase;
+      }
+    </style>
+  </defs>
+  <rect id="Rectangle_16_copy" data-name="Rectangle 16 copy" class="cls-1" width="300" height="61"/>
+  <text id="_Preston_3-Seater_Lounge_with_Chaise" data-name="&apos;Preston&apos; 3-Seater Lounge with Chaise" class="cls-2" transform="translate(4.52 12.051) scale(1.655)">&apos;Preston&apos; 3-Seater Lounge with Chaise</text>
+</svg>

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en" xml:lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width">
+    <link rel="preconnect" href="https://cdn.divriots.com" crossorigin="">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <style>
+/* latin-ext */
+@font-face {
+  font-family: 'Instrument Serif';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/instrumentserif/v5/jizBRFtNs2ka5fXjeivQ4LroWlx-6zsTjmbI.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Instrument Serif';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/instrumentserif/v5/jizBRFtNs2ka5fXjeivQ4LroWlx-6zUTjg.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+    <style>
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('https://cdn.divriots.com/fonts/inter/v3.19/Inter.var.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: italic;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('https://cdn.divriots.com/fonts/inter/v3.19/Inter.var.woff2') format('woff2');
+  font-variation-settings: 'slnt' -10;
+}</style>
+    <style media="all">
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  -webkit-font-smoothing: auto;
+}
+
+button {
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+  -webkit-appearance: none;
+}
+* {
+  padding: 0;
+  margin: 0;
+}a {
+  color: inherit;
+  text-decoration: inherit;
+}
+input {
+  border: none;
+  font: inherit;
+  outline: none;
+  background-color: inherit;
+}
+button {
+  border-style: none;
+  width: auto;
+  overflow: visible;
+  background: transparent;
+  font: inherit;
+  line-height: normal;
+  color: inherit;
+}
+textarea {
+  font: inherit;
+  background-color: inherit;
+}
+select {
+  font: inherit;
+  background-color: inherit;
+}
+img {
+  display: block;
+}
+picture {
+  display: block;
+}
+video {
+  display: block;
+}
+canvas {
+  display: block;
+}
+svg {
+  display: block;
+}
+
+[data-visible='false']{
+  display:none!important;
+}
+
+.before-hidden::before {
+  display:none;
+}
+
+.after-hidden::after {
+  display:none;
+}
+
+.before-visible::before {
+  content: "";
+}
+
+.after-visible::after {
+  content: "";
+}
+
+.text {
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+}
+</style>
+    <meta charset="utf-8">
+  <style>
+/* ---------- onemorecase interactions ---------- */
+:root{--omc-ease:cubic-bezier(.22,1,.36,1)}
+
+/* phone-stand grips: five frames, hard cuts, no cross-fade */
+.pstand>div{animation:pcycle 2.5s steps(1,end) infinite}
+.pstand>div:nth-child(1){animation-delay:0s}
+.pstand>div:nth-child(2){animation-delay:-.5s}
+.pstand>div:nth-child(3){animation-delay:-1s}
+.pstand>div:nth-child(4){animation-delay:-1.5s}
+.pstand>div:nth-child(5){animation-delay:-2s}
+@keyframes pcycle{0%,19.999%{opacity:1}20%,100%{opacity:0}}
+
+/* coffee mugs */
+.mug{transition:transform .5s var(--omc-ease);transform-origin:50% 50%;cursor:default}
+.mug:hover{transform:scale(1.6);z-index:40}
+
+/* campaign posters — straighten and grow (transform set by script) */
+.omc-poster{cursor:default}
+.omc-poster.up{z-index:9999}
+
+/* postcards — double size, from their own centre */
+.pcard{transition:transform .55s var(--omc-ease),box-shadow .55s var(--omc-ease);
+  transform-origin:50% 50%;cursor:default}
+.pcard.up{z-index:9999;box-shadow:0 24px 60px rgba(0,0,0,.22)}
+
+/* hang tags — Figma timeline 69:271 / 69:272, 3.669s loop */
+.tag-a{animation:tagA 3.669066s linear infinite}
+.tag-b{animation:tagB 3.669066s linear infinite}
+@keyframes tagA{0%{opacity:0}25.672%{opacity:0;animation-timing-function:ease-out}31.031%{opacity:1}84.484%{opacity:1;animation-timing-function:ease-in-out}100%{opacity:0}}
+@keyframes tagB{0%{opacity:0}42.286%{opacity:0;animation-timing-function:ease-out}47.697%{opacity:1}85.205%{opacity:1;animation-timing-function:ease-in-out}100%{opacity:0}}
+
+@media (prefers-reduced-motion:reduce){
+  .pstand>div,.tag-a,.tag-b{animation:none}
+  .pstand>div:not(:first-child){opacity:0}
+  .mug,.pcard,.omc-poster{transition:none}
+}
+</style>
+</head>
+  <body style="display: grid;background-color: #f4f1e9;">
+    <div style="background-color: #f4f1e9;overflow: hidden;width: 1440px;min-width: 1440px;max-width: 1440px;min-height: 14008px;max-height: 14008px;position: relative;margin: 0px auto;">
+      <div style="left: calc(-720px + 50%);top: 438px;width: 1440px;height: 869px;position: absolute;"></div>
+      <div style="overflow: hidden;left: calc(-719px + 50%);top: 780px;width: 1440px;height: 592px;position: absolute;"><img src="images/70fdb0476e704ee888ca521db76359100ad1540d.png" alt="Rectangle 50" style="inset: 0;width: 100%;height: 100%;position: absolute;transform: translate(0px,-332.5px) scale(1,2.74);"></div>
+      <span class="text" style="display: inline;text-align: center;line-height: 66px;font-size: 46px;font-family: &quot;Instrument Serif&quot;, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;letter-spacing: -0.7px;color: #11110f;left: calc(-138px + 50%);top: 1466px;width: 277px;position: absolute;">Campaign Posters</span>
+      <span class="text" style="display: inline;text-align: center;line-height: 48px;font-size: 46px;font-family: &quot;Instrument Serif&quot;, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;letter-spacing: -0.7px;color: #11110f;left: calc(-215px + 50%);top: 2729px;width: 430px;position: absolute;">Retail Packaging System</span>
+      <span class="text" style="display: inline;text-align: center;line-height: 24px;font-size: 15px;font-family: Inter, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;color: #11110f;left: calc(-264px + 50%);top: 2825px;width: 528px;position: absolute;">Boxes and hang tags work as a layered retail system: illustrated cartons carry the brand at shelf scale, while removable tags hold variant and product information. The hierarchy stays consistent across every format.</span>
+      <span class="text" style="display: inline;text-align: center;line-height: 24px;font-size: 15px;font-family: Inter, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;color: #11110f;left: calc(-264px + 50%);top: 1573px;width: 528px;position: absolute;">Seasonal and anniversary posters use the same character library, restrained palette and generous margins, allowing each message to change while the brand remains immediately recognisable.</span>
+      <div style="left: calc(-720px + 50%);top: 5693px;width: 1440px;height: 994px;position: absolute;"></div>
+      <span class="text" style="display: inline;text-align: center;line-height: 16px;font-size: 12px;font-family: Inter, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;color: #11110f;left: calc(-108px + 50%);top: 1225px;width: max-content;position: absolute;">Everyday imagination, unfolding softly</span>
+      <div style="overflow: hidden;left: 209px;top: 6997px;aspect-ratio: 0.53;width: auto;height: 579px;position: absolute;"><img src="images/56d1a98698b6e2b2ea2ff03d7241f1a9da82c6ca.png" alt="白色点点 1" style="inset: 0;width: 100%;height: 100%;position: absolute;transform: translate(0px,-33.2px) scale(2.73,1.45);"></div>
+      <div style="overflow: hidden;left: 713px;top: 6663px;aspect-ratio: 0.75;width: auto;height: 977px;position: absolute;"><img src="images/5c39c4ca1cb1288345562d0c39e60262c624c569.png" alt="手套宣传2 1" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+      <div class="pstand" style="overflow: hidden;left: 146px;top: 7090px;width: 435px;height: 435px;position: absolute;">
+        <div style="overflow: hidden;left: 0px;top: 0px;aspect-ratio: 1;width: auto;height: 433px;position: absolute;"><img src="images/37d48f854ad6638986ae097144fb63c543c3e3a4.png" alt="3 1" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+        <div style="overflow: hidden;left: 0px;top: 2px;aspect-ratio: 1;width: auto;height: 433px;position: absolute;"><img src="images/34fe1ed629f7c516b0d054ca7dfe551dfaf6f75f.png" alt="4 1" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+        <div style="overflow: hidden;left: 0px;top: 1px;aspect-ratio: 1;width: auto;height: 433px;position: absolute;"><img src="images/0cc8dc7aaec7d7cde51862b94df8ca1e30c04511.png" alt="1 982601886" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+        <div style="overflow: hidden;left: 1px;top: 2px;aspect-ratio: 1;width: auto;height: 433px;position: absolute;"><img src="images/bb1776b5875bba39e8c00e6786034b026a7cc6e8.png" alt="5 1" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+        <div style="overflow: hidden;left: 2px;top: 1px;aspect-ratio: 1;width: auto;height: 433px;position: absolute;"><img src="images/190134b5e46c33d46b615f667ef81c94a0e93bb2.png" alt="2 27" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+      </div>
+      <div style="overflow: hidden;left: calc(-199px + 50%);top: 853px;width: 400px;height: 372px;position: absolute;"><img src="images/%E7%8B%90%E7%8B%B8_%E9%80%8F%E6%98%8E%E8%83%8C%E6%99%AF.gif" alt="onemorecase fox" style="width:100%;height:100%;object-fit:contain;display:block"></div>
+      <div style="overflow: hidden;left: 549px;top: 9715px;aspect-ratio: 1.5;width: auto;height: 678px;position: absolute;"><img src="images/d9b06b85eebd7310a572a0782219302e61711445.jpeg" alt="IMG_8350 1" style="inset: 0;width: 100%;height: 100%;position: absolute;transform: translate(-0.3px,36.1px) scale(1.11,1.11);"></div>
+      <div style="overflow: visible;left: 30px;top: 1763px;width: 1384.9px;height: 802.1px;position: absolute;">
+        <div class="omc-poster" data-rv="right" data-rv-group="omcp" data-rv-dist="1450" data-rv-fade="0" data-rv-start="0.80" data-rv-span="0.46" style="overflow: hidden;transform-origin: 0 0;transform: rotate(-25.5deg);left: 0px;top: 241.7px;aspect-ratio: 0.71;width: auto;height: 495px;position: absolute;"><img src="images/c4044dc68af6b7633a47473a7061f79c7276be3c.png" alt="圣诞海报 2" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+        <div class="omc-poster" data-rv="right" data-rv-group="omcp" data-rv-dist="1450" data-rv-fade="0" data-rv-start="0.80" data-rv-span="0.46" style="overflow: hidden;transform-origin: 0 0;transform: rotate(-22.8deg);left: 614px;top: 135.6px;aspect-ratio: 0.71;width: auto;height: 492px;position: absolute;"><img src="images/f61716e2a6e563c111c85018f7aeb3af54b3b562.png" alt="动物海报 3" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+        <div class="omc-poster" data-rv="right" data-rv-group="omcp" data-rv-dist="1450" data-rv-fade="0" data-rv-start="0.80" data-rv-span="0.46" style="overflow: hidden;transform-origin: 0 0;transform: rotate(15.1deg);left: 1047px;top: 233px;aspect-ratio: 0.71;width: auto;height: 495px;position: absolute;"><img src="images/afe4ce269b3a8413b30b72223cc1e53a0eaa53f2.png" alt="周年庆海报 2" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+        <div class="omc-poster" data-rv="right" data-rv-group="omcp" data-rv-dist="1450" data-rv-fade="0" data-rv-start="0.80" data-rv-span="0.46" style="overflow: hidden;transform-origin: 0 0;transform: rotate(15.3deg);left: 481.6px;top: 192px;aspect-ratio: 0.71;width: auto;height: 491px;position: absolute;"><img src="images/cd5c422ac0e6881b1b61f044888bc5b7bf956a3e.png" alt="2026新年海报 2" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+      </div>
+      <span class="text" style="display: inline;text-align: left;line-height: 48px;font-size: 46px;font-family: &quot;Instrument Serif&quot;, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;letter-spacing: -0.5px;color: #11110f;left: 64px;top: 6737px;width: 304px;position: absolute;">Phone stand</span>
+      <span class="text" style="display: inline;text-align: left;line-height: 24px;font-size: 15px;font-family: Inter, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;color: #11110f;left: 64px;top: 6821px;width: 528px;position: absolute;">A foldable stand balances portability with hands-free use. Illustrated surfaces turn the functional accessory into part of the brand experience without interrupting its practical form.</span>
+      <div style="overflow: hidden;left: 948px;top: 3002px;aspect-ratio: 0.72;width: auto;height: 685px;position: absolute;"><img src="images/c10410248c3d9009ea6fece5b5f37712dc6ea8bf.jpeg" alt="DSCF4693 1" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+      <div style="overflow: hidden;left: -28px;top: 3334px;aspect-ratio: 1.5;width: auto;height: 352px;position: absolute;"><img src="images/888ce04a882d733f07cd7c068708ee3f69fce2ed.jpeg" alt="DSCF4697 1" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+      <div style="overflow: hidden;left: -28px;top: 3001px;aspect-ratio: 1.55;width: auto;height: 339px;position: absolute;"><img src="images/d9b55465c94fe4e1022f6529a2b9d12b83e2b941.jpeg" alt="DSCF4699 1" style="inset: 0;width: 100%;height: 100%;position: absolute;transform: translate(0px,-6.5px) scale(1,1.04);"></div>
+      <div style="overflow: hidden;left: calc(-229px + 50%);top: 3001px;aspect-ratio: 0.67;width: auto;height: 686px;position: absolute;"><img src="images/f61f1017496c48db7e279c39b80b6c7034199dc5.jpeg" alt="DSCF4702 1" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+      <div class="tag-a" style="overflow: hidden;left: calc(-125px + 50%);top: 3048px;aspect-ratio: 0.5;width: auto;height: 497px;position: absolute;filter: drop-shadow(1px 2px 2px rgba(0,0,0,0.25));"><img src="images/30e9f38d533eac0a1ec423f15f07f043321632b2.png" alt="MOTION / onemorecase Primary Tag" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+      <div class="tag-b" style="overflow: hidden;transform-origin: 0 0;transform: rotate(-34.8deg);left: 638px;top: 3235px;aspect-ratio: 0.5;width: auto;height: 327px;position: absolute;filter: drop-shadow(1px 2px 2px rgba(0,0,0,0.25));"><img src="images/1bb144088630b416e0a311ded58069366bb99fb1.png" alt="MOTION / onemorecase Secondary Tag" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+      <div style="overflow: hidden;left: 0px;top: 11347px;aspect-ratio: 0.75;width: auto;height: 902px;position: absolute;"><img src="images/eac5612f783ffa5a482652cab37c3b0705431e40.jpeg" alt="IMG_3812 1" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+      <div style="overflow: hidden;top: 11347px;right: 0px;aspect-ratio: 0.76;width: auto;height: 902px;position: absolute;"><img src="images/8e4a5de7883b6a9c0c3951b444ec22d966ba4a52.jpeg" alt="IMG_3813 1" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+      <div style="overflow: hidden;left: 202px;top: 10568px;aspect-ratio: 0.74;width: auto;height: 643px;position: absolute;"><img src="images/c996da0efea4de5c16cfa889dbf9f0eb94b6c087.jpeg" alt="IMG_5699 1" style="inset: 0;width: 100%;height: 100%;position: absolute;transform: translate(-0.5px,26.3px) scale(1.17,1.15);"></div>
+      <div style="overflow: hidden;left: -27px;top: 4746px;aspect-ratio: 0.76;width: auto;height: 976px;position: absolute;"><img src="images/104331ff88914696ccf1d73c8de8f0a0a77a9a55.png" alt="1 982601887" style="inset: 0;width: 100%;height: 100%;position: absolute;transform: translate(10.6px,-18px) scale(1.31,1.01);"></div>
+      <div style="overflow: hidden;left: 715px;top: 4746px;width: 730px;height: 955px;position: absolute;"><img src="images/4b20f2f8222b1eb8a10573abf5e83b5f66a33b41.jpeg" alt="IMG_3675 1" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+      <div style="overflow: hidden;left: 758px;top: 10568px;aspect-ratio: 0.7;width: auto;height: 643px;position: absolute;"><img src="images/79de63aca9639f80f85bfa60e109c12422b46a4c.jpeg" alt="线下市集 1" style="inset: 0;width: 100%;height: 100%;position: absolute;transform: translate(16.7px,0px) scale(1.07,1);"></div>
+      <div style="overflow: hidden;left: 541px;top: 12368px;aspect-ratio: 0.77;width: auto;height: 1270px;position: absolute;"><img src="images/5702b8e64a553f0c87a0ecd3b00e523ec2491389.jpeg" alt="0980287A-A918-4330-B043-DBDF514BEDDB 1" style="inset: 0;width: 100%;height: 100%;position: absolute;transform: translate(-31.2px,83.2px) scale(1.17,1.13);"></div>
+      <span class="text" style="display: inline;text-align: left;line-height: 48px;font-size: 46px;font-family: &quot;Instrument Serif&quot;, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;letter-spacing: -0.5px;color: #11110f;left: 64px;top: 10168px;width: 304px;position: absolute;">Brand Collaboration</span>
+      <span class="text" style="display: inline;text-align: left;line-height: 24px;font-size: 15px;font-family: Inter, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;color: #11110f;left: 64px;top: 10287px;width: 413px;position: absolute;">Co-branded products, market displays and social content adapt the identity to new partners and physical retail settings while retaining its hand-drawn character.</span>
+      <div style="left: 710px;top: 5700px;width: 764px;height: 964px;position: absolute;"></div>
+      <div style="overflow: hidden;left: calc(19px + 50%);top: 5708px;aspect-ratio: 0.75;width: auto;height: 890px;position: absolute;"><img src="images/1b57ba53736fc31f64a9878cbb9f643f4454b13a.png" alt="图片生成-1776391457737 1" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+      <div style="overflow: hidden;left: -9px;top: 5700px;aspect-ratio: 0.75;width: auto;height: 964px;position: absolute;"><img src="images/e8b82f03173a78faa9e7c819cb0d16cae35e2883.png" alt="主图 1" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+      <div style="background-color: #f4f1e9;overflow: hidden;left: 0px;top: 0px;width: 1440px;height: 342px;position: absolute;">
+        <span class="text" style="display: inline;text-align: left;line-height: 16px;font-size: 12px;font-family: Inter, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;color: #55544f;left: 56px;top: 116px;width: 500px;position: absolute;">BRAND · IDENTITY</span>
+        <span class="text" style="display: inline;text-align: left;line-height: 66px;font-size: 64px;font-family: &quot;Instrument Serif&quot;, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;letter-spacing: -1px;color: #11110f;left: 56px;top: 150px;width: 1100px;position: absolute;">OneMoreCase</span>
+        <span class="text" style="display: inline;text-align: left;line-height: 16px;font-size: 12px;font-family: Inter, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;color: #55544f;left: 56px;top: 290px;width: 140px;position: absolute;">← ALL WORK</span>
+        
+      </div>
+      <span class="text" style="display: inline;text-align: left;line-height: 24px;font-size: 15px;font-family: Inter, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;color: #11110f;left: 64px;top: 13546px;width: 300px;position: absolute;">R<span style="text-transform: lowercase;">ETAIL</span> &amp; C<span style="text-transform: lowercase;">OMMUNITY</span></span>
+      <span class="text" style="display: inline;text-align: center;line-height: 24px;font-size: 15px;font-family: Inter, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;color: #11110f;left: calc(-261px + 50%);top: 4085px;width: 528px;position: absolute;">Enlarging the motifs across a curved ceramic surface tests the identity at object scale, turning an everyday mug into a playful extension of the brand world.</span>
+      <div class="mug" style="overflow: hidden;left: 403px;top: 4296px;aspect-ratio: 1;width: auto;height: 304px;position: absolute;"><img src="images/5915ac9b4d685b3c0b66bc1cdf67f43610c42e2b.png" alt="柚子 1" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+      <div class="mug" style="overflow: hidden;left: 67px;top: 4296px;aspect-ratio: 1;width: auto;height: 304px;position: absolute;"><img src="images/c3f602d2531e9d812c3b6e5d759e74f0ec8adb86.png" alt="柠檬 1" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+      <div class="mug" style="overflow: hidden;left: 1075px;top: 4296px;aspect-ratio: 1;width: auto;height: 304px;position: absolute;"><img src="images/5eaf42dc7b07eee8c4ea1ec29c62583cefad0071.png" alt="蝴蝶 1" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+      <div class="mug" style="overflow: hidden;left: 739px;top: 4296px;aspect-ratio: 1;width: auto;height: 304px;position: absolute;"><img src="images/8bc5d10ab4260c39de8891a088a8c80ab4fc3ede.png" alt="洋葱 1" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+      <span class="text" style="display: inline;text-align: center;line-height: 66px;font-size: 46px;font-family: &quot;Instrument Serif&quot;, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;letter-spacing: -0.7px;color: #11110f;left: calc(-149px + 50%);top: 3991px;width: 304px;position: absolute;">Coffee Mug</span>
+      <div style="background-color: #b8b4aa;left: 64px;top: 9589px;width: 1312px;height: 1px;position: absolute;"></div>
+      <div style="background-color: #b8b4aa;left: calc(-656px + 50%);top: 3811px;width: 1312px;height: 1px;position: absolute;"></div>
+      <div style="overflow: hidden;left: calc(-715px + 50%);top: 8676px;width: 1440px;height: 994px;position: absolute;"><img src="images/70fdb0476e704ee888ca521db76359100ad1540d.png" alt="Rectangle 51" style="opacity: 0.1599999964237213;inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+      <div class="pcard" data-rv="left" data-rv-group="omcc" data-rv-dist="1400" data-rv-fade="0" data-rv-start="0.80" data-rv-span="0.46" style="overflow: hidden;left: 129px;top: 8946px;aspect-ratio: 1.36;width: auto;height: 180px;position: absolute;filter: drop-shadow(1px 2px 2px rgba(0,0,0,0.25));"><img src="images/958fc9ed00fe4954eca0fed84bd32271251ac375.png" alt="企鹅 1" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+      <div class="pcard" data-rv="right" data-rv-group="omcc" data-rv-dist="1400" data-rv-fade="0" data-rv-start="0.80" data-rv-span="0.46" style="overflow: hidden;left: 129px;top: 9220px;aspect-ratio: 1.35;width: auto;height: 180px;position: absolute;filter: drop-shadow(1px 2px 2px rgba(0,0,0,0.25));"><img src="images/7511057cbeb5020bd04d9c180517ec208d9f452c.png" alt="兔子 1" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+      <div class="pcard" data-rv="left" data-rv-group="omcc" data-rv-dist="1400" data-rv-fade="0" data-rv-start="0.80" data-rv-span="0.46" style="overflow: hidden;left: 419px;top: 8946px;aspect-ratio: 1.36;width: auto;height: 180px;position: absolute;filter: drop-shadow(1px 2px 2px rgba(0,0,0,0.25));"><img src="images/f563a1381af966926a75f27e3e023fde04682ddc.png" alt="花豹 1" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+      <div class="pcard" data-rv="left" data-rv-group="omcc" data-rv-dist="1400" data-rv-fade="0" data-rv-start="0.80" data-rv-span="0.46" style="overflow: hidden;left: 784px;top: 8946px;aspect-ratio: 1.35;width: auto;height: 180px;position: absolute;filter: drop-shadow(1px 2px 2px rgba(0,0,0,0.25));"><img src="images/b820899c1de3f5623d87fdcc36df6b8784a798a8.png" alt="蛋糕卷 1" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+      <div class="pcard" data-rv="right" data-rv-group="omcc" data-rv-dist="1400" data-rv-fade="0" data-rv-start="0.80" data-rv-span="0.46" style="overflow: hidden;left: 1081px;top: 9223px;aspect-ratio: 1.35;width: auto;height: 181px;position: absolute;filter: drop-shadow(1px 2px 2px rgba(0,0,0,0.25));"><img src="images/150064c75dd085692c93551d928b4ec2226de59e.png" alt="西红柿 1" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+      <div class="pcard" data-rv="left" data-rv-group="omcc" data-rv-dist="1400" data-rv-fade="0" data-rv-start="0.80" data-rv-span="0.46" style="overflow: hidden;left: 1080px;top: 8946px;aspect-ratio: 1.35;width: auto;height: 180px;position: absolute;filter: drop-shadow(1px 2px 2px rgba(0,0,0,0.25));"><img src="images/5d3291007be2cf44398d8e3fce13779012f0673a.png" alt="豆荚 1" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+      <div class="pcard" data-rv="right" data-rv-group="omcc" data-rv-dist="1400" data-rv-fade="0" data-rv-start="0.80" data-rv-span="0.46" style="overflow: hidden;left: 786px;top: 9223px;aspect-ratio: 1.35;width: auto;height: 181px;position: absolute;filter: drop-shadow(1px 2px 2px rgba(0,0,0,0.25));"><img src="images/3f9b20660ec885e7c41e506897751d2d60884f10.png" alt="面包 1" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+      <div class="pcard" data-rv="right" data-rv-group="omcc" data-rv-dist="1400" data-rv-fade="0" data-rv-start="0.80" data-rv-span="0.46" style="overflow: hidden;left: 420px;top: 9222px;aspect-ratio: 1.36;width: auto;height: 180px;position: absolute;filter: drop-shadow(1px 2px 2px rgba(0,0,0,0.25));"><img src="images/e8db829c6acf2a3a67978f7866cbf8ae62edaabe.png" alt="靴子鸭 1" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+      <span class="text" style="display: inline;text-align: left;line-height: 48px;font-size: 46px;font-family: &quot;Instrument Serif&quot;, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;letter-spacing: -0.5px;color: #11110f;left: 69px;top: 8724px;width: 300px;position: absolute;">Postcard</span>
+      <span class="text" style="display: inline;text-align: center;line-height: 48px;font-size: 46px;font-family: &quot;Instrument Serif&quot;, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;letter-spacing: -0.5px;color: #11110f;left: 692px;top: 7728px;width: 528px;position: absolute;">Magnetic iPad Case </span>
+      <div style="overflow: hidden;top: 7640px;right: 726px;aspect-ratio: 0.75;width: auto;height: 956px;position: absolute;"><img src="images/2431016aa24eca610c68a8ff4f6be1d72bdbb3b1.png" alt="8 1" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+      <div style="overflow: hidden;left: 730px;top: 7932px;aspect-ratio: 0.75;width: auto;height: 693px;position: absolute;"><img src="images/1dea0e8aca5b9be5e63a23835e01b7ca0884fd76.png" alt="图片生成-1776391466949 1" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+      <div style="overflow: hidden;left: 1230px;top: 8047px;aspect-ratio: 0.8;width: auto;height: 163px;position: absolute;"><img src="images/013bd54b27969c0307c985c7d3f05eba8953f3cc.png" alt="折叠说明1 1" style="inset: 0;width: 100%;height: 100%;position: absolute;transform: translate(-64.9px,-61.5px) scale(2.33,2.49);"></div>
+      <div style="overflow: hidden;left: 1254px;top: 8436px;aspect-ratio: 0.78;width: auto;height: 163px;position: absolute;"><img src="images/013bd54b27969c0307c985c7d3f05eba8953f3cc.png" alt="折叠说明1 2" style="inset: 0;width: 100%;height: 100%;position: absolute;transform: translate(66.2px,-61.5px) scale(2.4,2.49);"></div>
+      <span class="text" style="display: inline;text-align: left;line-height: 24px;font-size: 15px;font-family: Inter, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;color: #11110f;left: 807px;top: 7806px;width: 528px;position: absolute;">The foldable cover supports multiple viewing angles while keeping the Apple Pencil accessible. A restrained exterior lets the illustrated lining become the visual reveal.</span>
+      <div style="overflow: hidden;left: 1242px;top: 8265px;aspect-ratio: 1;width: auto;height: 133px;position: absolute;"><img src="images/013bd54b27969c0307c985c7d3f05eba8953f3cc.png" alt="折叠说明1 1" style="inset: 0;width: 100%;height: 100%;position: absolute;transform: translate(-63.8px,100.2px) scale(2.3,3.06);"></div>
+      <div style="left: 56px;top: 427px;width: 1312px;height: 312px;position: absolute;"><span class="text" style="display: inline;text-align: left;line-height: 16px;font-size: 12px;font-family: Inter, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;color: #59574f;left: 0px;top: 0px;width: 336px;height: 10px;position: absolute;">Project Background</span><span class="text" style="display: inline;text-align: left;line-height: 24px;font-size: 15px;font-family: Inter, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;color: #141311;left: 336px;top: 0px;width: 528px;height: 10px;position: absolute;">onemorecase is a playful accessories and lifestyle brand built around everyday imagination. Illustrated characters and small visual surprises give functional objects a warm, collectible personality.</span><span class="text" style="display: inline;text-align: left;line-height: 16px;font-size: 12px;font-family: Inter, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;color: #59574f;left: 0px;top: 132px;width: 336px;height: 10px;position: absolute;">Design Scope</span><span class="text" style="display: inline;text-align: left;line-height: 24px;font-size: 15px;font-family: Inter, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;color: #141311;left: 336px;top: 132px;width: 528px;height: 10px;position: absolute;">Brand Identity · Illustration System · Packaging · Product Accessories · Printed Matter · Retail Applications</span><span class="text" style="display: inline;text-align: left;line-height: 16px;font-size: 12px;font-family: Inter, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;color: #59574f;left: 0px;top: 192px;width: 336px;height: 10px;position: absolute;">Design Approach</span><span class="text" style="display: inline;text-align: left;line-height: 24px;font-size: 15px;font-family: Inter, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;color: #141311;left: 336px;top: 192px;width: 528px;height: 10px;position: absolute;">A soft off-white base, hand-drawn motifs and a restrained red-and-black palette create a flexible world that moves from packaging to cases, mugs, postcards and market displays. Consistent illustration scale and generous spacing keep the varied applications recognisable.</span></div>
+      <div style="background-color: #f4f1e9;overflow: hidden;left: 0px;top: 13688px;width: 1440px;height: 320px;position: absolute;">
+        <div style="background-color: rgba(15,15,14,0.28);left: 64px;top: 0px;width: 1312px;height: 1px;position: absolute;"></div>
+        <span class="text" style="display: inline;text-align: left;line-height: 16px;font-size: 12px;font-family: Inter, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;letter-spacing: 0.5px;color: rgba(15,15,14,0.65);left: 64px;top: 72px;width: max-content;position: absolute;">NEXT PROJECT</span>
+        <span class="text" style="display: inline;text-align: left;line-height: 16px;font-size: 12px;font-family: Inter, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;color: rgba(15,15,14,0.65);left: 64px;top: 104px;width: max-content;position: absolute;">BEERFEST AUSTRALIA</span>
+        <span class="text" style="display: inline;text-align: right;line-height: 56px;font-size: 52px;font-family: &quot;Instrument Serif&quot;, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;color: #0f0f0e;left: 1016px;top: 74px;width: 360px;height: 64px;position: absolute;">NEXT →</span>
+      </div>
+      <div style="background-color: #f4f1e9;left: 0px;top: 0px;width: 1440px;height: 80px;position: absolute;">
+        <span class="text" style="display: inline;text-align: left;line-height: 16px;font-size: 12px;font-family: Inter, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;color: #11110f;left: 32px;top: 32px;width: 160px;position: absolute;">GEMMA YANG</span>
+        <span class="text" style="display: inline;text-align: left;line-height: 16px;font-size: 12px;font-family: Inter, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;color: #11110f;left: 182px;top: 32px;width: 60px;position: absolute;">WORK</span>
+        <span class="text" style="display: inline;text-align: left;line-height: 16px;font-size: 12px;font-family: Inter, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;color: #11110f;left: 268px;top: 32px;width: 70px;position: absolute;">ABOUT</span>
+        <span class="text" style="display: inline;text-align: left;line-height: 16px;font-size: 12px;font-family: Inter, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;color: #11110f;left: 1164px;top: 32px;width: 244px;position: absolute;">GEMMAYANG22@GMAIL.COM</span>
+        <div style="background-color: #b8b4aa;left: 0px;top: 79px;width: 1440px;height: 1px;position: absolute;"></div>
+      </div>
+    </div>
+  
+<script src="../site.js"></script>
+<script>
+/* Posters and postcards: on hover the item straightens, grows, and parks in the
+   middle of the page — horizontally on the 1440 canvas centre, vertically on the
+   centre of its own display block. It is also lifted clear of every ancestor
+   stacking context, so nothing painted later can cover it. */
+(function () {
+  var EASE = 'transform .62s cubic-bezier(.22,1,.36,1)';
+  var page = document.body.querySelector('div');
+
+  /* raise the whole ancestor chain, so z-index actually wins across groups */
+  function lift(el, on) {
+    var n = el;
+    while (n && n !== page && n !== document.body) {
+      if (on) {
+        if (n.dataset.zsaved === undefined) n.dataset.zsaved = n.style.zIndex || '';
+        n.style.zIndex = '9999';
+        if (getComputedStyle(n).position === 'static') n.style.position = 'relative';
+      } else if (n.dataset.zsaved !== undefined) {
+        n.style.zIndex = n.dataset.zsaved;
+        delete n.dataset.zsaved;
+      }
+      n = n.parentElement;
+    }
+  }
+
+  function centreOn(el, targetX, targetY, scale) {
+    var w = el.offsetWidth, h = el.offsetHeight, L = el.offsetLeft, T = el.offsetTop;
+    var o = getComputedStyle(el).transformOrigin.split(' ');
+    var ox = parseFloat(o[0]) || 0, oy = parseFloat(o[1]) || 0;
+    var cx = L + ox + scale * (w / 2 - ox), cy = T + oy + scale * (h / 2 - oy);
+    return 'translate(' + (targetX - cx).toFixed(2) + 'px,' + (targetY - cy).toFixed(2) + 'px) scale(' + scale + ')';
+  }
+
+  function wire(el, getTarget, scale) {
+    var base = el.style.transform || '';
+    el.style.transition = EASE + ',box-shadow .5s cubic-bezier(.22,1,.36,1)';
+    el.addEventListener('mouseenter', function () {
+      var t = getTarget(el);
+      lift(el, true);
+      el.style.zIndex = '10000';
+      el.classList.add('up');
+      el.style.transform = centreOn(el, t[0], t[1], scale);
+    });
+    el.addEventListener('mouseleave', function () {
+      el.style.transform = base;
+      setTimeout(function () { el.classList.remove('up'); el.style.zIndex = ''; lift(el, false); }, 640);
+    });
+  }
+
+  /* campaign posters — upright, 1.32x, centred on the page and on the poster block */
+  document.querySelectorAll('.omc-poster-off').forEach(function (el) {
+    var host = el.offsetParent;
+    wire(el, function () { return [720 - (host ? host.offsetLeft : 0), (host ? host.offsetHeight : 802) / 2]; }, 1.32);
+  });
+
+  /* postcards — 2x, centred on the page and on the postcard block */
+  var cards = [].slice.call(document.querySelectorAll('.pcard-off'));
+  if (cards.length) {
+    var top = Infinity, bot = -Infinity;
+    cards.forEach(function (c) { top = Math.min(top, c.offsetTop); bot = Math.max(bot, c.offsetTop + c.offsetHeight); });
+    var midY = (top + bot) / 2;
+    cards.forEach(function (el) { wire(el, function () { return [720, midY]; }, 2); });
+  }
+})();
+</script>
+</body>
+</html>

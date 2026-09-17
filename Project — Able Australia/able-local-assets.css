@@ -1,0 +1,31 @@
+:root{
+  /* Permanent local exports. These replace the expired temporary Figma URLs
+     without changing the approved Able layout, dimensions or animation. */
+  --image25:url("images/66f91470f8f868f128be0542549c33e4b56dd7dd.png");
+  --image26:url("images/66f91470f8f868f128be0542549c33e4b56dd7dd.png");
+  --image28:url("images/f7addf84c949b888e7b03094f7edce4a22ec73e5.png");
+  --logoW:url("images/669b0cd6796a473a1402fc9f96a5ec7c1618b180.png");
+  --wing:url("images/1d29962ae897f049f9873712535e0a9b465da2bc.png");
+  --logo4:url("images/7648e26b9eb2c6ea39a7d62be9f43af5d70b4739.png");
+  --logo2:url("images/c09b20201bf90276ef24efe62022eb35f2e22162.png");
+  --bottle:url("images/720a5305d0bdfcf6b83ff0e60f82a2f5af848ac0.png");
+  --materials:url("images/7923718c9c1dd57aefa7df1f9fe3942229f1c38d.png");
+  --poster3:url("images/7992de13c018d8538300db5ee848ae0f44ec74b5.png");
+  --camp1:url("images/344254b111cbc9e2dfde0ee0e534ad50fc572313.png");
+  --camp2:url("images/6df321c2bf38292b1f9792269283b19f77fc639a.png");
+  --camp3:url("images/0f38a90ac61f01db13695b4ddf60e773684c4a3c.png");
+  --camp4:url("images/73d6828c905e27a9fe481da7684188e286e54ecc.png");
+  --rect68:url("海报背景/36e1b28f7dac7ca923163bcb6b3231e2.png");
+  --rect69:url("海报背景/d05aacf5f57d19966ab532e561c54a6a.png");
+  --rect70:url("海报背景/872a73c9a8e20bfa626e6be2fb9454fc.png");
+  --rect71:url("海报背景/019d28910539f0f514fa66a140622ee2.png");
+  --rect72:url("海报背景/019d28910539f0f514fa66a140622ee2.png");
+  --line1:linear-gradient(#ffff8c,#ffff8c);
+  --line2:linear-gradient(#11110f,#11110f);
+  --line3:linear-gradient(#11110f,#11110f);
+  --line4:linear-gradient(#fff,#fff);
+  --line5:linear-gradient(#ffff8c,#ffff8c);
+  --line6:linear-gradient(#11110f,#11110f);
+  --line7:linear-gradient(#11110f,#11110f);
+  --line8:linear-gradient(#fff,#fff);
+}

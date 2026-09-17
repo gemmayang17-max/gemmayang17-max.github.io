@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Able Australia — Gemma Yang</title>
+<!--
+  Able Australia — project page
+  Converted 1:1 from Figma: portfolio-ai, frame "Project — Able Australia" (313:8), 1440 x 9658.
+  Layout, type, colour and the 16s looping motion timeline are taken straight from the file.
+
+  NOTE ON IMAGES: every image below is referenced from Figma's temporary asset CDN via the
+  custom properties in :root. Those links expire about 7 days after export. To make this page
+  permanent, save the images locally and change only the :root block, e.g.
+      --wing: url("assets/logo-bb.png");
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+
+:root{
+  /* ---- Figma assets (temporary Figma CDN URLs — see note at top of file) ---- */
+  --image25: url("https://www.figma.com/api/mcp/asset/5c915624-c70a-42f5-9f8c-39417d751c8b.png");
+  --image26: url("https://www.figma.com/api/mcp/asset/0cae9cb7-9bc4-4d62-b819-b36e4de7acc3.png");
+  --logoW: url("https://www.figma.com/api/mcp/asset/b6c2b3d8-e19b-4afa-a9b9-737ec5da19c4.png");
+  --wing: url("https://www.figma.com/api/mcp/asset/432ff4a8-129b-405d-88bf-9c23523be98f.png");
+  --image28: url("https://www.figma.com/api/mcp/asset/2f288e59-a101-4285-87c1-9d6350d2980e.png");
+  --rect71: url("https://www.figma.com/api/mcp/asset/20014c8e-c20e-4df1-8f13-9c2c43f9eaf5.png");
+  --rect72: url("https://www.figma.com/api/mcp/asset/a038dc44-51cc-4174-a1fb-ec8830a5223d.png");
+  --poster3: url("https://www.figma.com/api/mcp/asset/542ade1d-d132-4b55-9c09-efdcbdf06210.png");
+  --bottle: url("https://www.figma.com/api/mcp/asset/8068b315-e78c-48c1-bcef-724ea068872b.png");
+  --materials: url("https://www.figma.com/api/mcp/asset/40894202-b224-4e07-b51a-72a125bcf2ae.png");
+  --logo4: url("https://www.figma.com/api/mcp/asset/311f9e73-da8f-40ef-9678-e72a68a7826b.png");
+  --logo2: url("https://www.figma.com/api/mcp/asset/3ee7ec8d-1308-48f1-937f-c6a506034753.png");
+  --camp1: url("https://www.figma.com/api/mcp/asset/b4415013-cc46-40b0-ac2a-61e0041c1853.png");
+  --camp2: url("https://www.figma.com/api/mcp/asset/3b93891b-e15e-4d27-bb88-3ba516f7a24f.png");
+  --camp3: url("https://www.figma.com/api/mcp/asset/40660a6f-cb56-4134-bab3-0c62b5fef471.png");
+  --camp4: url("https://www.figma.com/api/mcp/asset/4835883a-00b5-4564-8c11-e7727048b6da.png");
+  --rect68: url("https://www.figma.com/api/mcp/asset/8b07848d-da07-4dd5-8f54-6c6d11ef6f97.svg");
+  --rect69: url("https://www.figma.com/api/mcp/asset/ffc5bfdb-f806-46a4-87b4-16b6b8e38b3c.svg");
+  --rect70: url("https://www.figma.com/api/mcp/asset/a75735a3-2ea2-4982-aece-2f7e64c3f326.svg");
+  --line1: url("https://www.figma.com/api/mcp/asset/74dbfd3f-6572-4bdd-bc31-7fa3205b46a3.svg");
+  --line2: url("https://www.figma.com/api/mcp/asset/cd43a6f9-a96a-488a-afde-9e7c875d8b0e.svg");
+  --line3: url("https://www.figma.com/api/mcp/asset/b20c3bf8-ddb7-4eb9-92d5-43d25ae1d19b.svg");
+  --line4: url("https://www.figma.com/api/mcp/asset/fa28bbe5-3eee-402f-afe5-1e0c7335a96b.svg");
+  --line5: url("https://www.figma.com/api/mcp/asset/21b6e3b7-93b8-48b9-ada4-9258336721d9.svg");
+  --line6: url("https://www.figma.com/api/mcp/asset/df3b5310-0036-46ff-98cb-2acd216302da.svg");
+  --line7: url("https://www.figma.com/api/mcp/asset/888cfbdd-89fb-453e-88bb-64983bd202b6.svg");
+  --line8: url("https://www.figma.com/api/mcp/asset/6d0eeabf-2cf2-42e1-892d-95726c1ae483.svg");
+  /* ---- LOCAL COPIES: after exporting the images from Figma into ./assets/,
+          delete the block above and un-comment this one ----
+  --image25: url("assets/image25.png");
+  --image26: url("assets/image26.png");
+  --logoW: url("assets/logoW.png");
+  --wing: url("assets/wing.png");
+  --image28: url("assets/image28.png");
+  --rect71: url("assets/rect71.png");
+  --rect72: url("assets/rect72.png");
+  --poster3: url("assets/poster3.png");
+  --bottle: url("assets/bottle.png");
+  --materials: url("assets/materials.png");
+  --logo4: url("assets/logo4.png");
+  --logo2: url("assets/logo2.png");
+  --camp1: url("assets/camp1.png");
+  --camp2: url("assets/camp2.png");
+  --camp3: url("assets/camp3.png");
+  --camp4: url("assets/camp4.png");
+  --rect68: url("assets/rect68.svg");
+  --rect69: url("assets/rect69.svg");
+  --rect70: url("assets/rect70.svg");
+  --line1: url("assets/line1.svg");
+  --line2: url("assets/line2.svg");
+  --line3: url("assets/line3.svg");
+  --line4: url("assets/line4.svg");
+  --line5: url("assets/line5.svg");
+  --line6: url("assets/line6.svg");
+  --line7: url("assets/line7.svg");
+  --line8: url("assets/line8.svg");
+  ---- */
+  /* ---- Portfolio System variables (from the Figma file) ---- */
+  --surface:#f4f1e9;      /* editorial/surface-white */
+  --ink:#11110f;          /* colour/ink */
+  --ink-muted:#55544f;    /* colour/ink-muted */
+  --rule:#b8b4aa;         /* colour/rule */
+  --yellow:#ffff8c;
+  --blue:#81c5ff;
+  --dark:#383838;
+  --serif:'Instrument Serif',Georgia,'Times New Roman',serif;
+  --sans:'Inter',-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif;
+  --anton:'Anton','Arial Narrow',Impact,sans-serif;
+  --myriad:'Myriad Pro','Source Sans 3','Source Sans Pro','Helvetica Neue',Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--surface);overflow-x:hidden}
+body{font-family:var(--sans);color:var(--ink);-webkit-font-smoothing:antialiased}
+#viewport{position:relative;width:100%;overflow:hidden}
+#stage{margin:0 auto}
+#stage{position:relative;width:1440px;height:9658px;background:var(--surface);transform-origin:top left}
+#stage p{margin:0}
+.t{position:absolute;overflow-wrap:break-word}
+.nw{white-space:nowrap}
+.img{position:absolute;background-size:cover;background-position:center;background-repeat:no-repeat}
+.rule{position:absolute;left:50%;transform:translateX(-50%);width:1312px;height:1px;background:var(--rule)}
+/* Takeaway grid: half-weight, half-opacity separators. */
+.rule.dim{height:.5px;background:#939088;opacity:.5;z-index:2;pointer-events:none}
+.rule.dim.vertical{width:.5px;height:652px;transform:none}
+/* Keep the closing rule above the adjacent footer surface. */
+.rule.dim.bottom{height:.5px}
+a{text-decoration:none;color:inherit}
+
+/* ---------- headings / body ---------- */
+.h2{font:400 46px/48px var(--serif);letter-spacing:-0.46px;color:var(--ink-muted)}
+.body{font:400 15px/24px var(--sans);color:var(--ink)}
+.label{font:400 12px/16px var(--sans);text-transform:uppercase;color:var(--ink-muted)}
+
+/* ---------- site header ---------- */
+#siteheader{position:absolute;left:50%;transform:translateX(-50%);top:0;width:1440px;height:80px;background:var(--surface);z-index:40}
+#siteheader a{position:absolute;top:32px;font:400 12px/16px var(--sans);color:var(--ink)}
+#siteheader .hr{position:absolute;left:0;bottom:0;width:1440px;height:1px;background:#b8b4aa}
+
+/* ---------- project info rows ---------- */
+#info{position:absolute;left:64px;top:355px;width:1312px;display:flex;flex-direction:column;gap:36px}
+#info .row{display:flex;align-items:flex-start;width:100%}
+#info .row .k{width:336px;flex:none;font:400 12px/16px var(--sans);text-transform:uppercase;color:var(--ink-muted)}
+#info .row .v{width:528px;flex:none;font:400 15px/24px var(--sans);color:var(--ink)}
+
+/* ---------- hero logo sequence band ---------- */
+#hero{position:absolute;left:0;top:1024px;width:1440px;height:835px;overflow:hidden}
+#hero .plate{position:absolute;left:0;top:0;width:1440px;height:835px}
+#hero .ctr{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);text-align:center}
+/* the Figma timeline's last beat ends at 78.125%; running the hero at 12.5s
+   (16s x .78125) drops the dead tail so the loop is continuous */
+#hero .anim{animation-duration:12.5s}
+#hero .t,#hero .img{color:#fff}
+
+/* ---------- posters (static trio) ---------- */
+.fposter{position:absolute;top:2029px;width:415.19px;height:587.494px}
+.fposter .crop{position:absolute;inset:0;overflow:hidden}
+
+/* ---------- carousel ---------- */
+#carousel{position:absolute;left:0;top:3537.63px;width:1440px;height:800px;overflow:hidden}
+#track{position:absolute;left:0;top:0;width:100%;height:100%;animation:track 16s linear infinite}
+.poster{position:absolute;top:0;width:413.434px;height:718.373px}
+.poster .pbg{position:absolute;inset:0;background-size:100% 100%;background-repeat:no-repeat}
+.poster .pshot{position:absolute;left:38.63px;top:64.93px;width:330.419px;height:495.628px;overflow:hidden}
+.poster .pshot i{position:absolute;left:0;top:-26.53%;width:100%;height:140.46%;background-size:cover;background-position:center;display:block}
+.poster .pline{position:absolute;left:29.59px;top:39.45px;width:355.899px;height:2px;overflow:hidden;transform-origin:left center}
+.poster .pline i{display:block;width:355.899px;height:2px;background-size:100% 100%;background-repeat:no-repeat}
+.poster .t span{display:inline-block}
+
+/* ---------- campaign language band ---------- */
+#campaign{position:absolute;left:50%;transform:translateX(-50%);top:4410px;width:1520px;height:1216px;background:var(--dark)}
+
+/* ================= MOTION =================
+   One 16s master timeline, looping — exactly as authored in Figma
+   (timeline cohort 313:8, duration 16000ms, loopMode: loop).
+   ========================================== */
+@keyframes track{0%{transform:translateX(0)}100%{transform:translateX(-1811.548px)}}
+
+/* -- hero: ground colour swap (yellow <-> blue) -- */
+@keyframes heroYellow{0%{opacity:1}27.601%{opacity:1;animation-timing-function:cubic-bezier(.65,0,.35,1)}32.401%{opacity:0}96.401%{opacity:0;animation-timing-function:cubic-bezier(.65,0,.35,1)}100%{opacity:1}100%{opacity:1}}
+@keyframes heroBlue{0%{opacity:0}27.601%{opacity:0;animation-timing-function:cubic-bezier(.65,0,.35,1)}32.401%{opacity:1}96.401%{opacity:1;animation-timing-function:cubic-bezier(.65,0,.35,1)}100%{opacity:0}100%{opacity:0}}
+/* -- hero: logo cross-dissolve 1 -> 2 -> 3 -- */
+@keyframes logo4{0%{opacity:1}8.401%{opacity:1;animation-timing-function:cubic-bezier(.65,0,.35,1)}12.96%{opacity:0}100%{opacity:0}}
+@keyframes logo2{0%{opacity:0}7.36%{opacity:0;animation-timing-function:cubic-bezier(.16,1,.3,1)}12%{opacity:1}17.44%{opacity:1;animation-timing-function:cubic-bezier(.65,0,.35,1)}21.76%{opacity:0}100%{opacity:0}}
+@keyframes logo3{0%{opacity:0}16.16%{opacity:0;animation-timing-function:cubic-bezier(.16,1,.3,1)}20.96%{opacity:1}26.001%{opacity:1;animation-timing-function:cubic-bezier(.65,0,.35,1)}29.76%{opacity:0}100%{opacity:0}}
+/* -- hero: wordmark then the three-beat line -- */
+@keyframes hAble{0%{opacity:0;translate:0 18px}31.2%{opacity:0;translate:0 18px;animation-timing-function:cubic-bezier(.16,1,.3,1)}35.84%{opacity:1;translate:0 0}44.401%{opacity:1;animation-timing-function:cubic-bezier(.4,0,1,1)}48%{opacity:0}100%{opacity:0;translate:0 0}}
+@keyframes hAustralia{0%{opacity:0;translate:0 24px}32.16%{opacity:0;translate:0 24px;animation-timing-function:cubic-bezier(.16,1,.3,1)}36.8%{opacity:1;translate:0 0}44.401%{opacity:1;animation-timing-function:cubic-bezier(.4,0,1,1)}48%{opacity:0}100%{opacity:0;translate:0 0}}
+@keyframes hTogether{0%{opacity:0;translate:-88px 0}47.36%{opacity:0;translate:-88px 0;animation-timing-function:cubic-bezier(.16,1,.3,1)}52.96%{opacity:1;translate:0 0}61.6%{opacity:1;animation-timing-function:cubic-bezier(.4,0,1,1)}64.96%{opacity:0}100%{opacity:0;translate:0 0}}
+@keyframes hWeAre{0%{opacity:0;translate:0 -72px}64.32%{opacity:0;translate:0 -72px;animation-timing-function:cubic-bezier(.16,1,.3,1)}69.6%{opacity:1;translate:0 0}78.08%{opacity:1;animation-timing-function:cubic-bezier(.4,0,1,1)}81.28%{opacity:0}100%{opacity:0;translate:0 0}}
+@keyframes hAble2{0%{opacity:0;scale:.94}80.64%{opacity:0;scale:.94;animation-timing-function:cubic-bezier(.16,1,.3,1)}86.24%{opacity:1}87.04%{scale:1.025;animation-timing-function:cubic-bezier(.65,0,.35,1)}90.801%{scale:1}95.36%{opacity:1;animation-timing-function:cubic-bezier(.4,0,1,1)}100%{opacity:0}100%{opacity:0;scale:1}}
+
+/* -- carousel: the four lead posters are already resolved at t=0 -- */
+@keyframes lineDraw0{0%{transform:scaleX(0);opacity:0}.313%{transform:scaleX(0);opacity:0}1.875%{opacity:1}5.625%{transform:scaleX(1)}100%{transform:scaleX(1);opacity:1}}
+@keyframes dShot0{0%{translate:0 3.849px;scale:.965}4.375%{translate:0 0;scale:1}100%{translate:0 0;scale:1}}
+@keyframes dHead0{0%{opacity:0;translate:0 76px;scale:1 .9}8.125%{opacity:0;translate:0 76px;scale:1 .9}10.938%{opacity:1}18.75%{translate:0 0;scale:1 1}100%{opacity:1;translate:0 0;scale:1 1}}
+
+@keyframes aLine{0%{transform:scaleX(0);opacity:0}17.5%{transform:scaleX(0);opacity:0}19.063%{opacity:1}23.125%{transform:scaleX(1)}100%{transform:scaleX(1);opacity:1}}
+@keyframes aT1{0%{opacity:0;translate:-55px 0}19.063%{opacity:0;translate:-55px 0;animation-timing-function:cubic-bezier(.16,1,.3,1)}22.188%{opacity:1}27.187%{translate:0 0}100%{opacity:1;translate:0 0}}
+@keyframes aT2{0%{opacity:0;translate:0 70px;scale:1 .85}24.063%{opacity:0;translate:0 70px;scale:1 .85;animation-timing-function:cubic-bezier(.16,1,.3,1)}27.187%{opacity:1}32.188%{translate:0 0;scale:1 1}100%{opacity:1;translate:0 0;scale:1 1}}
+@keyframes aT3{0%{opacity:0;translate:34px 0}30.312%{opacity:0;translate:34px 0;animation-timing-function:cubic-bezier(.16,1,.3,1)}33.438%{opacity:1}38.438%{translate:0 0}100%{opacity:1;translate:0 0}}
+@keyframes aT4{0%{opacity:0;translate:0 18px}37.188%{opacity:0;translate:0 18px;animation-timing-function:cubic-bezier(.16,1,.3,1)}40.313%{opacity:1}42.188%{translate:0 0}100%{opacity:1;translate:0 0}}
+@keyframes aT5{0%{opacity:0;translate:0 12px}39.375%{opacity:0;translate:0 12px;animation-timing-function:cubic-bezier(.16,1,.3,1)}42.5%{opacity:1}44.063%{translate:0 0}100%{opacity:1;translate:0 0}}
+@keyframes bLine{0%{transform:scaleX(0);opacity:0}42.5%{transform:scaleX(0);opacity:0}44.063%{opacity:1}48.125%{transform:scaleX(1)}100%{transform:scaleX(1);opacity:1}}
+@keyframes bH{0%{opacity:0;translate:0 115px;scale:1 .88}44.688%{opacity:0;translate:0 115px;scale:1 .88;animation-timing-function:cubic-bezier(.16,1,.3,1)}47.813%{opacity:1}54.063%{translate:0 0;scale:1 1}100%{opacity:1;translate:0 0;scale:1 1}}
+@keyframes bL1{0%{opacity:0;translate:18px 0}52.188%{opacity:0;translate:18px 0;animation-timing-function:cubic-bezier(.16,1,.3,1)}55.313%{opacity:1}57.5%{translate:0 0}100%{opacity:1;translate:0 0}}
+@keyframes bL2{0%{opacity:0;translate:18px 0}54.063%{opacity:0;translate:18px 0;animation-timing-function:cubic-bezier(.16,1,.3,1)}57.188%{opacity:1}59.375%{translate:0 0}100%{opacity:1;translate:0 0}}
+@keyframes bL3{0%{opacity:0;translate:18px 0}55.937%{opacity:0;translate:18px 0;animation-timing-function:cubic-bezier(.16,1,.3,1)}59.062%{opacity:1}61.25%{translate:0 0}100%{opacity:1;translate:0 0}}
+@keyframes bS{0%{opacity:0;translate:0 65px;scale:1 .94}59.688%{opacity:0;translate:0 65px;scale:1 .94;animation-timing-function:cubic-bezier(.16,1,.3,1)}62.813%{opacity:1}69.063%{translate:0 0;scale:1 1}100%{opacity:1;translate:0 0;scale:1 1}}
+@keyframes cLine{0%{transform:scaleX(0);opacity:0}67.5%{transform:scaleX(0);opacity:0}69.063%{opacity:1}72.813%{transform:scaleX(1)}100%{transform:scaleX(1);opacity:1}}
+@keyframes cH{0%{opacity:0;translate:-26px 130px;scale:1 .9}69.375%{opacity:0;translate:-26px 130px;scale:1 .9;animation-timing-function:cubic-bezier(.16,1,.3,1)}72.188%{opacity:1}79.375%{translate:0 0;scale:1 1}100%{opacity:1;translate:0 0;scale:1 1}}
+@keyframes cL1{0%{opacity:0;translate:0 18px}77.813%{opacity:0;translate:0 18px;animation-timing-function:cubic-bezier(.16,1,.3,1)}80.625%{opacity:1}82.813%{translate:0 0}100%{opacity:1;translate:0 0}}
+@keyframes cL2{0%{opacity:0;translate:0 18px}79.688%{opacity:0;translate:0 18px;animation-timing-function:cubic-bezier(.16,1,.3,1)}82.5%{opacity:1}84.688%{translate:0 0}100%{opacity:1;translate:0 0}}
+@keyframes cL3{0%{opacity:0;translate:0 18px}81.563%{opacity:0;translate:0 18px;animation-timing-function:cubic-bezier(.16,1,.3,1)}84.375%{opacity:1}86.563%{translate:0 0}100%{opacity:1;translate:0 0}}
+@keyframes cS{0%{opacity:0;translate:32px 0}84.688%{opacity:0;translate:32px 0;animation-timing-function:cubic-bezier(.16,1,.3,1)}87.5%{opacity:1}93.75%{translate:0 0}100%{opacity:1;translate:0 0}}
+@keyframes dLine{0%{opacity:0}100%{opacity:0}}
+@keyframes dHead{0%{opacity:0;translate:0 76px;scale:1 .9}100%{opacity:0;translate:0 76px;scale:1 .9}}
+@keyframes dShot{0%{translate:0 70px;scale:.36}92.5%{translate:0 70px;scale:.36}100%{translate:0 3.849px;scale:.965}}
+.anim{animation-duration:16s;animation-timing-function:linear;animation-iteration-count:infinite;animation-fill-mode:both}
+.t span{display:inline-block}
+.heroYellowP{animation-name:heroYellow}
+.heroBlueP{animation-name:heroBlue}
+.logo4{animation-name:logo4}
+.logo2{animation-name:logo2}
+.logo3{animation-name:logo3}
+.hAble{animation-name:hAble}
+.hAustralia{animation-name:hAustralia}
+.hTogether{animation-name:hTogether}
+.hWeAre{animation-name:hWeAre}
+.hAble2{animation-name:hAble2}
+.lead-line{animation-name:lineDraw0}
+.lead-shot{animation-name:dShot0}
+.lead-head{animation-name:dHead0}
+.a-line{animation-name:aLine}
+.a-t1{animation-name:aT1}
+.a-t2{animation-name:aT2}
+.a-t3{animation-name:aT3}
+.a-t4{animation-name:aT4}
+.a-t5{animation-name:aT5}
+.b-line{animation-name:bLine}
+.b-h{animation-name:bH}
+.b-l1{animation-name:bL1}
+.b-l2{animation-name:bL2}
+.b-l3{animation-name:bL3}
+.b-s{animation-name:bS}
+.c-line{animation-name:cLine}
+.c-h{animation-name:cH}
+.c-l1{animation-name:cL1}
+.c-l2{animation-name:cL2}
+.c-l3{animation-name:cL3}
+.c-s{animation-name:cS}
+.d-line{animation-name:dLine}
+.d-h{animation-name:dHead}
+.d-shot{animation-name:dShot}
+/* ---- scroll-in: fires once on the way down; scrolling back up leaves them put ---- */
+@media (prefers-reduced-motion: reduce){
+  #stage *{animation:none !important}
+  #track{transform:translateX(0)}
+}
+
+</style>
+</head>
+<body>
+<div id="viewport">
+  <div id="stage">
+
+    <!-- ============ Editorial header ============ -->
+    <div style="position:absolute;left:0;top:0;width:1440px;height:342px;background:var(--surface);overflow:hidden">
+      
+      <div class="t label" style="left:56px;top:116px;width:500px">BRAND IDENTITY · CAMPAIGN SYSTEM</div>
+      <div class="t" style="left:56px;top:150px;width:1100px;font:400 64px/66px var(--serif);letter-spacing:-1px;color:var(--ink)">Able Australia</div>
+      <a class="t" style="left:56px;top:290px;width:140px;font:400 12px/16px var(--sans);color:var(--ink-muted)" href="#">← ALL WORK</a>
+    </div>
+
+    <!-- ============ Project info ============ -->
+    <div id="info">
+      <div class="row"><div class="k">Client &amp; Challenge</div><div class="v">Able Australia is a registered NDIS provider and not-for-profit supporting people with disability and older people across Victoria, Tasmania, Queensland and the ACT. The brief was to make a broad service offer feel clearer, more human and easier to recognise across audiences and locations.</div></div>
+      <div class="row"><div class="k">Design Scope</div><div class="v">Brand strategy · Visual identity · Logo system · Campaign art direction · Social, out-of-home and staff touchpoints</div></div>
+      <div class="row"><div class="k">Design Approach</div><div class="v">The identity pairs a responsive wing-shaped ‘A’ with high-contrast blue and yellow, direct language and person-centred photography. Repetition, scale and modular layouts create recognition across formats; the result is a flexible system that keeps people—not services—at the centre.</div></div>
+    </div>
+
+    <div class="t h2" style="left:64px;top:831px;width:528px">A More Human Identity</div>
+    <div class="t body" style="left:64px;top:901px;width:528px">Bold type and an animated sequence move from organisation to collective voice—Able, Together, We are Able. The system turns the brand name into an active statement of belonging.</div>
+
+    <!-- ============ A More Human Identity — 16s looping logo sequence ============
+         every layer is centred on both axes inside the 1440x835 band; the Figma
+         keyframes drive the individual translate/scale properties, which compose
+         on top of the centring transform. ============ -->
+    <div id="hero">
+      <div class="plate anim heroBlueP" style="background:var(--blue)"></div>
+      <div class="plate anim heroYellowP" style="background:var(--yellow)"></div>
+      <div class="ctr anim logo4" style="width:492px;height:376.987px;background-image:var(--logo4);background-size:cover;background-position:center"></div>
+      <div class="ctr anim logo2" style="width:492px;height:385px;background-image:var(--logo2);background-size:cover;background-position:center"></div>
+      <div class="ctr anim logo3" style="width:492px;height:385px;background-image:var(--wing);background-size:cover;background-position:center"></div>
+      <div class="ctr" style="width:560px;height:412.75px">
+        <div class="anim hAble" style="position:absolute;left:0;top:0;width:100%;text-align:center;font:400 300.625px/300.625px var(--anton);color:#fff;white-space:nowrap">Able</div>
+        <div class="anim hAustralia" style="position:absolute;left:0;top:301px;width:100%;text-align:center;font:700 111.753px/111.753px var(--myriad);letter-spacing:7.8227px;text-indent:7.8227px;color:#fff;white-space:nowrap">Australia</div>
+      </div>
+      <div class="ctr anim hTogether" style="font:400 261.644px/261.644px var(--myriad);color:#fff;white-space:nowrap">Together</div>
+      <div class="ctr anim hWeAre" style="font:400 261.644px/261.644px var(--myriad);color:#fff;white-space:nowrap">We are</div>
+      <div class="ctr anim hAble2" style="font:400 261.644px/261.644px var(--anton);color:#fff;white-space:nowrap">Able</div>
+    </div>
+
+    <div class="rule" style="top:1945px"></div>
+
+    <!-- ============ Poster trio ============ -->
+    <div class="fposter" style="left:57px"><div class="crop" style="background:#ffff8c"></div>
+      <div class="t" style="left:10px;top:12.5px;width:184px;font:400 10px/11px var(--myriad);text-align:justify;color:#000000">Able Australia supports people with disability to live independently, connect with their communities and create better days, every day.</div>
+      <div class="t" style="left:220px;top:12.5px;width:184px;font:400 10px/11px var(--myriad);text-align:justify;color:#000000">Together, we create more opportunities for people to participate, belong and live the life they choose.</div>
+      <div class="t nw" style="left:10px;top:151px;font:600 12px/66px var(--myriad);letter-spacing:-0.18px;color:var(--ink-muted)">Able Australia</div>
+      <div class="t nw" style="left:208px;top:151px;font:400 12px/66px var(--myriad);letter-spacing:-0.18px;color:var(--ink-muted)">ableaustralia.org.au</div>
+      <div class="t nw" style="left:343px;top:151px;font:400 12px/66px var(--myriad);letter-spacing:-0.18px;color:var(--ink-muted)">/get support</div>
+      <div class="t nw" style="left:8px;top:333.42px;font:400 174.329px/174.329px var(--anton);color:#000000">Able</div>
+      <div class="t nw" style="left:10.48px;top:511.55px;font:700 64.804px/64.804px var(--myriad);letter-spacing:4.5363px;color:#000000">Australia</div>
+    </div>
+    <div class="fposter" style="left:968px"><div class="crop" style="background:#81c5ff"></div>
+      <div class="t" style="left:10px;top:12.5px;width:184px;font:400 10px/11px var(--myriad);text-align:justify;color:#ffffff">Able Australia supports people with disability to live independently, connect with their communities and create better days, every day.</div>
+      <div class="t" style="left:220px;top:12.5px;width:184px;font:400 10px/11px var(--myriad);text-align:justify;color:#ffffff">Together, we create more opportunities for people to participate, belong and live the life they choose.</div>
+      <div class="t nw" style="left:10px;top:151px;font:600 12px/66px var(--myriad);letter-spacing:-0.18px;color:#ffffff">Able Australia</div>
+      <div class="t nw" style="left:208px;top:151px;font:400 12px/66px var(--myriad);letter-spacing:-0.18px;color:#ffffff">ableaustralia.org.au</div>
+      <div class="t nw" style="left:343px;top:151px;font:400 12px/66px var(--myriad);letter-spacing:-0.18px;color:#ffffff">/get support</div>
+      <div class="t nw" style="left:8px;top:333.42px;font:400 174.329px/174.329px var(--anton);color:#ffffff">Able</div>
+      <div class="t nw" style="left:10.48px;top:511.55px;font:700 64.804px/64.804px var(--myriad);letter-spacing:4.5363px;color:#ffffff">Australia</div>
+    </div>
+    <div class="fposter" style="left:513px">
+      <div class="crop">
+        <div class="img" style="left:-176px;top:-48px;width:1080px;height:800px;background-image:var(--image26);background-size:cover"></div>
+        <div style="position:absolute;inset:0;background-image:linear-gradient(90deg,rgba(252,244,220,.06) 0%,rgba(252,244,220,.06) 100%),linear-gradient(90deg,rgba(0,0,0,.03) 0%,rgba(0,0,0,.03) 100%)"></div>
+      </div>
+      <div class="t nw" style="left:10px;top:11px;font:400 97.867px/97.867px var(--myriad);color:#ffff8c">Together </div>
+      <div class="t nw" style="left:10px;top:380.6px;line-height:0;color:#ffff8c">
+        <p style="font:400 97.867px/97.867px var(--myriad)">We are</p>
+        <p style="font:400 97.867px/97.867px var(--anton)">Able</p>
+      </div>
+    </div>
+
+    <div class="rule" style="top:2703px"></div>
+
+    <!-- ============ A Flexible Brand System ============ -->
+    <div class="t h2" style="left:64px;top:2821px;width:528px">A Flexible Brand System</div>
+    <div class="t body" style="left:64px;top:2891px;width:528px">The wing-shaped ‘A’ becomes both signature and graphic device. Its soft, upward form balances authority with warmth, while blue, yellow and black create a high-contrast palette that remains recognisable across campaign formats.</div>
+    <div class="img" style="left:591px;top:2900px;width:490px;height:383px;background-image:var(--wing);background-size:cover"></div>
+    <div class="t nw" style="left:1064px;top:2960px;font:400 174.329px/174.329px var(--anton);color:#000">Able</div>
+    <div class="t nw" style="left:1066.48px;top:3138.13px;font:700 64.804px/64.804px var(--myriad);letter-spacing:4.5363px;color:#000">Australia</div>
+
+    <div class="rule" style="top:3383px"></div>
+
+    <!-- ============ Campaign poster carousel — 16s linear loop ============ -->
+    <div id="carousel">
+      <div id="track">
+    <div class="poster" style="left:-390px">
+      <div class="pbg" style="background-image:var(--rect70)"></div>
+      <div class="pline"><i style="background-image:var(--line3)"></i></div>
+      <div class="t nw" style="left:29.59px;top:50.96px;font:400 80.44px/80.44px var(--myriad);color:#000"><span>Together </span></div>
+      <div class="t nw" style="left:29.59px;top:131.51px;line-height:0;color:#000"><span><p style="font:400 80.44px/94.441px var(--myriad)">We are</p><p style="font:400 80.44px/94.441px var(--anton)">Able</p></span></div>
+      <div class="t" style="left:29.59px;top:379.73px;width:357.542px;font:400 48.494px/62.467px var(--myriad);color:#000;white-space:pre-wrap"><span>We support our clients  to live the life they choose.</span></div>
+      <div class="t nw" style="left:293.43px;top:616.25px;font:400 54.049px/54.049px var(--anton);color:#000"><span>Able</span></div>
+      <div class="t nw" style="left:294.2px;top:671.52px;font:700 20.092px/20.092px var(--myriad);letter-spacing:1.4064px;color:#000"><span>Australia</span></div>
+    </div>
+    <div class="poster" style="left:63.71px">
+      <div class="pbg" style="background-image:var(--rect71)"></div>
+      <div class="pline"><i style="background-image:var(--line4)"></i></div>
+      <div class="t nw" style="left:44.38px;top:287.68px;font:600 9.863px/54.248px var(--myriad);letter-spacing:-0.1479px;color:#ffffff"><span>Able Australia</span></div>
+      <div class="t nw" style="left:207.13px;top:287.68px;font:400 9.863px/54.248px var(--myriad);letter-spacing:-0.1479px;color:#ffffff"><span>ableaustralia.org.au</span></div>
+      <div class="t nw" style="left:318.09px;top:287.68px;font:400 9.863px/54.248px var(--myriad);letter-spacing:-0.1479px;color:#ffffff"><span>/get support</span></div>
+      <div class="t" style="left:29.59px;top:50.96px;width:324.665px;font:400 80.44px/80.44px var(--myriad);color:#ffffff"><span>Do More of What You Love</span></div>
+      <div class="t" style="left:29.59px;top:567.13px;width:383.844px;line-height:0;color:#ffffff;white-space:pre-wrap"><span><p style="font:400 48.494px/62.467px var(--myriad)">Life Happens </p><p style="font:400 48.494px/62.467px var(--myriad)">Out Here</p></span></div>
+    </div>
+    <div class="poster" style="left:514.13px">
+      <div class="pbg" style="background-image:var(--rect69)"></div>
+      <div class="pline"><i style="background-image:var(--line2)"></i></div>
+      <div class="t nw" style="left:44.38px;top:287.68px;font:600 9.863px/54.248px var(--myriad);letter-spacing:-0.1479px;color:var(--ink-muted)"><span>Able Australia</span></div>
+      <div class="t nw" style="left:207.13px;top:287.68px;font:400 9.863px/54.248px var(--myriad);letter-spacing:-0.1479px;color:var(--ink-muted)"><span>ableaustralia.org.au</span></div>
+      <div class="t nw" style="left:318.09px;top:287.68px;font:400 9.863px/54.248px var(--myriad);letter-spacing:-0.1479px;color:var(--ink-muted)"><span>/get support</span></div>
+      <div class="t" style="left:29.59px;top:50.96px;width:324.665px;font:400 80.44px/80.44px var(--myriad);color:#000000"><span>Make. Move. Connect.</span></div>
+      <div class="t" style="left:29.59px;top:567.13px;width:383.844px;line-height:0;color:#000000;white-space:pre-wrap"><span><p style="font:400 48.494px/62.467px var(--myriad)">Better Days, </p><p style="font:400 48.494px/62.467px var(--myriad)">Every Day </p></span></div>
+    </div>
+    <div class="poster" style="left:967.02px">
+      <div class="pbg" style="background-image:var(--rect68)"></div>
+      <div class="pshot anim lead-shot"><i style="background-image:var(--image28)"></i></div>
+      <div class="pline anim lead-line"><i style="background-image:var(--line1)"></i></div>
+      <div class="t" style="left:34.52px;top:581.11px;width:353.433px;font:400 55.852px/55.852px var(--myriad);color:#ffff8c"><span class="anim lead-head">Every Day, More Possible</span></div>
+    </div>
+    <div class="poster" style="left:1421.55px">
+      <div class="pbg" style="background-image:var(--rect70)"></div>
+      <div class="pline anim a-line"><i style="background-image:var(--line7)"></i></div>
+      <div class="t nw" style="left:29.59px;top:50.96px;font:400 80.44px/80.44px var(--myriad);color:#000"><span class="anim a-t1">Together </span></div>
+      <div class="t nw" style="left:29.59px;top:131.51px;line-height:0;color:#000"><span class="anim a-t2"><p style="font:400 80.44px/94.441px var(--myriad)">We are</p><p style="font:400 80.44px/94.441px var(--anton)">Able</p></span></div>
+      <div class="t" style="left:29.59px;top:379.73px;width:357.542px;font:400 48.494px/62.467px var(--myriad);color:#000;white-space:pre-wrap"><span class="anim a-t3">We support our clients  to live the life they choose.</span></div>
+      <div class="t nw" style="left:293.43px;top:616.25px;font:400 54.049px/54.049px var(--anton);color:#000"><span class="anim a-t4">Able</span></div>
+      <div class="t nw" style="left:294.2px;top:671.52px;font:700 20.092px/20.092px var(--myriad);letter-spacing:1.4064px;color:#000"><span class="anim a-t5">Australia</span></div>
+    </div>
+    <div class="poster" style="left:1875.26px">
+      <div class="pbg" style="background-image:var(--rect72)"></div>
+      <div class="pline anim b-line"><i style="background-image:var(--line8)"></i></div>
+      <div class="t nw" style="left:44.38px;top:287.68px;font:600 9.863px/54.248px var(--myriad);letter-spacing:-0.1479px;color:#ffffff"><span class="anim b-l1">Able Australia</span></div>
+      <div class="t nw" style="left:207.13px;top:287.68px;font:400 9.863px/54.248px var(--myriad);letter-spacing:-0.1479px;color:#ffffff"><span class="anim b-l2">ableaustralia.org.au</span></div>
+      <div class="t nw" style="left:318.09px;top:287.68px;font:400 9.863px/54.248px var(--myriad);letter-spacing:-0.1479px;color:#ffffff"><span class="anim b-l3">/get support</span></div>
+      <div class="t" style="left:29.59px;top:50.96px;width:324.665px;font:400 80.44px/80.44px var(--myriad);color:#ffffff"><span class="anim b-h">Do More of What You Love</span></div>
+      <div class="t" style="left:29.59px;top:567.13px;width:383.844px;line-height:0;color:#ffffff;white-space:pre-wrap"><span class="anim b-s"><p style="font:400 48.494px/62.467px var(--myriad)">Life Happens </p><p style="font:400 48.494px/62.467px var(--myriad)">Out Here</p></span></div>
+    </div>
+    <div class="poster" style="left:2325.68px">
+      <div class="pbg" style="background-image:var(--rect69)"></div>
+      <div class="pline anim c-line"><i style="background-image:var(--line6)"></i></div>
+      <div class="t nw" style="left:44.38px;top:287.68px;font:600 9.863px/54.248px var(--myriad);letter-spacing:-0.1479px;color:var(--ink-muted)"><span class="anim c-l1">Able Australia</span></div>
+      <div class="t nw" style="left:207.13px;top:287.68px;font:400 9.863px/54.248px var(--myriad);letter-spacing:-0.1479px;color:var(--ink-muted)"><span class="anim c-l2">ableaustralia.org.au</span></div>
+      <div class="t nw" style="left:318.09px;top:287.68px;font:400 9.863px/54.248px var(--myriad);letter-spacing:-0.1479px;color:var(--ink-muted)"><span class="anim c-l3">/get support</span></div>
+      <div class="t" style="left:29.59px;top:50.96px;width:324.665px;font:400 80.44px/80.44px var(--myriad);color:#000000"><span class="anim c-h">Make. Move. Connect.</span></div>
+      <div class="t" style="left:29.59px;top:567.13px;width:383.844px;line-height:0;color:#000000;white-space:pre-wrap"><span class="anim c-s"><p style="font:400 48.494px/62.467px var(--myriad)">Better Days, </p><p style="font:400 48.494px/62.467px var(--myriad)">Every Day </p></span></div>
+    </div>
+    <div class="poster" style="left:2778.57px">
+      <div class="pbg" style="background-image:var(--rect68)"></div>
+      <div class="pshot anim d-shot"><i style="background-image:var(--image28)"></i></div>
+      <div class="pline anim d-line"><i style="background-image:var(--line5)"></i></div>
+      <div class="t" style="left:34.52px;top:581.11px;width:353.433px;font:400 55.852px/55.852px var(--myriad);color:#ffff8c"><span class="anim d-h">Every Day, More Possible</span></div>
+    </div>
+      </div>
+    </div>
+
+    <!-- ============ Campaign Language ============ -->
+    <div id="campaign"></div>
+    <div class="t" style="left:64px;top:4507px;width:528px;font:400 46px/48px var(--serif);letter-spacing:-0.46px;color:#fff">Campaign Language</div>
+    <div class="t" style="left:64px;top:4577px;width:528px;font:400 15px/24px var(--sans);color:#fff">Short, affirmative messages translate the brand promise into everyday actions: do more, make, move, connect. Consistent type, generous scale and image-led layouts let each message adapt without losing the wider system.</div>
+    <div class="img" style="left:167px;top:4685px;width:545.465px;height:403.951px;background-image:var(--camp3)"></div>
+    <div class="img" style="left:737.44px;top:4685px;width:545.465px;height:403.951px;background-image:var(--camp4)"></div>
+    <div class="img" style="left:167px;top:5114px;width:545px;height:404px;background-image:var(--camp1)"></div>
+    <div class="img" style="left:737.44px;top:5120px;width:545.465px;height:403.951px;background-image:var(--camp2)"></div>
+
+    <div class="rule" style="top:5739px"></div>
+
+    <!-- ============ Out-of-Home ============ -->
+    <div class="t h2" style="left:64px;top:5933px;width:480px">Out-of-Home Presence</div>
+    <div class="t body" style="left:64px;top:6002px;width:480px">Large-format posters pair direct language with person-centred photography. The repeated identity mark and clear hierarchy are designed for quick recognition at street level, while the human image keeps the message grounded in real life.</div>
+    <div class="img" style="left:664px;top:5871px;width:776px;height:1163px;background-image:var(--poster3)"></div>
+
+    <!-- ============ Brand Touchpoints ============ -->
+    <div class="t" style="left:64px;top:7201px;width:480px;font:400 52px/56px var(--serif);letter-spacing:-0.52px;color:#12120f">Brand Touchpoints</div>
+    <div class="t" style="left:64px;top:7270px;width:528px;font:400 16px/24px var(--sans);color:#12120f">Bottles, totes and staff credentials carry the same visual system into daily use. Rather than treating merchandise as decoration, each object reinforces recognition and helps the identity feel present, practical and connected.</div>
+    <div class="img" data-rv="right" data-rv-dist="300" data-rv-group="ablekit" data-rv-anchor="#able-kit" data-rv-fade="0" data-rv-start="0.76" data-rv-span="0.36" style="left:878.2px;top:7226.8px;width:534.65px;height:802.4px;background-image:var(--bottle)"></div>
+    <div id="able-kit" data-rv="left" data-rv-dist="300" data-rv-group="ablekit" data-rv-anchor="#able-kit" data-rv-fade="0" data-rv-start="0.76" data-rv-span="0.36" style="position:absolute;left:124.7px;top:7795.6px;width:563.55px;height:607.75px;overflow:hidden">
+      <div class="img" style="left:0;top:0;width:100%;height:139.13%;background-image:var(--materials)"></div>
+    </div>
+
+    <div class="rule dim" style="top:8685px"></div>
+    <div class="rule dim vertical" style="left:476.5px;top:8685px"></div>
+    <div class="rule dim vertical" style="left:961.5px;top:8685px"></div>
+
+    <div style="position:absolute;left:68px;top:8784px;width:343px;height:456px;overflow:hidden">
+      <div class="img" style="left:0;top:-256.38%;width:315.79%;height:356.38%;background-image:var(--materials)"></div>
+    </div>
+    <div style="position:absolute;left:592px;top:8826px;width:284.856px;height:437.02px;overflow:hidden">
+      <div class="img" style="left:-133.92%;top:-256.38%;width:364.56%;height:356.38%;background-image:var(--materials)"></div>
+    </div>
+    <div style="position:absolute;left:1027px;top:8838px;width:335px;height:413px;overflow:hidden">
+      <div class="img" style="left:-192.68%;top:-256.38%;width:292.68%;height:356.38%;background-image:var(--materials)"></div>
+    </div>
+
+    <div class="rule dim bottom" style="top:9337px"></div>
+
+    <!-- ============ Next project ============ -->
+    <div style="position:absolute;left:0;top:9338px;width:1440px;height:320px;background:#f4f1e9;overflow:hidden">
+      <div class="t nw" style="left:64px;top:112px;font:400 12px/16px var(--sans);letter-spacing:.48px;color:rgba(15,15,14,.65)">NEXT PROJECT</div>
+      <div class="t nw" style="left:64px;top:144px;font:400 12px/16px var(--sans);color:rgba(15,15,14,.65)">CUSTOM TYPEFACE &amp; EDITORIAL SERIES</div>
+      <a class="t" style="left:1016px;top:114px;width:360px;height:64px;text-align:right;font:400 52px/56px var(--serif);color:#0f0f0e;white-space:pre-wrap" href="#">NEXT  →</a>
+    </div>
+
+    <!-- ============ Site header (drawn last, sits above) ============ -->
+    <div id="siteheader">
+      <a style="left:32px;width:160px" href="#">GEMMA YANG</a>
+      <a style="left:182px;width:60px" href="#">WORK</a>
+      <a style="left:268px;width:70px" href="#">ABOUT</a>
+      <a style="left:1164px;width:244px" href="mailto:gemmayang22@gmail.com">GEMMAYANG22@GMAIL.COM</a>
+      <div class="hr"></div>
+    </div>
+
+  </div>
+</div>
+<script src="../site-layout.js?v=20260912"></script>
+<script src="../site.js?v=20260912"></script>
+</body>
+</html>

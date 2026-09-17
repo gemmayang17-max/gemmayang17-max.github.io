@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Work — Gemma Yang</title>
+<!-- Work Index — Figma portfolio-ai 237:78, with the hover behaviour from the
+     "WORK / Hover Row" component: the row opens downward and reveals a 1016x392
+     preview (Preview Wrapper 1064x420, image inset x24 y6). Clicking anywhere in
+     the open row — including the image — opens the project. -->
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--surface:#f4f1e9;--ink:#11110f;--ink-muted:#55544f;--rule:#b8b4aa;--accent:#cd3023;
+ --serif:'Instrument Serif',Georgia,serif;--sans:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+ --ease:cubic-bezier(.22,1,.36,1)}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--surface);overflow-x:hidden}
+body{font-family:var(--sans);color:var(--ink);-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+#viewport{position:relative;width:100%;overflow:hidden}
+#stage{position:relative;width:1440px;min-height:1440px;background:var(--surface);transform-origin:top left}
+
+#siteheader{position:fixed;left:0;top:0;width:1440px;height:40px;background:var(--surface);
+  transform-origin:top left;z-index:100}
+#siteheader a,#siteheader span{position:absolute;top:12px;font:400 12px/16px var(--sans);color:var(--ink);
+  transition:opacity .35s var(--ease)}
+#siteheader a:hover{opacity:.5}
+#siteheader .on{color:var(--accent)}
+#siteheader .hr{position:absolute;left:0;top:39px;width:1440px;height:1px;background:#b8b4aa}
+
+#side{position:absolute;left:0;top:55px;width:376px;height:1300px;overflow:hidden}
+#side .name{position:absolute;left:24px;top:48px;width:330px;font:400 96px/88px var(--serif);letter-spacing:-1.92px}
+#side .name p{margin:0}
+#side .idrule{position:absolute;left:24px;top:310px;width:330px;height:1px;background:var(--ink-muted)}
+#side .meta{position:absolute;left:24px;top:330px;width:300px;font:400 12px/16px var(--sans);white-space:pre-wrap}
+#divider{position:absolute;left:375px;top:55px;width:1px;height:1360px;background:var(--ink)}
+
+#list{position:absolute;left:376px;top:115px;width:1064px}
+.row{position:relative;display:block;width:1064px;cursor:pointer}
+.rowtop{position:relative;display:block;width:1064px;height:80px}
+.rrule{position:absolute;left:24px;top:0;width:1016px;height:1px;background:var(--rule)}
+#finalrule{position:relative;margin-left:24px;width:1016px;height:1px;background:var(--rule)}
+.num{position:absolute;left:44px;top:24px;width:64px;font:400 18px/20px var(--serif);color:var(--ink)}
+.ttl{position:absolute;left:132px;top:13px;width:760px;font:400 48px/50px var(--serif);color:var(--ink);white-space:nowrap}
+.arw{position:absolute;left:1000px;top:25px;width:22px;height:22px}
+.arw img{display:block;width:100%;height:100%}
+.num,.ttl,.arw{transition:transform .6s var(--ease),color .45s var(--ease),opacity .45s var(--ease)}
+
+/* --- the reveal: row opens downward, preview 1064x420 with the image inset 24 / 6 --- */
+.prev{display:block;width:1064px;height:0;overflow:hidden;
+  transition:height .62s var(--ease)}
+.prevbox{display:block;margin:6px 24px 22px;width:1016px;height:392px;overflow:hidden;
+  opacity:0;transform:scale(1.04);
+  transition:opacity .5s var(--ease),transform .8s var(--ease)}
+.prevbox img{display:block;width:100%;height:100%;object-fit:cover}
+.row:hover .prev{height:420px}
+.row:hover .prevbox{opacity:1;transform:scale(1)}
+/* active state — number, title and arrow pick up the accent, as in the component's Active layers */
+.row:hover .num{color:var(--accent)}
+.row:hover .ttl{color:var(--accent);transform:translateX(14px)}
+.row:hover .arw{transform:translate(10px,-10px)}
+#list:hover .row:not(:hover) .ttl,#list:hover .row:not(:hover) .num{opacity:.4}
+@media (prefers-reduced-motion:reduce){
+  .prev,.prevbox,.num,.ttl,.arw{transition:none}
+}
+</style>
+</head>
+<body>
+
+<div id="siteheader">
+  <a href="index.html" style="left:32px;width:160px">GEMMA YANG</a>
+  <span class="on" style="left:182px;width:60px">WORK</span>
+  <a href="#" style="left:268px;width:70px">ABOUT</a>
+  <a href="mailto:gemmayang22@gmail.com" style="left:1164px;width:244px">GEMMAYANG22@GMAIL.COM</a>
+  <div class="hr"></div>
+</div>
+
+<div id="viewport"><div id="stage">
+  <div id="side">
+    <div class="name"><p>GEMMA</p><p>YANG</p></div>
+    <div class="idrule"></div>
+    <div class="meta">DESIGNER  /  MELBOURNE</div>
+  </div>
+  <div id="divider"></div>
+  <div id="list">
+      <a class="row" href="../Project%20%E2%80%94%20Sydney%20Open%202021/index.html">
+        <span class="rowtop"><span class="num">01</span><span class="ttl">Sydney Open 2021</span>
+          <span class="arw"><img src="https://www.figma.com/api/mcp/asset/f5b4a9d8-c441-4bc3-8942-bb09a8eece21.svg" alt=""></span></span>
+        <span class="prev"><span class="prevbox"><img src="hover-assets/01.png?v=20260912c" alt="Sydney Open 2021" loading="lazy"></span></span>
+      </a>
+      <a class="row" href="../Project%20%E2%80%94%20Domayne%20Digital%20Campaigns/index.html">
+        <span class="rowtop"><span class="rrule"></span><span class="num">02</span><span class="ttl">Domayne Digital Campaigns</span>
+          <span class="arw"><img src="https://www.figma.com/api/mcp/asset/f5b4a9d8-c441-4bc3-8942-bb09a8eece21.svg" alt=""></span></span>
+        <span class="prev"><span class="prevbox"><img src="hover-assets/02.png" alt="Domayne Digital Campaigns" loading="lazy"></span></span>
+      </a>
+      <a class="row" href="../Project%20%E2%80%94%20Domayne%20Father%E2%80%99s%20Day/index.html">
+        <span class="rowtop"><span class="rrule"></span><span class="num">03</span><span class="ttl">Domayne Father’s Day</span>
+          <span class="arw"><img src="https://www.figma.com/api/mcp/asset/f5b4a9d8-c441-4bc3-8942-bb09a8eece21.svg" alt=""></span></span>
+        <span class="prev"><span class="prevbox"><img src="hover-assets/03.png" alt="Domayne Father’s Day" loading="lazy"></span></span>
+      </a>
+      <a class="row" href="../Project%20%E2%80%94%20onemorecase/index.html">
+        <span class="rowtop"><span class="rrule"></span><span class="num">04</span><span class="ttl">onemorecase</span>
+          <span class="arw"><img src="https://www.figma.com/api/mcp/asset/f5b4a9d8-c441-4bc3-8942-bb09a8eece21.svg" alt=""></span></span>
+        <span class="prev"><span class="prevbox"><img src="hover-assets/04.png" alt="onemorecase" loading="lazy"></span></span>
+      </a>
+      <a class="row" href="../Project%20%E2%80%94%20Beerfest%20Australia/index.html">
+        <span class="rowtop"><span class="rrule"></span><span class="num">05</span><span class="ttl">Beerfest Australia</span>
+          <span class="arw"><img src="https://www.figma.com/api/mcp/asset/f5b4a9d8-c441-4bc3-8942-bb09a8eece21.svg" alt=""></span></span>
+        <span class="prev"><span class="prevbox"><img src="hover-assets/05.png" alt="Beerfest Australia" loading="lazy"></span></span>
+      </a>
+      <a class="row" href="../Project%20%E2%80%94%20Sydney%20Candle%20Co/index.html">
+        <span class="rowtop"><span class="rrule"></span><span class="num">06</span><span class="ttl">Sydney Candle Co</span>
+          <span class="arw"><img src="https://www.figma.com/api/mcp/asset/f5b4a9d8-c441-4bc3-8942-bb09a8eece21.svg" alt=""></span></span>
+        <span class="prev"><span class="prevbox"><img src="hover-assets/06.png" alt="Sydney Candle Co" loading="lazy"></span></span>
+      </a>
+      <a class="row" href="../Project%20%E2%80%94%20Colour%20U/index.html">
+        <span class="rowtop"><span class="rrule"></span><span class="num">07</span><span class="ttl">Colour U</span>
+          <span class="arw"><img src="https://www.figma.com/api/mcp/asset/f5b4a9d8-c441-4bc3-8942-bb09a8eece21.svg" alt=""></span></span>
+        <span class="prev"><span class="prevbox"><img src="hover-assets/07.png" alt="Colour U" loading="lazy"></span></span>
+      </a>
+      <a class="row" href="../Project%20%E2%80%94%20Able%20Australia/index3.html">
+        <span class="rowtop"><span class="rrule"></span><span class="num">08</span><span class="ttl">Able Australia</span>
+          <span class="arw"><img src="https://www.figma.com/api/mcp/asset/f5b4a9d8-c441-4bc3-8942-bb09a8eece21.svg" alt=""></span></span>
+        <span class="prev"><span class="prevbox"><img src="hover-assets/08.png" alt="Able Australia" loading="lazy"></span></span>
+      </a>
+      <a class="row" href="../Project%20%E2%80%94%20Custom%20Typeface%20%26%20Editorial%20Series/index.html">
+        <span class="rowtop"><span class="rrule"></span><span class="num">09</span><span class="ttl">Custom Typeface &amp; Editorial Series</span>
+          <span class="arw"><img src="https://www.figma.com/api/mcp/asset/f5b4a9d8-c441-4bc3-8942-bb09a8eece21.svg" alt=""></span></span>
+        <span class="prev"><span class="prevbox"><img src="hover-assets/09.png" alt="Custom Typeface &amp; Editorial Series" loading="lazy"></span></span>
+      </a>
+      <a class="row" href="../Project%20%E2%80%94%20GeGe%20Pancake%20Shop/index.html">
+        <span class="rowtop"><span class="rrule"></span><span class="num">10</span><span class="ttl">GeGe Pancake Shop</span>
+          <span class="arw"><img src="https://www.figma.com/api/mcp/asset/f5b4a9d8-c441-4bc3-8942-bb09a8eece21.svg" alt=""></span></span>
+        <span class="prev"><span class="prevbox"><img src="hover-assets/10.png" alt="GeGe Pancake Shop" loading="lazy"></span></span>
+      </a>
+    <div id="finalrule"></div>
+  </div>
+</div></div>
+
+<script src="../site-layout.js?v=width-only-20260912"></script>
+<script>
+(function(){
+  var st=document.getElementById('stage'),vp=document.getElementById('viewport'),
+      hd=document.getElementById('siteheader'),list=document.getElementById('list'),
+      div=document.getElementById('divider'),scale=1;
+  function layout(){
+    var h=Math.max(1440,115+list.offsetHeight+64);
+    st.style.height=h+'px';
+    div.style.height=(h-80)+'px';
+    var geometry=window.portfolioCanvasLayout(vp.clientWidth,innerHeight);
+    scale=geometry.scale;
+    st.style.left=geometry.left+'px';
+    st.style.transform='scale('+scale+')';
+    hd.style.transform='scale('+(vp.clientWidth/1440)+')';
+    vp.style.height=(h*scale)+'px';
+  }
+  layout();addEventListener('resize',layout);
+  /* keep the canvas height in step while a row opens or closes */
+  var raf=null,until=0;
+  function track(){layout();if(performance.now()<until)raf=requestAnimationFrame(track);else raf=null;}
+  list.addEventListener('mouseover',kick);list.addEventListener('mouseout',kick);
+  function kick(){until=performance.now()+750;if(!raf)raf=requestAnimationFrame(track);}
+})();
+</script>
+</body>
+</html>

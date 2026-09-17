@@ -1,0 +1,23 @@
+/* Shared portfolio shell: Sydney Open is the reference for typography and spacing. */
+.portfolio-project {--surface:#f4f1e9;--ink:#11110f;--ink-muted:#55544f;--rule:#b8b4aa;--serif:'Instrument Serif',Georgia,serif;--sans:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;}
+html:has(.portfolio-project),body.portfolio-project{margin:0;background:var(--surface);overflow-x:hidden}
+.portfolio-project{font-family:var(--sans);color:var(--ink);-webkit-font-smoothing:antialiased}
+.portfolio-project *{box-sizing:border-box}
+.portfolio-project #viewport{position:relative;width:100%;overflow:hidden}
+.portfolio-project #stage{position:relative;width:1440px;margin:0;padding:0;background:var(--surface);transform-origin:top left}
+.portfolio-project #stage p,.portfolio-project h1{margin:0}
+.portfolio-project a{text-decoration:none;color:inherit}
+.portfolio-project .t{position:absolute;overflow-wrap:break-word}
+.portfolio-project .nw{white-space:nowrap}
+.portfolio-project .img{position:absolute;background-size:cover;background-position:center;background-repeat:no-repeat}
+.portfolio-project .clip{position:absolute;overflow:hidden}
+.portfolio-project .rule{position:absolute;height:1px;background:var(--rule)}
+.portfolio-project .h2{font:400 46px/48px var(--serif);letter-spacing:-.46px;color:var(--ink-muted)}
+.portfolio-project .body{font:400 15px/24px var(--sans);color:var(--ink)}
+.portfolio-project .label{font:400 12px/16px var(--sans);text-transform:uppercase;color:var(--ink-muted)}
+.portfolio-project #info{position:absolute;left:64px;top:355px;width:1312px;display:flex;flex-direction:column;gap:36px}
+.portfolio-project #info .row{display:flex;align-items:flex-start;width:100%}
+.portfolio-project #info .k{width:336px;flex:none;font:400 12px/16px var(--sans);text-transform:uppercase;color:var(--ink-muted)}
+.portfolio-project #info .v{width:528px;flex:none;font:400 15px/24px var(--sans);color:var(--ink)}
+.portfolio-project #siteheader{position:absolute;left:0;top:0;width:1440px;height:80px;background:var(--surface);z-index:40}
+.portfolio-project #siteheader a{position:absolute;top:32px;font:400 12px/16px var(--sans);color:var(--ink)}

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Beerfest Australia — Gemma Yang</title>
+<!-- Converted 1:1 from Figma: portfolio-ai, frame "Project — Beerfest Australia" (69:298), 1440 x 9598.
+     Images use Figma's temporary asset CDN (~7 day expiry) — export into ./assets/ and swap the :root blocks.
+     Films (hero background, hero browser frame, social panel) and the seven 'more details' crops load from ./assets. -->
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Instrument+Serif&family=Inter:wght@400;500&family=Staatliches&display=swap" rel="stylesheet">
+<style>
+:root{
+  --imgbg: url("https://www.figma.com/api/mcp/asset/f51a22d3-a559-451d-9aba-4599abd571c7.png");
+  --phone: url("https://www.figma.com/api/mcp/asset/19d1cfdc-fecf-4225-9453-5ecb0ec27338.png");
+  --music: url("https://www.figma.com/api/mcp/asset/bacf0c94-669e-462f-9f43-c73f66a9f4f9.png");
+  --game: url("https://www.figma.com/api/mcp/asset/5b6be47e-3f26-4853-9048-61142c3b93fb.png");
+  --food: url("https://www.figma.com/api/mcp/asset/8d837e77-a9ac-4617-a932-1a2c392b3875.png");
+  --klass: url("https://www.figma.com/api/mcp/asset/8f3208fc-0da8-4b19-ab14-3527389f0e5d.png");
+  --about: url("https://www.figma.com/api/mcp/asset/d6c8ad0f-5b32-4c6e-a579-f700caba24d7.png");
+  --contact: url("https://www.figma.com/api/mcp/asset/31a528e9-73a7-42c1-ac44-4565a5a41f28.png");
+  --fremantle: url("https://www.figma.com/api/mcp/asset/43f7d731-18be-42b1-917b-32dc4fd8c514.png");
+  --masterclass: url("https://www.figma.com/api/mcp/asset/13357f91-6df1-4288-9cfa-67b0c531306e.png");
+  --sydney: url("https://www.figma.com/api/mcp/asset/40444462-0781-4561-8a1c-425f9e584a71.png");
+  --melbourne: url("https://www.figma.com/api/mcp/asset/e08da61b-43a9-4dc6-8303-abc166a22eb0.png");
+  --tea: url("assets/tea-complete.png");
+  --pinot: url("https://www.figma.com/api/mcp/asset/1a949599-55a8-48e1-a7f5-fef046a02488.png");
+  --cheese: url("https://www.figma.com/api/mcp/asset/25936a1e-c058-4b92-89fa-1b8645419887.png");
+  --nipic1: url("https://www.figma.com/api/mcp/asset/9204b2d7-7fd9-4ab1-8df5-6036d77ced77.png");
+  --nipic2: url("https://www.figma.com/api/mcp/asset/0cfd22a5-df85-40d5-b6af-52cb2ddadba1.png");
+  --social: url("https://www.figma.com/api/mcp/asset/14d5a8fa-1c8a-4e2b-98be-8fd182177743.svg");
+/* ---- LOCAL COPIES — un-comment after exporting into ./assets/, delete the block above
+  --imgbg: url("assets/imgbg.png");
+  --phone: url("assets/phone.png");
+  --music: url("assets/music.png");
+  --game: url("assets/game.png");
+  --food: url("assets/food.png");
+  --klass: url("assets/klass.png");
+  --about: url("assets/about.png");
+  --contact: url("assets/contact.png");
+  --fremantle: url("assets/fremantle.png");
+  --masterclass: url("assets/masterclass.png");
+  --sydney: url("assets/sydney.png");
+  --melbourne: url("assets/melbourne.png");
+  --tea: url("assets/tea.png");
+  --pinot: url("assets/pinot.png");
+  --cheese: url("assets/cheese.png");
+  --nipic1: url("assets/nipic1.png");
+  --nipic2: url("assets/nipic2.png");
+  --social: url("assets/social.svg");
+---- */
+  --ink-inv:#f4f1e9; --ink-inv-muted:#8a8a86; --rule-inv:#373735; --bg:#0c0c0a;
+  --serif:'Instrument Serif',Georgia,serif;
+  --sans:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --bebas:'Bebas Neue',Impact,sans-serif;
+  --staat:'Staatliches',Impact,sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);overflow-x:hidden}
+body{font-family:var(--sans);color:var(--ink-inv);-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+#viewport{position:relative;width:100%;overflow:hidden}
+#stage{position:relative;width:1440px;height:9363.6px;background:var(--bg);overflow:hidden;transform-origin:top left}
+#stage p{margin:0}
+.t{position:absolute;overflow-wrap:break-word}
+.nw{white-space:nowrap}
+.img{position:absolute;background-size:cover;background-position:center;background-repeat:no-repeat}
+.clip{position:absolute;overflow:hidden}
+/* stills in the What We Have and More Details blocks lift 30% on hover */
+.z30{cursor:pointer;transform-origin:50% 50%;
+  transition:transform .5s cubic-bezier(.22,1,.36,1),box-shadow .5s cubic-bezier(.22,1,.36,1)}
+.z30:hover{transform:scale(1.3);z-index:80;box-shadow:0 22px 55px rgba(0,0,0,.28)}
+video{display:block;width:100%;height:100%;object-fit:cover}
+.h2{font:400 46px/48px var(--serif);letter-spacing:-0.46px;color:var(--ink-inv)}
+.body{font:400 15px/24px var(--sans);color:var(--ink-inv)}
+#info{position:absolute;left:64px;top:355px;width:1312px;display:flex;flex-direction:column;gap:36px}
+#info .row{display:flex;align-items:flex-start;width:100%}
+#info .k{width:336px;flex:none;font:400 12px/16px var(--sans);text-transform:uppercase;color:var(--ink-inv-muted)}
+#info .v{width:528px;flex:none;font:400 15px/24px var(--sans);color:#f1f1ef}
+#siteheader{position:absolute;left:0;top:0;width:1440px;height:80px;background:var(--bg);z-index:40}
+#siteheader a{position:absolute;top:32px;font:400 12px/16px var(--sans);color:#fff}
+
+/* ==== MOTION: carousel cards — Figma Smart Animate, 620x412 -> 750x498 on hover ==== */
+#carousel{position:absolute;left:0;top:4820px;width:1440px;height:498px;display:flex;align-items:center;
+  justify-content:flex-start;padding:0 64px;overflow-x:auto;overflow-y:hidden;scrollbar-width:none}
+#carousel::-webkit-scrollbar{display:none}
+#track{display:flex;gap:10px;align-items:center;flex:none}
+.card{position:relative;flex:none;width:620px;height:412px;overflow:hidden;cursor:pointer;
+  transition:width .45s cubic-bezier(.4,0,.2,1),height .45s cubic-bezier(.4,0,.2,1)}
+.card .inner{position:absolute;left:0;top:0;width:620px;height:412px;transform-origin:top left;
+  transition:transform .45s cubic-bezier(.4,0,.2,1)}
+.card:hover{width:750px;height:498px}
+.card:hover .inner{transform:scale(1.2097)}
+.cardlabel{position:absolute;left:0;top:183.5px;width:620px;text-align:center;
+  font:400 46px/48px var(--bebas);letter-spacing:-0.46px;color:var(--ink-inv)}
+@media (prefers-reduced-motion:reduce){.card,.card .inner{transition:none}}
+</style>
+</head>
+<body>
+<div id="viewport"><div id="stage">
+
+  <!-- ==== social media panel (exported SVG) ==== -->
+  <div class="img" data-fullbleed="#F0EFE8" style="left:0px;top:8106px;width:1440px;height:937.6px;background:#F0EFE8"></div>
+  <div class="clip" data-rv="up" data-rv-dist="60" data-rv-start="1.16" data-rv-span="0.22" style="left:144px;top:8106px;width:1152px;height:781.6px">
+    <video src="assets/socialdisplay.mp4" autoplay muted loop playsinline></video>
+  </div>
+
+  <!-- ==== what we have ==== -->
+  <div data-rv="up" data-rv-dist="60" data-rv-start="1.16" data-rv-span="0.22" style="position:absolute;left:-36px;top:5680px;width:1504px;height:1065px">
+    <div class="clip" style="left:26.02px;top:97px;width:1476.93px;height:1042px;opacity:.21">
+      <div class="img" style="left:-13.57%;top:-8.93%;width:127.13%;height:120.16%;background-image:var(--imgbg);background-size:100% 100%"></div>
+    </div>
+    <div style="position:absolute;left:32px;top:10px;width:1440px;height:1069px;background:linear-gradient(180deg,#010101 0%,rgba(47,46,46,0) 100%)"></div>
+    <div class="img" style="left:865.6px;top:86.94px;width:233.07px;height:970.5px;background-image:var(--phone);background-size:contain"></div>
+    <div style="position:absolute;left:403px;top:120px;width:378px;height:606px;background:#f4f4ef"></div>
+    <div class="t nw" style="left:517px;top:142.75px;font:400 30.6px/normal var(--staat);color:#d7522a">WHAT WE HAVE</div>
+    <div class="t" style="left:501px;top:186px;font:400 8px/normal var(--staat);color:#301902;white-space:pre"> we will take  you  on a journey of beer and food discovery！</div>
+    <div class="img z30" style="left:598px;top:220px;width:171.241px;height:232.253px;background-image:var(--music)"></div>
+    <div class="img z30" style="left:415px;top:463px;width:171.241px;height:231.846px;background-image:var(--game)"></div>
+    <div class="img z30" style="left:396px;top:220px;width:189.951px;height:233.473px;background-image:var(--food)"></div>
+    <div class="img z30" style="left:598px;top:463px;width:171.241px;height:231.44px;background-image:var(--klass)"></div>
+  </div>
+
+  <!-- ==== six page mockups ==== -->
+  <div class="img" data-rv="up" data-rv-dist="70" data-rv-start="1.16" data-rv-span="0.22" style="left:947px;top:3141px;width:192px;height:1215px;background-image:var(--about)"></div>
+  <div class="img" data-rv="up" data-rv-dist="70" data-rv-start="1.16" data-rv-span="0.22" style="left:1165px;top:3141px;width:192px;height:1158px;background-image:var(--contact)"></div>
+  <div class="img" data-rv="up" data-rv-dist="70" data-rv-start="1.16" data-rv-span="0.22" style="left:512px;top:3142px;width:192px;height:1357px;background-image:var(--fremantle)"></div>
+  <div class="img" data-rv="up" data-rv-dist="70" data-rv-start="1.16" data-rv-span="0.22" style="left:730px;top:3141px;width:192px;height:868px;background-image:var(--masterclass)"></div>
+  <div class="img" data-rv="up" data-rv-dist="70" data-rv-start="1.16" data-rv-span="0.22" style="left:294px;top:3141px;width:192px;height:1357px;background-image:var(--sydney)"></div>
+  <div class="img" data-rv="up" data-rv-dist="70" data-rv-start="1.16" data-rv-span="0.22" style="left:77px;top:3140px;width:192px;height:1361px;background-image:var(--melbourne)"></div>
+
+  <!-- ==== want more? carousel ==== -->
+  <div class="t nw" style="left:597px;top:4708px;font:400 64px/66px var(--bebas);letter-spacing:-1px;color:#e3572d">want more?</div>
+  <div id="carousel" data-role="carousel-centre"><div id="track">
+        <div class="card"><div class="inner">
+          <div class="img" style="left:0;top:0;width:620px;height:412px;background-image:var(--tea)"></div>
+          <div class="cardlabel">sydney tea festival</div>
+        </div></div>
+        <div class="card"><div class="inner">
+          <div class="img" style="left:0;top:0;width:620px;height:412px;background-image:var(--pinot)"></div>
+          <div class="cardlabel">pinot palooza</div>
+        </div></div>
+        <div class="card"><div class="inner">
+          <div class="img" style="left:0;top:0;width:620px;height:412px;background-image:var(--cheese)"></div>
+          <div class="cardlabel">Mould Cheese Festival </div>
+        </div></div>
+  </div></div>
+
+  <!-- ==== hero: background film + browser frame film (both from ./assets) ==== -->
+  <div class="clip" style="left:-233px;top:996px;width:1906px;height:1053px;background:#000000">
+    <video src="assets/hero-bg.mp4" autoplay muted loop playsinline style="opacity:.65;object-fit:contain"></video>
+    <div style="position:absolute;inset:0;opacity:.85;background:linear-gradient(180deg,#000 0%,#000 28%,rgba(0,0,0,.2) 43%,#000 58%,#000 100%)"></div>
+  </div>
+  <div class="clip" data-rv="up" data-rv-dist="60" data-rv-start="1.16" data-rv-span="0.22" style="left:264px;top:1177px;width:913px;height:704px;border:1px solid #7e7e7e;border-radius:25px">
+    <video src="assets/hero.mp4" autoplay muted loop playsinline></video>
+  </div>
+
+  <div class="t h2" style="left:80px;top:924px;width:591px">Bringing the Festival Energy Online</div>
+  <div class="t body" style="left:80px;top:989px;width:493px">Bold imagery, clear event information and prominent ticketing cues create an immediate sense of the BeerFest atmosphere while keeping the experience easy to navigate.</div>
+
+  <div class="clip" data-rv="up" data-rv-dist="60" data-rv-start="1.16" data-rv-span="0.22" style="left:50px;top:2227px;width:440px;height:504px">
+    <div class="img" style="left:0;top:-0.1%;width:124.7%;height:100.2%;background-image:var(--nipic1);background-size:100% 100%"></div>
+  </div>
+  <div class="clip" data-rv="up" data-rv-dist="60" data-rv-start="1.16" data-rv-span="0.22" style="left:435px;top:2065px;width:442px;height:828px">
+    <div class="img" style="left:-15.38%;top:20.1%;width:121.72%;height:59.8%;background-image:var(--nipic2);background-size:100% 100%"></div>
+  </div>
+  <div class="clip" data-rv="up" data-rv-dist="60" data-rv-start="1.16" data-rv-span="0.22" style="left:822px;top:2149.53px;width:429px;height:658.938px">
+    <div class="img" style="left:-5.69px;top:-1027.71px;width:434.645px;height:3075.4px;background-image:var(--fremantle);background-size:100% 100%"></div>
+  </div>
+
+  <div class="t h2" style="left:75px;top:2937px;width:655px">One System, Six Pages</div>
+  <div class="t body" style="left:75px;top:3006px;width:607px">A consistent visual language, modular layout and clear hierarchy connect the full website experience across different types of festival content.</div>
+
+  <!-- ==== more details (301:23) — seven detail crops, exact Figma coordinates ==== -->
+  <img class="z30" src="assets/details/d-8.png"      style="position:absolute;left:545px;top:7269px;width:349px;height:375px">
+  <img class="z30" src="assets/details/d-2.png"      style="position:absolute;left:921px;top:7269px;width:350px;height:325px">
+  <img class="z30" src="assets/details/d-3.png"      style="position:absolute;left:215px;top:7439px;width:350px;height:309px">
+  <img class="z30" src="assets/details/d-4.png"      style="position:absolute;left:811px;top:7594px;width:349px;height:254px">
+  <img class="z30" src="assets/details/d-sydney.png" style="position:absolute;left:484px;top:6972px;width:381px;height:256px">
+  <img class="z30" src="assets/details/d-5.png"      style="position:absolute;left:810px;top:7100px;width:350px;height:196px">
+  <img class="z30" src="assets/details/d-1.png"      style="position:absolute;left:168px;top:7157px;width:349px;height:224px">
+
+  <div class="t h2" style="left:72px;top:5435px;width:429px">Extending the Festival Beyond the Website</div>
+  <div class="t body" style="left:72px;top:5554px;width:607px">Event photography and social content reinforce the sense of community and help carry the BeerFest identity across digital touchpoints.</div>
+
+  <!-- ==== editorial header + project info ==== -->
+  <div class="clip" style="left:0;top:0;width:1440px;height:342px;background:var(--bg)">
+    
+    <div class="t" style="left:56px;top:116px;width:500px;font:400 12px/16px var(--sans);color:#bebbb4">WEB · RESPONSIVE DESIGN</div>
+    <div class="t" style="left:56px;top:150px;width:1100px;font:400 64px/66px var(--serif);letter-spacing:-1px;color:#f4f1e9">Beerfest Australia</div>
+    <a class="t" style="left:56px;top:290px;width:140px;font:400 12px/16px var(--sans);color:#f04a34" href="#">← ALL WORK</a>
+  </div>
+  <div id="info">
+      <div class="row"><div class="k">Project Background</div><div class="v">BeerFest Australia is a nationwide festival celebrating craft beer, cider and cocktails alongside street food, music and live entertainment. The website redesign is centred on Local Community Spirit, reflecting the festival’s emphasis on shared experiences and social connection.</div></div>
+      <div class="row"><div class="k">Design Scope</div><div class="v">Six-page Website · Responsive Design · Information Architecture · Interaction System</div></div>
+      <div class="row"><div class="k">Design Approach</div><div class="v">Warm colours, expressive typography and candid festival photography capture the energy of the live event. Clear content hierarchy and repeated ticket pathways guide visitors from discovering the festival to finding practical information and taking action. Responsive layouts and consistent interaction states extend the same experience across desktop and mobile.</div></div>
+  </div>
+
+  <!-- ==== next project ==== -->
+  <div class="clip" style="left:0;top:9043.6px;width:1440px;height:320px;background:var(--bg)">
+    <div class="t nw" style="left:64px;top:72px;font:400 12px/16px var(--sans);letter-spacing:.5px;color:rgba(245,242,235,.65)">NEXT PROJECT</div>
+    <div class="t nw" style="left:64px;top:104px;font:400 12px/16px var(--sans);color:rgba(245,242,235,.65)">SYDNEY CANDLE CO</div>
+    <a class="t" style="left:1016px;top:74px;width:360px;height:64px;text-align:right;font:400 52px/56px var(--serif);color:#f5f2eb;white-space:pre-wrap" href="#">NEXT  →</a>
+  </div>
+
+  <div id="siteheader">
+    <a style="left:32px;width:160px" href="#">GEMMA YANG</a>
+    <a style="left:182px;width:60px" href="#">WORK</a>
+    <a style="left:268px;width:70px" href="#">ABOUT</a>
+    <a style="left:1164px;width:244px" href="mailto:gemmayang22@gmail.com">GEMMAYANG22@GMAIL.COM</a>
+    <div style="position:absolute;left:0;top:79px;width:1440px;height:1px;background:var(--rule-inv)"></div>
+  </div>
+
+</div></div>
+<script src="../site-layout.js?v=width-only-20260912"></script>
+<script src="../site.js?v=20260912c"></script>
+<script src="../image-viewer.js?v=20260912b"></script>
+<script>
+/* the "want more?" row opens with the middle card centred on the page */
+(function () {
+  var box = document.getElementById('carousel');
+  if (!box) return;
+  function centre() { box.scrollLeft = Math.max(0, (box.scrollWidth - box.clientWidth) / 2); }
+  centre();
+  addEventListener('load', centre);
+  addEventListener('resize', centre);
+})();
+</script>
+</body>
+</html>

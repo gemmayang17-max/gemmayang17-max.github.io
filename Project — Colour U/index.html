@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en" xml:lang="en">
+  <head>
+<script>try{if(sessionStorage.getItem("portfolio-transition")==="1"){document.documentElement.classList.add("portfolio-page-entering");sessionStorage.removeItem("portfolio-transition")}}catch(e){}</script>
+    <meta name="viewport" content="width=device-width">
+    <link rel="preconnect" href="https://cdn.divriots.com" crossorigin="">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <style>
+/* latin-ext */
+@font-face {
+  font-family: 'Instrument Sans';
+  font-style: normal;
+  font-weight: 400 600;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/instrumentsans/v4/pxiTypc9vsFDm051Uf6KVwgkfoSxQ0GsQv8ToedPibnr0She1YmV.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Instrument Sans';
+  font-style: normal;
+  font-weight: 400 600;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/instrumentsans/v4/pxiTypc9vsFDm051Uf6KVwgkfoSxQ0GsQv8ToedPibnr0SZe1Q.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Instrument Serif';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/instrumentserif/v5/jizBRFtNs2ka5fXjeivQ4LroWlx-6zsTjmbI.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Instrument Serif';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/instrumentserif/v5/jizBRFtNs2ka5fXjeivQ4LroWlx-6zUTjg.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+    <style>
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('https://cdn.divriots.com/fonts/inter/v3.19/Inter.var.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: italic;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('https://cdn.divriots.com/fonts/inter/v3.19/Inter.var.woff2') format('woff2');
+  font-variation-settings: 'slnt' -10;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}</style>
+    <style media="all">
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button {
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+  -webkit-appearance: none;
+}
+* {
+  padding: 0;
+  margin: 0;
+}a {
+  color: inherit;
+  text-decoration: inherit;
+}
+input {
+  border: none;
+  font: inherit;
+  outline: none;
+  background-color: inherit;
+}
+button {
+  border-style: none;
+  width: auto;
+  overflow: visible;
+  background: transparent;
+  font: inherit;
+  line-height: normal;
+  color: inherit;
+}
+textarea {
+  font: inherit;
+  background-color: inherit;
+}
+select {
+  font: inherit;
+  background-color: inherit;
+}
+img {
+  display: block;
+}
+picture {
+  display: block;
+}
+video {
+  display: block;
+}
+canvas {
+  display: block;
+}
+svg {
+  display: block;
+}
+
+[data-visible='false']{
+  display:none!important;
+}
+
+.before-hidden::before {
+  display:none;
+}
+
+.after-hidden::after {
+  display:none;
+}
+
+.before-visible::before {
+  content: "";
+}
+
+.after-visible::after {
+  content: "";
+}
+
+.text {
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+}
+</style>
+    <meta charset="utf-8">
+  <style>
+/* billboard: the two artworks alternate like a gif — hard cut, 1.2s each */
+.cu-gif>div{animation:cuflip 2.4s steps(1,end) infinite;will-change:opacity}
+.cu-gif>div:nth-child(2){animation-delay:-1.2s}
+@keyframes cuflip{0%,49.99%{opacity:1}50%,100%{opacity:0}}
+@media (prefers-reduced-motion:reduce){.cu-gif>div{animation:none}.cu-gif>div:nth-child(2){opacity:0}}
+</style>
+<style>
+.cu-stage svg{will-change:transform}
+</style>
+<link rel="stylesheet" href="../page-transition.css?v=smooth-20260916">
+</head>
+  <body style="display: grid;background-color: #f4f1e9;">
+    <div style="background-color: #f4f1e9;overflow: hidden;width: 1440px;min-width: 1440px;max-width: 1440px;min-height: 4971px;max-height: 4971px;position: relative;margin: 0px auto;">
+      <div style="background-color: #deebd9;left: 0px;top: 3083px;width: 1440px;height: 1518px;position: absolute;"></div>
+      <svg width="372.1339416503906" height="256.45593548755835" viewBox="0 0 372.1339416503906 256.45593548755835" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none" style="transform-origin: 0 0;transform: rotate(13.7deg);left: 664px;top: 1902px;width: 372.1px;height: 256.5px;position: absolute;">
+        <path d="M142.8291 5.3791C243.2456-19.126 344.5146 42.4125 369.0197 142.8291 370.2853 148.0153 371.3209 153.2039 372.1339 158.384L334.3247 167.6108C333.6272 162.4206 332.6497 157.216 331.3803 152.0144 311.9481 72.3855 231.6432 23.5864 152.0144 43.0186 72.3855 62.4507 23.5864 142.7556 43.0186 222.3845 44.2879 227.5861 45.8177 232.6559 47.5894 237.584L9.7801 246.8107C8.1157 241.8384 6.6447 236.756 5.3791 231.5698-19.126 131.1532 42.4125 29.8842 142.8291 5.3791Z" style="fill-rule: nonzero;fill: #a1d0a3;"></path>
+        <path d="M134.4397 197.3525C122.4439 200.3296 115.063 212.5121 117.954 224.5629L121.5052 239.3655C124.3962 251.4162 136.4643 258.7718 148.4601 255.7946L173.4616 249.5897C185.4574 246.6125 192.8383 234.43 189.9473 222.3792L186.3961 207.5767C183.5051 195.5259 171.4369 188.1703 159.4411 191.1475L134.4397 197.3525Z" style="fill-rule: nonzero;fill: #f68eca;"></path>
+        <path d="M213.7703 177.6638C201.7745 180.641 194.3936 192.8235 197.2846 204.8743L200.8358 219.6769C203.7268 231.7276 215.7949 239.0832 227.7907 236.106L252.7921 229.9011C264.7879 226.9239 272.1688 214.7414 269.2778 202.6906L265.7266 187.888C262.8356 175.8373 250.7675 168.4817 238.7717 171.4589L213.7703 177.6638Z" style="fill-rule: nonzero;fill: #f68eca;"></path>
+      </svg>
+      <svg width="1061.692626953125" height="731.6650472516262" viewBox="0 0 1061.692626953125 731.6650472516262" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none" style="transform-origin: 0 0;transform: rotate(13.7deg);left: 669.2px;top: 2989px;width: 1061.7px;height: 731.7px;position: absolute;">
+        <path d="M407.4892 15.3465C693.9762-54.5661 982.8952 121.0022 1052.8078 407.4892 1056.4186 422.2855 1059.3729 437.0886 1061.6926 451.8673L953.8233 478.1911C951.8334 463.3835 949.0445 448.5349 945.423 433.6948 889.9834 206.5147 660.8747 67.2916 433.6947 122.7313 206.5147 178.171 67.2916 407.2796 122.7313 634.4597 126.3528 649.2998 130.7172 663.7639 135.7718 677.8236L27.9026 704.1474C23.1539 689.9614 18.9573 675.4615 15.3465 660.6652-54.5661 374.1782 121.0022 85.2591 407.4892 15.3465Z" style="fill-rule: nonzero;fill: rgba(140,184,143,0.22);"></path>
+        <path d="M383.5545 563.0437C349.3306 571.5375 328.273 606.294 336.521 640.6746L346.6525 682.9063C354.9005 717.2868 389.3307 738.2722 423.5546 729.7784L494.8832 712.0757C529.1071 703.5819 550.1647 668.8254 541.9167 634.4448L531.7852 592.2132C523.5372 557.8326 489.107 536.8472 454.8831 545.341L383.5545 563.0437Z" style="fill-rule: nonzero;fill: rgba(140,184,143,0.22);"></path>
+        <path d="M609.8834 506.8723C575.6596 515.3662 554.602 550.1227 562.85 584.5033L572.9814 626.7349C581.2294 661.1155 615.6597 682.1009 649.8836 673.607L721.2122 655.9044C755.436 647.4106 776.4936 612.654 768.2456 578.2734L758.1142 536.0418C749.8662 501.6612 715.436 480.6758 681.2121 489.1697L609.8834 506.8723Z" style="fill-rule: nonzero;fill: rgba(140,184,143,0.22);"></path>
+      </svg>
+      <div class="cu-stage" style="overflow: hidden;left: -13px;top: 710px;width: 1467px;height: 943px;position: absolute;"><div class="cu-inner" style="position:absolute;inset:0;transform:scale(.8);transform-origin:733.5px 943px;"><svg data-rv="fall" data-rv-group="cu" data-rv-fade="zero" data-rv-dist="1000" data-rv-delay="0" data-rv-rot="-16" data-rv-start="1.167" data-rv-span="0.41" data-rv-gap="0.10" viewBox="192 686 290 215" width="290" height="215" xmlns="http://www.w3.org/2000/svg" style="left: 192px;top: 686px;width: 290px;height: 215px;position: absolute;overflow: visible;"><path d="M300.7743 712.8602C372.5286 686.4808 452.0817 723.2645 478.4611 795.0188 479.8235 798.7247 481.017 802.4516 482.0463 806.1907L455.0291 816.1232C454.0839 812.367 452.9316 808.6236 451.5652 804.9067 430.6467 748.0066 367.5623 718.8377 310.6622 739.7561 253.762 760.6746 224.5931 823.759 245.5116 880.6591 246.8781 884.376 248.4249 887.9743 250.1377 891.4483L223.1205 901.3808C221.4828 897.8653 219.9781 894.2529 218.6157 890.547 192.2363 818.7927 229.02 739.2396 300.7743 712.8602Z" style="fill-rule: nonzero;fill: #a1d0a3;"></path><path d="M310.6118 854.6417C302.0441 857.8296 297.6353 867.3979 300.7644 876.0131L304.6081 886.5956C307.7373 895.2108 317.2194 899.6105 325.787 896.4227L343.6436 889.7785C352.2112 886.5907 356.62 877.0224 353.4909 868.4072L349.6472 857.8246C346.518 849.2094 337.0359 844.8097 328.4683 847.9976L310.6118 854.6417Z" style="fill-rule: nonzero;fill: #f68eca;"></path><path d="M367.2713 833.5596C358.7036 836.7475 354.2948 846.3158 357.424 854.931L361.2677 865.5136C364.3968 874.1288 373.8789 878.5285 382.4466 875.3406L400.3031 868.6965C408.8707 865.5086 413.2795 855.9403 410.1504 847.3251L406.3067 836.7426C403.1775 828.1274 393.6954 823.7277 385.1278 826.9155L367.2713 833.5596Z" style="fill-rule: nonzero;fill: #f68eca;"></path></svg><svg data-rv="fall" data-rv-group="cu" data-rv-fade="zero" data-rv-dist="850" data-rv-delay="1" data-rv-rot="-8" data-rv-start="1.167" data-rv-span="0.41" data-rv-gap="0.10" viewBox="43 513 287 200" width="287" height="200" xmlns="http://www.w3.org/2000/svg" style="left: 43px;top: 513px;width: 287px;height: 200px;position: absolute;overflow: visible;"><path d="M204.1886 526.3635C279.5276 539.3476 330.0762 610.9477 317.092 686.2867 316.4214 690.1777 315.5941 694.0026 314.6183 697.756L286.2514 692.8672C287.3085 689.1409 288.1799 685.3224 288.8525 681.4198 299.1487 621.6771 259.0644 564.8993 199.3217 554.603 139.579 544.3068 82.8012 584.3911 72.505 644.1338 71.8324 648.0364 71.3753 651.9263 71.1241 655.7915L42.7571 650.9026C43.0941 647.0391 43.5948 643.158 44.2654 639.2669 57.2496 563.9279 128.8496 513.3793 204.1886 526.3635Z" style="fill-rule: nonzero;fill: #a1d0a3;"></path><path d="M141.8984 654.1081C132.8837 652.5908 124.2853 658.6782 122.6933 667.7048L120.7378 678.7926C119.1459 687.8192 125.1632 696.3667 134.1779 697.884L152.9661 701.0464C161.9808 702.5637 170.5792 696.4763 172.1712 687.4497L174.1267 676.3619C175.7187 667.3353 169.7014 658.7878 160.6867 657.2705L141.8984 654.1081Z" style="fill-rule: nonzero;fill: #f68eca;"></path><path d="M201.5144 664.1425C192.4997 662.6251 183.9013 668.7126 182.3093 677.7391L180.3538 688.827C178.7618 697.8535 184.7792 706.401 193.7939 707.9184L212.5821 711.0807C221.5968 712.5981 230.1952 706.5106 231.7872 697.484L233.7427 686.3962C235.3347 677.3696 229.3174 668.8221 220.3026 667.3048L201.5144 664.1425Z" style="fill-rule: nonzero;fill: #f68eca;"></path></svg><svg data-rv="fall" data-rv-group="cu" data-rv-fade="zero" data-rv-dist="620" data-rv-delay="2" data-rv-rot="-12" data-rv-start="1.167" data-rv-span="0.41" data-rv-gap="0.10" viewBox="192 287 281 241" width="281" height="241" xmlns="http://www.w3.org/2000/svg" style="left: 192px;top: 287px;width: 281px;height: 241px;position: absolute;overflow: visible;"><path d="M276.1801 327.582C340.8115 286.749 426.3073 306.0414 467.1403 370.6728 469.2492 374.0109 471.1973 377.4048 472.9875 380.8451L448.6522 396.2197C446.9407 392.7451 445.0295 389.3263 442.9143 385.9784 410.5343 334.7266 342.7374 319.428 291.4857 351.8079 240.2339 384.1879 224.9353 451.9848 257.3152 503.2366 259.4304 506.5845 261.6971 509.7787 264.1 512.8165L239.7647 528.1911C237.4265 525.097 235.1981 521.8802 233.0892 518.5421 192.2563 453.9107 211.5487 368.4149 276.1801 327.582Z" style="fill-rule: nonzero;fill: #a1d0a3;"></path><path d="M315.5162 464.1522C307.807 469.0651 305.5016 479.3449 310.367 487.1129L316.3434 496.6547C321.2087 504.4227 331.4024 506.7372 339.1116 501.8244L355.1788 491.5852C362.888 486.6724 365.1934 476.3925 360.328 468.6246L354.3516 459.0827C349.4863 451.3147 339.2926 449.0002 331.5834 453.913L315.5162 464.1522Z" style="fill-rule: nonzero;fill: #f68eca;"></path><path d="M366.4984 431.6627C358.7892 436.5756 356.4838 446.8554 361.3492 454.6234L367.3256 464.1652C372.1909 471.9332 382.3846 474.2477 390.0938 469.3349L406.1611 459.0957C413.8702 454.1829 416.1756 443.9031 411.3103 436.1351L405.3339 426.5932C400.4685 418.8252 390.2748 416.5107 382.5657 421.4235L366.4984 431.6627Z" style="fill-rule: nonzero;fill: #f68eca;"></path></svg><svg data-rv="fall" data-rv-group="cu" data-rv-fade="zero" data-rv-dist="1000" data-rv-delay="0" data-rv-rot="9" data-rv-start="1.167" data-rv-span="0.41" data-rv-gap="0.10" viewBox="1131 690 288 201" width="288" height="201" xmlns="http://www.w3.org/2000/svg" style="left: 1131px;top: 690px;width: 288px;height: 201px;position: absolute;overflow: visible;"><path d="M1255.0998 704.2109C1330.1634 689.7194 1402.7621 738.8229 1417.2536 813.8865 1418.002 817.7633 1418.5804 821.6336 1418.9948 825.4897L1390.7315 830.9461C1390.4029 827.0867 1389.8679 823.2067 1389.1173 819.3184 1377.6258 759.794 1320.056 720.8557 1260.5316 732.3472 1201.0073 743.8387 1162.0689 801.4085 1173.5604 860.9328 1174.3111 864.8211 1175.2589 868.6215 1176.3905 872.3258L1148.1272 877.7822C1147.0764 874.049 1146.1726 870.2416 1145.4241 866.3647 1130.9327 791.3011 1180.0361 718.7023 1255.0998 704.2109Z" style="fill-rule: nonzero;fill: #a1d0a3;"></path><path d="M1241.9976 845.7284C1233.0286 847.4963 1227.1379 856.2306 1228.8402 865.237L1230.9312 876.3001C1232.6335 885.3065 1241.2843 891.1745 1250.2532 889.4065L1268.946 885.7218C1277.9149 883.9539 1283.8057 875.2196 1282.1034 866.2132L1280.0124 855.1501C1278.3101 846.1437 1269.6593 840.2758 1260.6904 842.0437L1241.9976 845.7284Z" style="fill-rule: nonzero;fill: #f68eca;"></path><path d="M1301.3108 834.0367C1292.3419 835.8046 1286.4511 844.5389 1288.1534 853.5453L1290.2444 864.6084C1291.9467 873.6148 1300.5975 879.4828 1309.5664 877.7148L1328.2592 874.0302C1337.2282 872.2622 1343.1189 863.5279 1341.4166 854.5215L1339.3256 843.4584C1337.6233 834.452 1328.9725 828.5841 1320.0036 830.352L1301.3108 834.0367Z" style="fill-rule: nonzero;fill: #f68eca;"></path></svg><svg data-rv="fall" data-rv-group="cu" data-rv-fade="zero" data-rv-dist="800" data-rv-delay="1" data-rv-rot="14" data-rv-start="1.167" data-rv-span="0.41" data-rv-gap="0.10" viewBox="1007 466 287 230" width="287" height="230" xmlns="http://www.w3.org/2000/svg" style="left: 1007px;top: 466px;width: 287px;height: 230px;position: absolute;overflow: visible;"><path d="M1197.5847 500.1351C1266.1021 534.0455 1294.1566 617.0797 1260.2461 685.5971 1258.4948 689.1359 1256.612 692.5665 1254.6073 695.8864L1228.8088 683.1183C1230.8838 679.8476 1232.807 676.4356 1234.5636 672.8864 1261.454 618.5531 1239.2072 552.7082 1184.8739 525.8177 1130.5406 498.9272 1064.6957 521.174 1037.8052 575.5073 1036.0487 579.0565 1034.5022 582.655 1033.1603 586.2884L1007.3618 573.5203C1008.7856 569.9129 1010.3713 566.3353 1012.1227 562.7966 1046.0331 494.2792 1129.0673 466.2247 1197.5847 500.1351Z" style="fill-rule: nonzero;fill: #a1d0a3;"></path><path d="M1101.4802 604.8385C1093.2714 600.8157 1083.295 604.2011 1079.1973 612.4L1074.1638 622.4712C1070.0661 630.6701 1073.3989 640.5778 1081.6077 644.6005L1098.7163 652.9847C1106.9251 657.0074 1116.9015 653.622 1120.9992 645.4231L1126.0326 635.3519C1130.1303 627.153 1126.7976 617.2454 1118.5888 613.2226L1101.4802 604.8385Z" style="fill-rule: nonzero;fill: #f68eca;"></path><path d="M1155.7666 631.4418C1147.5578 627.419 1137.5814 630.8044 1133.4837 639.0034L1128.4503 649.0745C1124.3526 657.2734 1127.6853 667.1811 1135.8941 671.2038L1153.0027 679.588C1161.2115 683.6108 1171.1879 680.2254 1175.2856 672.0264L1180.319 661.9553C1184.4167 653.7564 1181.084 643.8487 1172.8752 639.826L1155.7666 631.4418Z" style="fill-rule: nonzero;fill: #f68eca;"></path></svg><svg data-rv="fall" data-rv-group="cu" data-rv-fade="zero" data-rv-dist="560" data-rv-delay="2" data-rv-rot="10" data-rv-start="1.167" data-rv-span="0.41" data-rv-gap="0.10" viewBox="1149 276 289 197" width="289" height="197" xmlns="http://www.w3.org/2000/svg" style="left: 1149px;top: 276px;width: 289px;height: 197px;position: absolute;overflow: visible;"><path d="M1268.4895 293.9379C1342.7597 275.8135 1417.6603 321.3286 1435.7848 395.5987 1436.7208 399.4346 1437.4867 403.2722 1438.0881 407.1035L1410.1236 413.9278C1409.6077 410.089 1408.8847 406.2396 1407.9459 402.3923 1393.5734 343.4972 1334.1783 307.4044 1275.2832 321.7768 1216.388 336.1492 1180.2952 395.5444 1194.6676 454.4395 1195.6065 458.2867 1196.7379 462.0365 1198.0483 465.6814L1170.0838 472.5057C1168.8527 468.828 1167.7648 465.069 1166.8287 461.2332 1148.7043 386.963 1194.2194 312.0624 1268.4895 293.9379Z" style="fill-rule: nonzero;fill: #a1d0a3;"></path><path d="M1262.2846 435.9253C1253.4122 438.1273 1247.9532 447.1377 1250.0914 456.0507L1252.7179 466.999C1254.8562 475.912 1263.782 481.3523 1272.6544 479.1504L1291.1459 474.5611C1300.0183 472.3591 1305.4773 463.3486 1303.3391 454.4357L1300.7126 443.4874C1298.5743 434.5744 1289.6485 429.134 1280.7761 431.336L1262.2846 435.9253Z" style="fill-rule: nonzero;fill: #f68eca;"></path><path d="M1320.9591 421.3632C1312.0867 423.5652 1306.6277 432.5756 1308.7659 441.4886L1311.3925 452.4369C1313.5307 461.3499 1322.4566 466.7902 1331.3289 464.5883L1349.8204 459.9989C1358.6928 457.797 1364.1519 448.7865 1362.0136 439.8736L1359.3871 428.9252C1357.2488 420.0123 1348.323 414.5719 1339.4507 416.7739L1320.9591 421.3632Z" style="fill-rule: nonzero;fill: #f68eca;"></path></svg><div class="cu-phone" data-rv="up" data-rv-group="cu" data-rv-fade="zero" data-rv-dist="900" data-rv-start="1.167" data-rv-span="0.611" style="overflow: hidden;left: 407px;top: 78px;width: 650px;height: 865px;position: absolute;"><img src="images/94849b67c9b62558cbded34fafef1a0c.png" alt="app2 2" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: fill;"></div></div></div>
+      <span class="text" style="display: inline;text-align: left;line-height: 24px;font-size: 15px;font-family: Inter, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;color: #11110f;left: 64px;top: 1950px;width: 528px;position: absolute;">The identity reduces the project idea to one repeatable mark. Its half-arch and paired blocks scale from app icon to wordmark and public-facing pattern without losing recognition.</span>
+      <span class="text" style="display: inline;text-align: center;line-height: 48px;font-size: 20px;font-family: &quot;Instrument Sans&quot;, system-ui, sans-serif;font-weight: 600;font-stretch: 100%;letter-spacing: -0.2px;color: #a1d0a3;left: 1026px;top: 2033.5px;width: 316px;position: absolute;">Color Your Life</span>
+      <span class="text" style="display: inline;text-align: center;line-height: 48px;font-size: 20px;font-family: &quot;Instrument Sans&quot;, system-ui, sans-serif;font-weight: 600;font-stretch: 100%;letter-spacing: -0.2px;color: #f68eca;left: 1026px;top: 2075.5px;width: 316px;position: absolute;">Color Your Life</span>
+      <span class="text" style="display: inline;text-align: left;line-height: 48px;font-size: 46px;font-family: &quot;Instrument Serif&quot;, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;letter-spacing: -0.5px;color: #12120f;left: 64px;top: 1880px;width: 528px;position: absolute;">Colour U Identity</span>
+      <span class="text" style="display: inline;text-align: center;line-height: 71.5px;font-size: 68.5px;font-family: &quot;Instrument Sans&quot;, system-ui, sans-serif;font-weight: 600;font-stretch: 100%;letter-spacing: -0.7px;color: #a1d0a3;left: 1014px;top: 1941px;width: 340px;position: absolute;"><span style="color: #f68eca;">Colour</span> U</span>
+      <div class="cu-gif" style="overflow: hidden;left: -3px;top: 2379px;width: 799px;height: 558px;position: absolute;">
+        <div style="overflow: hidden;left: 0px;top: 0px;aspect-ratio: 1.43;width: auto;height: 558px;position: absolute;"><img src="images/d0088cc4df50715cd3c6175914f3438107dd702c.png" alt="po 1" style="inset: 0;width: 100%;height: 100%;position: absolute;transform: translate(47.8px,-8.7px) scale(1.12,1.07);"></div>
+        <div style="overflow: hidden;left: 0px;top: 0px;aspect-ratio: 1.44;width: auto;height: 555px;position: absolute;"><img src="images/9ce741e23c4a1b8099243ddc939bc4c6a820b81c.png" alt="ppp 2" style="inset: 0;width: 100%;height: 100%;position: absolute;transform: translate(44.8px,-3.3px) scale(1.11,1.07);"></div>
+      </div>
+      <svg width="196" height="196" viewBox="0 0 196 196" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none" style="left: 1094px;top: 2690px;width: 196px;height: 196px;position: absolute;">
+        <path d="M43.904 0C19.6565 0 0 19.6565 0 43.904V152.096C0 176.3435 19.6565 196 43.904 196H152.096C176.3435 196 196 176.3435 196 152.096V43.904C196 19.6565 176.3435 0 152.096 0H43.904Z" style="fill-rule: nonzero;fill: #f68eca;"></path>
+      </svg>
+      <svg width="160.1024627685547" height="104.63389000000001" viewBox="0 0 160.1024627685547 104.63389000000001" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none" style="left: 1112px;top: 2731px;aspect-ratio: 1.53;width: auto;height: 104.6px;position: absolute;">
+        <path d="M80.0512 0c44.2111 0 80.0512 35.8868 80.0513 80.1553 0 1.9746-0.0715 3.9324-0.2118 5.8712-0.0378 0.5229-0.467 0.917-0.9913 0.917l-14.6151 0c-0.5871 0-1.0558-0.5216-1.0041-1.1064 0.1657-1.8718 0.2504-3.7669 0.2505-5.6818 0-35.1043-28.4207-63.562-63.4795-63.562-35.0587 0-63.4795 28.4577-63.4794 63.562 0 1.9149 0.0848 3.81 0.2504 5.6818 0.0518 0.5848-0.4169 1.1064-1.004 1.1064h-14.6152c-0.5243 0-0.9535-0.394-0.9913-0.917-0.1402-1.9388-0.2117-3.8967-0.2117-5.8712 0-44.2686 35.8402-80.1553 80.0512-80.1553z" transform=" translate(1.2406742300186124e-14 0)" style="fill-rule: nonzero;fill: #fff;"></path>
+        <path d="M54.6342 78.9897c-3.9269 0-7.1102 3.1875-7.1102 7.1194v11.4053c0 3.932 3.1833 7.1195 7.1102 7.1195h15.9101c3.9269 0 7.1102-3.1875 7.1102-7.1195v-11.4053c0-3.932-3.1834-7.1195-7.1102-7.1194z" transform=" translate(1.2406742300186124e-14 0)" style="fill-rule: nonzero;fill: #fff;"></path>
+        <path d="M89.5582 78.9897c-3.9269 0-7.1102 3.1875-7.1102 7.1194v11.4053c0 3.932 3.1833 7.1195 7.1102 7.1195h15.91c3.9269 0 7.1102-3.1875 7.1103-7.1195v-11.4053c0-3.932-3.1833-7.1195-7.1103-7.1194z" transform=" translate(1.2406742300186124e-14 0)" style="fill-rule: nonzero;fill: #fff;"></path>
+      </svg>
+      <svg width="196" height="196" viewBox="0 0 196 196" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none" style="left: 864px;top: 2690px;width: 196px;height: 196px;position: absolute;">
+        <path d="M43.904 0C19.6565 0 0 19.6565 0 43.904V152.096C0 176.3435 19.6565 196 43.904 196H152.096C176.3435 196 196 176.3435 196 152.096V43.904C196 19.6565 176.3435 0 152.096 0H43.904Z" style="fill-rule: nonzero;fill: #a1d0a3;"></path>
+      </svg>
+      <svg width="160.1024627685547" height="104.63389000000001" viewBox="0 0 160.1024627685547 104.63389000000001" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none" style="left: 882px;top: 2731px;aspect-ratio: 1.53;width: auto;height: 104.6px;position: absolute;">
+        <path d="M80.0512 0c44.2111 0 80.0512 35.8868 80.0513 80.1553 0 1.9746-0.0715 3.9324-0.2118 5.8712-0.0378 0.5229-0.467 0.917-0.9913 0.917l-14.6151 0c-0.5871 0-1.0558-0.5216-1.0041-1.1064 0.1657-1.8718 0.2504-3.7669 0.2505-5.6818 0-35.1043-28.4207-63.562-63.4795-63.562-35.0587 0-63.4795 28.4577-63.4794 63.562 0 1.9149 0.0848 3.81 0.2504 5.6818 0.0518 0.5848-0.4169 1.1064-1.004 1.1064h-14.6152c-0.5243 0-0.9535-0.394-0.9913-0.917-0.1402-1.9388-0.2117-3.8967-0.2117-5.8712 0-44.2686 35.8402-80.1553 80.0512-80.1553z" transform=" translate(1.2406742300186124e-14 0)" style="fill-rule: nonzero;fill: #fff;"></path>
+        <path d="M54.6342 78.9897c-3.9269 0-7.1102 3.1875-7.1102 7.1194v11.4053c0 3.932 3.1833 7.1195 7.1102 7.1195h15.9101c3.9269 0 7.1102-3.1875 7.1102-7.1195v-11.4053c0-3.932-3.1834-7.1195-7.1102-7.1194z" transform=" translate(1.2406742300186124e-14 0)" style="fill-rule: nonzero;fill: #fff;"></path>
+        <path d="M89.5582 78.9897c-3.9269 0-7.1102 3.1875-7.1102 7.1194v11.4053c0 3.932 3.1833 7.1195 7.1102 7.1195h15.91c3.9269 0 7.1102-3.1875 7.1103-7.1195v-11.4053c0-3.932-3.1833-7.1195-7.1103-7.1194z" transform=" translate(1.2406742300186124e-14 0)" style="fill-rule: nonzero;fill: #fff;"></path>
+      </svg>
+      <div style="overflow: hidden;border-radius: 15px;left: 595px;top: 3420px;aspect-ratio: 0.46;width: auto;height: 541px;position: absolute;filter: drop-shadow(0.3px 1.4px 8.2px rgba(0,0,0,0.25));"><img src="images/8a92c137190e885ffacb27fa2cdd1989b3099a23.png" alt="quiz@3x 1" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+      <div style="overflow: hidden;border-radius: 15px;left: 1143px;top: 3420px;aspect-ratio: 0.46;width: auto;height: 541px;position: absolute;filter: drop-shadow(0.3px 1.4px 8.2px rgba(0,0,0,0.25));"><img src="images/7d64a5076bb724c004426476fbb8021e99541d77.png" alt="分享@3x 1" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+      <div style="overflow: hidden;border-radius: 15px;left: 869px;top: 3420px;aspect-ratio: 0.46;width: auto;height: 541px;position: absolute;filter: drop-shadow(0.3px 1.4px 8.2px rgba(0,0,0,0.25));"><img src="images/fd58571f6fa83edfb29cf127a474e48903694d74.png" alt="走路@3x 1" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+      <div style="overflow: hidden;border-radius: 15px;left: 47px;top: 4000px;aspect-ratio: 0.46;width: auto;height: 541px;position: absolute;filter: drop-shadow(0.3px 1.4px 8.2px rgba(0,0,0,0.25));"><img src="images/19d336c25d6c09f17e093542b8bcfeb8b18d7c29.png" alt="购买@3x 1" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+      <div style="overflow: hidden;border-radius: 15px;left: 321px;top: 4000px;aspect-ratio: 0.46;width: auto;height: 541px;position: absolute;filter: drop-shadow(0.3px 1.4px 8.2px rgba(0,0,0,0.25));"><img src="images/a24af9441923350ac579abc6527fb425c20b461c.png" alt="购买工具 – 1@3x 1" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+      <div style="overflow: hidden;border-radius: 15px;left: 1143px;top: 4000px;aspect-ratio: 0.46;width: auto;height: 541px;position: absolute;filter: drop-shadow(0.3px 1.4px 8.2px rgba(0,0,0,0.25));"><img src="images/be3b377afee6b132103c4b133f31bbc5440f1319.png" alt="兑换植物@3x 1" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+      <div style="overflow: hidden;border-radius: 15px;left: 595px;top: 4000px;aspect-ratio: 0.46;width: auto;height: 541px;position: absolute;filter: drop-shadow(0.5px 1.8px 11px rgba(0,0,0,0.25));"><img src="images/cb44d2bcf0c9bbe3e803fb0714efbdff6a103779.png" alt="扫二维码@3x 1" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+      <div style="overflow: hidden;border-radius: 15px;left: 869px;top: 4000px;aspect-ratio: 0.46;width: auto;height: 541px;position: absolute;filter: drop-shadow(0.5px 1.8px 11px rgba(0,0,0,0.25));"><img src="images/a2ffd6b4830731ab5de2025750db908c381ee7f8.png" alt="介绍@3x 1" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+      <div style="overflow: hidden;display: flex;flex-direction: column;row-gap: 36px;align-items: start;justify-content: flex-start;left: 64px;top: 355px;width: 1312px;position: absolute;">
+        <div style="overflow: hidden;display: flex;flex-direction: row;grid-column-gap: 0px;align-items: start;justify-content: flex-start;width: 100%;position: relative;flex-shrink: 0;"><span class="text" style="display: inline;text-align: left;line-height: 16px;font-size: 12px;font-family: Inter, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;text-transform: uppercase;color: #55544f;width: 336px;position: relative;flex-shrink: 0;">Project Background</span><span class="text" style="display: inline;text-align: left;line-height: 24px;font-size: 15px;font-family: Inter, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;color: #11110f;width: 528px;position: relative;flex-shrink: 0;">Colour U is an urban greening app concept that converts everyday walking into visible environmental participation. Daily steps become virtual plants that can contribute to real-world community greenery.</span></div>
+        <div style="overflow: hidden;display: flex;flex-direction: row;grid-column-gap: 0px;align-items: start;justify-content: flex-start;width: 100%;position: relative;flex-shrink: 0;"><span class="text" style="display: inline;text-align: left;line-height: 16px;font-size: 12px;font-family: Inter, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;text-transform: uppercase;color: #55544f;width: 336px;position: relative;flex-shrink: 0;">Design Scope</span><span class="text" style="display: inline;text-align: left;line-height: 24px;font-size: 15px;font-family: Inter, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;color: #11110f;width: 528px;position: relative;flex-shrink: 0;">Mobile Interface · App Icon · Visual Identity · Illustration · Campaign Poster</span></div>
+        <div style="overflow: hidden;display: flex;flex-direction: row;grid-column-gap: 0px;align-items: start;justify-content: flex-start;width: 100%;position: relative;flex-shrink: 0;"><span class="text" style="display: inline;text-align: left;line-height: 16px;font-size: 12px;font-family: Inter, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;text-transform: uppercase;color: #55544f;width: 336px;position: relative;flex-shrink: 0;">Design Approach</span><span class="text" style="display: inline;text-align: left;line-height: 24px;font-size: 15px;font-family: Inter, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;color: #11110f;width: 528px;position: relative;flex-shrink: 0;">A half-arch and paired blocks form a compact symbol that suggests both a planted canopy and two footsteps. Repeating this geometry across the icon, campaign pattern and interface creates a recognisable system, while soft green and pink distinguish environmental progress from user actions.</span></div>
+      </div>
+      <div style="background-color: #f4f1e9;overflow: hidden;left: 0px;top: 0px;width: 1440px;height: 342px;position: absolute;">
+        <span class="text" style="display: inline;text-align: left;line-height: 16px;font-size: 12px;font-family: Inter, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;color: #55544f;left: 56px;top: 116px;width: 500px;position: absolute;">MOBILE · UI DESIGN</span>
+        <span class="text" style="display: inline;text-align: left;line-height: 66px;font-size: 64px;font-family: &quot;Instrument Serif&quot;, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;letter-spacing: -1px;color: #11110f;left: 56px;top: 150px;width: 1100px;position: absolute;">Colour U</span>
+        <a href="#" style="position:absolute;left:56px;top:290px;width:140px;font:400 12px/16px 'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;color:#55544f;text-align:left;white-space:normal;overflow-wrap:break-word;text-decoration:none">← ALL WORK</a>
+        
+      </div>
+      <span class="text" style="display: inline;text-align: left;line-height: 48px;font-size: 46px;font-family: &quot;Instrument Serif&quot;, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;letter-spacing: -0.5px;color: #12120f;left: 872px;top: 2379px;width: 480px;position: absolute;">Poster</span>
+      <span class="text" style="display: inline;text-align: left;line-height: 24px;font-size: 15px;font-family: Inter, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;color: #11110f;left: 872px;top: 2448px;width: 480px;position: absolute;">Repeating the identity mark at civic scale turns a small app symbol into an immediately recognisable public graphic, linking individual participation with the shared urban environment.</span>
+      <span class="text" style="display: inline;text-align: left;line-height: 56px;font-size: 52px;font-family: &quot;Instrument Serif&quot;, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;letter-spacing: -0.5px;color: #12120f;left: 64px;top: 3147px;width: 480px;position: absolute;">Mobile App</span>
+      <span class="text" style="display: inline;text-align: left;line-height: 24px;font-size: 16px;font-family: Inter, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;color: #12120f;left: 64px;top: 3216px;width: 560px;position: absolute;">The interface carries the same arch motif through onboarding, step conversion, plant selection, redemption and community sharing. Consistent spacing and colour make the multi-step journey easy to scan.</span>
+      <div style="border-radius: 14.4px;background-color: #a1d0a3;left: 1080px;top: 2134px;width: 28.8px;height: 28.8px;position: absolute;"></div>
+      <div style="border-radius: 14.4px;background-color: #f68eca;left: 1212px;top: 2134px;width: 28.8px;height: 28.8px;position: absolute;"></div>
+      <span class="text" style="display: inline;text-align: center;line-height: 21.9px;font-size: 12px;font-family: &quot;Instrument Sans&quot;, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;letter-spacing: -0.1px;color: #55544f;left: 1114px;top: 2137px;width: max-content;position: absolute;">#A1D0A3</span>
+      <span class="text" style="display: inline;text-align: center;line-height: 21.9px;font-size: 12px;font-family: &quot;Instrument Sans&quot;, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;letter-spacing: -0.1px;color: #55544f;left: 1245px;top: 2137px;width: max-content;position: absolute;">#F68ECA</span>
+      <div style="overflow: hidden;border-radius: 15px;left: 47px;top: 3420px;aspect-ratio: 0.46;width: auto;height: 541px;position: absolute;filter: drop-shadow(0.4px 1.7px 10.3px rgba(0,0,0,0.25));"><img src="images/65eac7b75325bbf080f44b17dd761c27c0f33aca.png" alt="入口1@3x 2" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+      <div style="overflow: hidden;border-radius: 15px;left: 321px;top: 3420px;aspect-ratio: 0.46;width: auto;height: 541px;position: absolute;filter: drop-shadow(0.5px 1.8px 11px rgba(0,0,0,0.25));"><img src="images/bb2e00dc9ccc7ca2b20379cebcc9111f75c7c706.png" alt="登陆@3x 1" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+      <div style="background-color: #b8b4aa;left: calc(-656px + 50%);top: 1792px;width: 1312px;height: 1px;position: absolute;"></div>
+      <div style="background-color: #f4f1e9;overflow: hidden;left: 0px;top: 4651px;width: 1440px;height: 320px;position: absolute;">
+        <div style="background-color: rgba(15,15,14,0.28);left: 64px;top: 0px;width: 1312px;height: 1px;position: absolute;"></div>
+        <span class="text" style="display: inline;text-align: left;line-height: 16px;font-size: 12px;font-family: Inter, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;letter-spacing: 0.5px;color: rgba(15,15,14,0.65);left: 64px;top: 72px;width: max-content;position: absolute;">NEXT PROJECT</span>
+        <span class="text" style="display: inline;text-align: left;line-height: 16px;font-size: 12px;font-family: Inter, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;color: rgba(15,15,14,0.65);left: 64px;top: 104px;width: max-content;position: absolute;">ABLE AUSTRALIA</span>
+        <span class="text" style="display: inline;text-align: right;line-height: 56px;font-size: 52px;font-family: &quot;Instrument Serif&quot;, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;color: #0f0f0e;left: 1016px;top: 74px;width: 360px;height: 64px;position: absolute;">NEXT →</span>
+      </div>
+      <div style="background-color: #f4f1e9;left: 0px;top: 0px;width: 1440px;height: 80px;position: absolute;">
+        <span class="text" style="display: inline;text-align: left;line-height: 16px;font-size: 12px;font-family: Inter, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;color: #11110f;left: 32px;top: 32px;width: 160px;position: absolute;">GEMMA YANG</span>
+        <span class="text" style="display: inline;text-align: left;line-height: 16px;font-size: 12px;font-family: Inter, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;color: #11110f;left: 182px;top: 32px;width: 60px;position: absolute;">WORK</span>
+        <span class="text" style="display: inline;text-align: left;line-height: 16px;font-size: 12px;font-family: Inter, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;color: #11110f;left: 268px;top: 32px;width: 70px;position: absolute;">ABOUT</span>
+        <span class="text" style="display: inline;text-align: left;line-height: 16px;font-size: 12px;font-family: Inter, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;color: #11110f;left: 1164px;top: 32px;width: 244px;position: absolute;">GEMMAYANG22@GMAIL.COM</span>
+        <div style="background-color: #b8b4aa;left: 0px;top: 79px;width: 1440px;height: 1px;position: absolute;"></div>
+      </div>
+    </div>
+  
+<script src="../site-layout.js?v=width-only-20260912"></script>
+<script src="../site.js?v=responsive-20260916"></script>
+<script src="../image-viewer.js?v=20260912b"></script>
+</body>
+</html>

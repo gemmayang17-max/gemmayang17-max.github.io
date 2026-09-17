@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en" xml:lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width">
+    <link rel="preconnect" href="https://cdn.divriots.com" crossorigin="">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <style>
+/* latin-ext */
+@font-face {
+  font-family: 'Instrument Serif';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/instrumentserif/v5/jizBRFtNs2ka5fXjeivQ4LroWlx-6zsTjmbI.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Instrument Serif';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/instrumentserif/v5/jizBRFtNs2ka5fXjeivQ4LroWlx-6zUTjg.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+    <style>
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('https://cdn.divriots.com/fonts/inter/v3.19/Inter.var.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: italic;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('https://cdn.divriots.com/fonts/inter/v3.19/Inter.var.woff2') format('woff2');
+  font-variation-settings: 'slnt' -10;
+}</style>
+    <style media="all">
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  -webkit-font-smoothing: auto;
+}
+
+button {
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+  -webkit-appearance: none;
+}
+* {
+  padding: 0;
+  margin: 0;
+}a {
+  color: inherit;
+  text-decoration: inherit;
+}
+input {
+  border: none;
+  font: inherit;
+  outline: none;
+  background-color: inherit;
+}
+button {
+  border-style: none;
+  width: auto;
+  overflow: visible;
+  background: transparent;
+  font: inherit;
+  line-height: normal;
+  color: inherit;
+}
+textarea {
+  font: inherit;
+  background-color: inherit;
+}
+select {
+  font: inherit;
+  background-color: inherit;
+}
+img {
+  display: block;
+}
+picture {
+  display: block;
+}
+video {
+  display: block;
+}
+canvas {
+  display: block;
+}
+svg {
+  display: block;
+}
+
+[data-visible='false']{
+  display:none!important;
+}
+
+.before-hidden::before {
+  display:none;
+}
+
+.after-hidden::after {
+  display:none;
+}
+
+.before-visible::before {
+  content: "";
+}
+
+.after-visible::after {
+  content: "";
+}
+
+.text {
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+}
+</style>
+    <meta charset="utf-8">
+  </head>
+  <body style="display: grid;background-color: #f4f1e9;">
+    <div style="background-color: #f4f1e9;overflow: hidden;width: 1440px;min-width: 1440px;max-width: 1440px;min-height: 6058px;max-height: 6058px;position: relative;margin: 0px auto;">
+      <div style="overflow: hidden;left: calc(-1000px + 50%);top: 842px;aspect-ratio: 1.41;width: auto;height: 1414px;position: absolute;"><img src="images/f9a80e0c0687ae0bb13e33c9bd1bc9cac894a478.png" alt="棕 1" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+      <div style="overflow: hidden;left: calc(-1000px + 50%);top: 2177px;aspect-ratio: 1.41;width: auto;height: 1414px;position: absolute;"><img src="images/f9a80e0c0687ae0bb13e33c9bd1bc9cac894a478.png" alt="棕 2" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+      <div style="overflow: hidden;left: calc(-1000px + 50%);top: 3575px;aspect-ratio: 1.41;width: auto;height: 1414px;position: absolute;"><img src="images/f9a80e0c0687ae0bb13e33c9bd1bc9cac894a478.png" alt="棕 3" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+      <div style="overflow: hidden;left: calc(-1000px + 50%);top: 4920px;aspect-ratio: 1.41;width: auto;height: 1414px;position: absolute;"><img src="images/f9a80e0c0687ae0bb13e33c9bd1bc9cac894a478.png" alt="棕 4" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+      <div style="overflow: hidden;left: -21px;top: 1095px;aspect-ratio: 0.7;width: auto;height: 662px;opacity: 0.5;position: absolute;"><img src="images/567a75f8b92cf6eb44dfefca87b1e5ea8df626c1.png" alt="Untitled-1 1" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+      <div style="overflow: hidden;left: -231px;top: 1838px;width: 1000px;height: 1020px;opacity: 0.45;position: absolute;"><img src="images/1443d4ae0321912c9441eb17cd91cb554685a920.png" alt="1643296268353- 2" style="inset: 0;width: 100%;height: 100%;position: absolute;transform: translate(74.5px,20.8px) scale(0.91,1.06);"></div>
+      <div style="overflow: hidden;left: 659px;top: 2634px;aspect-ratio: 1.39;width: auto;height: 226px;position: absolute;"><img src="images/8af858f3ed47a6305bdf996897e3281b5b78117d.png" alt="封面3 1" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+      <div style="overflow: hidden;left: 995px;top: 2634px;aspect-ratio: 1.39;width: auto;height: 226px;position: absolute;"><img src="images/7e27f8d4d72eb2536b079caebfef1d0f937e8a79.png" alt="封面2 1" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+      <div style="overflow: hidden;left: 661px;top: 2142px;aspect-ratio: 1.39;width: auto;height: 468px;position: absolute;"><img src="images/9554b3b55242f525faeb7bfcd6b5e33e90925611.png" alt="封面1 1" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+      <div style="overflow: hidden;left: calc(-526.2px + 50%);top: 2234.4px;width: 486.8px;height: 561.3px;position: absolute;">
+        <div style="overflow: hidden;left: 72.6px;top: 0px;aspect-ratio: 1.24;width: auto;height: 316.8px;position: absolute;"><img src="images/cbb28251da622319af77bd39171176534e0d491d.png" alt="1643288792870- 1" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+        <div style="overflow: hidden;left: 227.5px;top: 353px;aspect-ratio: 1.24;width: auto;height: 208.4px;position: absolute;"><img src="images/082a1c2b52d2c37543c1d256af731efe4190cb49.png" alt="1643288611797- 1" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+        <div style="overflow: hidden;left: 0px;top: 353px;aspect-ratio: 1.24;width: auto;height: 208.4px;position: absolute;"><img src="images/1238f60c2abecac863bb14db90fa99486da8eb46.png" alt="1643288433391- 1" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+      </div>
+      <div style="overflow: hidden;left: 340px;top: 3085px;aspect-ratio: 0.66;width: auto;height: 479px;opacity: 0.7;position: absolute;"><img src="images/c9bc0c797169d1e6f7b155484abea2874f398dc1.png" alt="1643296595159- 1" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+      <span class="text" style="display: inline;text-align: left;line-height: 48px;font-size: 46px;font-family: &quot;Instrument Serif&quot;, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;letter-spacing: -0.5px;color: #f4f1e9;left: 64px;top: 1585px;width: 304px;position: absolute;">Font</span>
+      <span class="text" style="display: inline;text-align: left;line-height: 24px;font-size: 15px;font-family: Inter, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;color: #f4f1e9;left: 64px;top: 895px;width: 304px;position: absolute;">Each glyph is constructed from pointed terminals, directional crossbars and metallic joints borrowed from the form of an anchor. Repeating these cues creates a recognisable alphabet while preserving enough consistency for longer editorial applications.</span>
+      <span class="text" style="display: inline;text-align: left;line-height: 24px;font-size: 15px;font-family: Inter, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;color: #f4f1e9;left: 64px;top: 1634px;width: 304px;position: absolute;">A typeface inspired by the form of an anchor, translating its structural qualities into a bold and structured letter system with a subtle vintage and metallic character.</span>
+      <span class="text" style="display: inline;text-align: left;line-height: 24px;font-size: 15px;font-family: Inter, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;color: #f4f1e9;left: 70px;top: 2017px;width: 304px;position: absolute;">A series of three book covers inspired by encyclopedic themes across different<br>categories. The custom typeface is applied to the titles, accompanied by<br>hand-drawn illustrations to create a cohesive visual system.</span>
+      <span class="text" style="display: inline;text-align: left;line-height: 24px;font-size: 15px;font-family: Inter, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;color: #f4f1e9;left: 64px;top: 3121px;width: 276px;position: absolute;">Three layout variations exploring different margin settings and grid systems to create distinct page structures and reading rhythms.</span>
+      <span class="text" style="display: inline;text-align: left;line-height: 48px;font-size: 46px;font-family: &quot;Instrument Serif&quot;, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;letter-spacing: -0.5px;color: #f4f1e9;left: 70px;top: 1964px;width: 304px;position: absolute;">Book Cover</span>
+      <span class="text" style="display: inline;text-align: left;line-height: 48px;font-size: 46px;font-family: &quot;Instrument Serif&quot;, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;letter-spacing: -0.5px;color: #f4f1e9;left: 64px;top: 3058px;width: 420px;position: absolute;">Internal Page Design</span>
+      <span class="text" style="display: inline;text-align: left;line-height: 24px;font-size: 15px;font-family: Inter, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;color: #ebe5db;left: 64px;top: 4612px;width: 420px;position: absolute;">The finished volumes bring the cover system and internal grid together as one editorial set. Closed covers establish each subject through colour and illustration; open spreads reveal how the same visual language supports longer-form reading.</span>
+      <span class="text" style="display: inline;text-align: left;line-height: 48px;font-size: 46px;font-family: &quot;Instrument Serif&quot;, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;letter-spacing: -0.5px;color: #ebe5db;left: 64px;top: 4549px;width: 520px;position: absolute;">Final Book Series</span>
+      <div style="overflow: hidden;top: 1039px;right: 0px;aspect-ratio: 1.28;width: auto;height: 822px;position: absolute;"><img src="images/0ea676caae1d4cd0bdbef98c9e437db12b7238bc.png" alt="font 1" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+      <div style="overflow: hidden;left: 724px;top: 3060px;aspect-ratio: 1.3;width: auto;height: 458px;position: absolute;"><img src="images/76f28e47bfd2c072ab9f6cdb2ea1f5cb3c510912.png" alt="内页1 1" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+      <div style="overflow: hidden;left: 725px;top: 3545px;aspect-ratio: 1.3;width: auto;height: 458px;position: absolute;"><img src="images/8900c51da2396207a6b4866c78c28883a3db9d46.png" alt="内页2 1" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+      <div style="overflow: hidden;left: 103px;top: 3545px;aspect-ratio: 1.3;width: auto;height: 458px;position: absolute;"><img src="images/31edaa257b9b7c01add79b7865047e5180786643.png" alt="内页3 1" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+      <div style="overflow: hidden;left: 525px;top: 4073px;aspect-ratio: 1.33;width: auto;height: 300px;position: absolute;"><img src="images/8eaf1fc09d8e648d1ede08a8ecaada7cd8d6eb58.png" alt="1643290957450- 1" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+      <div style="overflow: hidden;left: 954px;top: 4073px;aspect-ratio: 1.33;width: auto;height: 300px;position: absolute;"><img src="images/8a03be020377bc1acf9087d520af8d512330a5e1.png" alt="1643290825029- 1" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+      <div style="overflow: hidden;left: 97px;top: 4073px;aspect-ratio: 1.33;width: auto;height: 300px;position: absolute;"><img src="images/b19c50844cd2b5fb1e4e657426b2e5615d0e6d3b.png" alt="1643290669941- 1" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+      <div style="overflow: hidden;transform-origin: 0 0;transform: rotate(180deg);left: 3083px;top: 4823px;aspect-ratio: 0.73;width: auto;height: 241px;position: absolute;"><img src="images/865ed94b1a0e75fb26bd85b2157d7bf90bbd9bb4.png" alt="1643295201533- 1" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+      <div style="overflow: hidden;transform-origin: 0 0;transform: rotate(180deg);left: 2894px;top: 4823px;aspect-ratio: 0.73;width: auto;height: 241px;position: absolute;"><img src="images/8d42399724e7940ae87c2b6ee2bf957fa9c23890.png" alt="1643295253880- 1" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+      <div style="overflow: hidden;transform-origin: 0 0;transform: rotate(180deg);left: 2705px;top: 4823px;aspect-ratio: 0.73;width: auto;height: 241px;position: absolute;"><img src="images/36b0a0cd4b45618b07044a8637c94cac249eae09.png" alt="1643295290042- 1" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+      <div style="overflow: hidden;transform-origin: 0 0;transform: rotate(180deg);left: 3079px;top: 4579px;aspect-ratio: 1.39;width: auto;height: 375px;position: absolute;"><img src="images/ffdc53257e0a617872cfe7dec854cafcda2c8348.png" alt="1643295704674- 1" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+      <div style="overflow: hidden;left: 85px;top: 5320px;aspect-ratio: 1.39;width: auto;height: 297px;position: absolute;"><img src="images/ffdc53257e0a617872cfe7dec854cafcda2c8348.png" alt="1643295704674- 2" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+      <div style="overflow: hidden;transform-origin: 0 0;transform: rotate(180deg);left: 2541px;top: 4579px;aspect-ratio: 1.39;width: auto;height: 375px;position: absolute;"><img src="images/2b7da3d69d890ae1f1b0fbee5126b766b725d2be.png" alt="1643295740933- 1" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+      <div style="overflow: hidden;left: 513px;top: 5320px;aspect-ratio: 1.39;width: auto;height: 297px;position: absolute;"><img src="images/2b7da3d69d890ae1f1b0fbee5126b766b725d2be.png" alt="1643295740933- 2" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+      <div style="overflow: hidden;transform-origin: 0 0;transform: rotate(180deg);left: 1999px;top: 4579px;aspect-ratio: 1.39;width: auto;height: 375px;position: absolute;"><img src="images/d55de25525d39bd8f2126389772f91b2af480145.png" alt="1643295914531- 1" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+      <div style="overflow: hidden;left: 945px;top: 5320px;aspect-ratio: 1.39;width: auto;height: 297px;position: absolute;"><img src="images/d55de25525d39bd8f2126389772f91b2af480145.png" alt="1643295914531- 2" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+      <div style="overflow: hidden;transform-origin: 0 0;transform: rotate(180deg);left: 3076px;top: 4207px;aspect-ratio: 1.39;width: auto;height: 637px;position: absolute;"><img src="images/8af858f3ed47a6305bdf996897e3281b5b78117d.png" alt="封面3 2" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+      <div style="overflow: hidden;transform-origin: 0 0;transform: rotate(180deg);left: 2173px;top: 4200px;aspect-ratio: 0.74;width: auto;height: 363px;position: absolute;"><img src="images/a44d617c39258e7e6142c2e99bad7db9b064ca06.png" alt="封面4 1" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+      <div style="overflow: hidden;left: 960.8px;top: 4809px;width: 442px;height: 311.5px;position: absolute;">
+        <div style="overflow: hidden;left: 216.4px;top: 1px;aspect-ratio: 0.73;width: auto;height: 310.4px;position: absolute;"><img src="images/8d42399724e7940ae87c2b6ee2bf957fa9c23890.png" alt="1643295253880- 2" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+        <div style="overflow: hidden;left: 0px;top: 0px;aspect-ratio: 0.74;width: auto;height: 311.4px;position: absolute;"><img src="images/a44d617c39258e7e6142c2e99bad7db9b064ca06.png" alt="封面4 2" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+      </div>
+      <div style="overflow: hidden;transform-origin: 0 0;transform: rotate(180deg);left: 1889px;top: 4200px;aspect-ratio: 0.74;width: auto;height: 363px;position: absolute;"><img src="images/3d0161608bf82c6e87a0ab6b8ea4d63b16fb6fa1.png" alt="封面5 1" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+      <div style="overflow: hidden;left: 65px;top: 4809.2px;width: 442px;height: 311.5px;position: absolute;">
+        <div style="overflow: hidden;left: 216.4px;top: 1px;aspect-ratio: 0.73;width: auto;height: 310.4px;position: absolute;"><img src="images/36b0a0cd4b45618b07044a8637c94cac249eae09.png" alt="1643295290042- 2" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+        <div style="overflow: hidden;left: 0px;top: 0px;aspect-ratio: 0.74;width: auto;height: 311.4px;position: absolute;"><img src="images/3d0161608bf82c6e87a0ab6b8ea4d63b16fb6fa1.png" alt="封面5 2" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+      </div>
+      <div style="overflow: hidden;left: 512.9px;top: 4809px;width: 442px;height: 312px;position: absolute;">
+        <div style="overflow: hidden;left: 216.4px;top: 1.6px;aspect-ratio: 0.73;width: auto;height: 310.4px;position: absolute;"><img src="images/865ed94b1a0e75fb26bd85b2157d7bf90bbd9bb4.png" alt="1643295201533- 2" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+        <div style="overflow: hidden;left: 0px;top: 0px;aspect-ratio: 0.74;width: auto;height: 311px;position: absolute;"><img src="images/536db77630ef215e44ae6be99000d7cbf5b49acd.png" alt="封面3_1 1" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+      </div>
+      <div style="overflow: hidden;left: 103px;top: calc(2123px + 50%);width: 1222.7px;height: 149px;position: absolute;">
+        <div style="overflow: hidden;left: 0px;top: 15.8px;aspect-ratio: 1.63;width: auto;height: 117.4px;position: absolute;"><img src="images/09fba983ca467fc5b43c4288fcfed9fd2e237680.png" alt="1643296383789- 1" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+        <div style="overflow: hidden;left: 317.3px;top: 17.5px;aspect-ratio: 0.83;width: auto;height: 115.7px;position: absolute;"><img src="images/88bfef3a682e3e0bd053ddf77e551303afcd9fc2.png" alt="1643296415810- 1" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+        <div style="overflow: hidden;left: 510.1px;top: 17.5px;aspect-ratio: 2.29;width: auto;height: 115.7px;position: absolute;"><img src="images/1ed30589a2f9a560f2d5f3a23712eab6b3a5d4ef.png" alt="1643296441315- 1" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+        <div style="overflow: hidden;left: 1114.9px;top: 0px;aspect-ratio: 0.72;width: auto;height: 149px;position: absolute;"><img src="images/a67ac732d356778883bf3be90cdcbf6025274ded.png" alt="1643296464776- 1" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+        <div style="overflow: hidden;left: 871.2px;top: 14px;aspect-ratio: 1.01;width: auto;height: 121px;position: absolute;"><img src="images/05dfcee13997b5cd74550c0a34ebaa56be2eb609.png" alt="1643296516578- 1" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+      </div>
+      <div style="overflow: hidden;display: flex;flex-direction: column;row-gap: 36px;align-items: start;justify-content: flex-start;left: 58px;top: 355px;width: 1312px;position: absolute;">
+        <div style="overflow: hidden;display: flex;flex-direction: row;grid-column-gap: 0px;align-items: start;justify-content: flex-start;width: 100%;position: relative;flex-shrink: 0;"><span class="text" style="display: inline;text-align: left;line-height: 16px;font-size: 12px;font-family: Inter, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;text-transform: uppercase;color: #55544f;width: 336px;position: relative;flex-shrink: 0;">Project Background</span><span class="text" style="display: inline;text-align: left;line-height: 24px;font-size: 15px;font-family: Inter, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;color: #11110f;width: 528px;position: relative;flex-shrink: 0;">This self-initiated project explores how one visual concept can develop from experimental letterforms into a complete editorial system. It includes a custom display typeface and a three-volume encyclopaedia series exploring flowers, fungi and shells.</span></div>
+        <div style="overflow: hidden;display: flex;flex-direction: row;grid-column-gap: 0px;align-items: start;justify-content: flex-start;width: 100%;position: relative;flex-shrink: 0;"><span class="text" style="display: inline;text-align: left;line-height: 16px;font-size: 12px;font-family: Inter, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;text-transform: uppercase;color: #55544f;width: 336px;position: relative;flex-shrink: 0;">Design Scope</span><span class="text" style="display: inline;text-align: left;line-height: 24px;font-size: 15px;font-family: Inter, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;color: #11110f;width: 528px;position: relative;flex-shrink: 0;">Custom Typeface · Book-cover System · Editorial Layout · Hand-drawn Illustration</span></div>
+        <div style="overflow: hidden;display: flex;flex-direction: row;grid-column-gap: 0px;align-items: start;justify-content: flex-start;width: 100%;position: relative;flex-shrink: 0;"><span class="text" style="display: inline;text-align: left;line-height: 16px;font-size: 12px;font-family: Inter, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;text-transform: uppercase;color: #55544f;width: 336px;position: relative;flex-shrink: 0;">Design Approach</span><span class="text" style="display: inline;text-align: left;line-height: 24px;font-size: 15px;font-family: Inter, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;color: #11110f;width: 528px;position: relative;flex-shrink: 0;">The structure and directional forms of an anchor are translated into a consistent letterform language with a subtle metallic and vintage character. Applying the typeface across the covers and internal layouts tests how an expressive typographic idea can remain distinctive while functioning within a controlled grid and readable editorial structure.</span></div>
+      </div>
+      <div style="background-color: #f4f1e9;overflow: hidden;left: 0px;top: 0px;width: 1440px;height: 342px;position: absolute;">
+        <span class="text" style="display: inline;text-align: left;line-height: 16px;font-size: 12px;font-family: Inter, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;color: #55544f;left: 56px;top: 116px;width: 500px;position: absolute;">TYPE · EDITORIAL DESIGN</span>
+        <span class="text" style="display: inline;text-align: left;line-height: 66px;font-size: 64px;font-family: &quot;Instrument Serif&quot;, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;letter-spacing: -1px;color: #11110f;left: 56px;top: 150px;width: 1100px;position: absolute;">Custom Typeface &amp; Editorial Series</span>
+        <span class="text" style="display: inline;text-align: left;line-height: 16px;font-size: 12px;font-family: 'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;font-weight: 400;font-stretch: 100%;color: #55544f;left: 56px;top: 290px;width: 140px;position: absolute;">← ALL WORK</span>
+        
+      </div>
+      <div style="background-color: #f4f1e9;left: calc(-656px + 50%);top: 4447px;width: 1312px;height: 1px;opacity: 0.26;position: absolute;"></div>
+      <div style="background-color: #f4f1e9;overflow: hidden;left: 0px;top: 5738px;width: 1440px;height: 320px;position: absolute;">
+        <div style="background-color: rgba(15,15,14,0.28);left: 64px;top: 0px;width: 1312px;height: 1px;position: absolute;"></div>
+        <span class="text" style="display: inline;text-align: left;line-height: 16px;font-size: 12px;font-family: Inter, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;letter-spacing: 0.5px;color: rgba(15,15,14,0.65);left: 64px;top: 72px;width: max-content;position: absolute;">NEXT PROJECT</span>
+        <span class="text" style="display: inline;text-align: left;line-height: 16px;font-size: 12px;font-family: Inter, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;color: rgba(15,15,14,0.65);left: 64px;top: 104px;width: max-content;position: absolute;">GEGE PANCAKE SHOP</span>
+        <span class="text" style="display: inline;text-align: right;line-height: 56px;font-size: 52px;font-family: &quot;Instrument Serif&quot;, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;color: #0f0f0e;left: 1016px;top: 74px;width: 360px;height: 64px;position: absolute;">NEXT →</span>
+      </div>
+      <div style="background-color: #f4f1e9;left: 0px;top: 0px;width: 1440px;height: 80px;position: absolute;">
+        <span class="text" style="display: inline;text-align: left;line-height: 16px;font-size: 12px;font-family: Inter, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;color: #11110f;left: 32px;top: 32px;width: 160px;position: absolute;">GEMMA YANG</span>
+        <span class="text" style="display: inline;text-align: left;line-height: 16px;font-size: 12px;font-family: Inter, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;color: #11110f;left: 182px;top: 32px;width: 60px;position: absolute;">WORK</span>
+        <span class="text" style="display: inline;text-align: left;line-height: 16px;font-size: 12px;font-family: Inter, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;color: #11110f;left: 268px;top: 32px;width: 70px;position: absolute;">ABOUT</span>
+        <span class="text" style="display: inline;text-align: left;line-height: 16px;font-size: 12px;font-family: Inter, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;color: #11110f;left: 1164px;top: 32px;width: 244px;position: absolute;">GEMMAYANG22@GMAIL.COM</span>
+        <div style="background-color: #b8b4aa;left: 0px;top: 79px;width: 1440px;height: 1px;position: absolute;"></div>
+      </div>
+    </div>
+  
+<script src="../site-layout.js?v=width-only-20260912"></script>
+<script src="../site.js?v=20260912c"></script>
+<script src="../image-viewer.js?v=20260912b"></script>
+</body>
+</html>

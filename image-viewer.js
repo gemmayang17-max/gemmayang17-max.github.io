@@ -1,0 +1,1 @@
+/* Image enlargement is intentionally disabled across the portfolio. */

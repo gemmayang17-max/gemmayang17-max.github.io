@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en" xml:lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width">
+    <link rel="preconnect" href="https://cdn.divriots.com" crossorigin="">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <style>
+/* latin-ext */
+@font-face {
+  font-family: 'Instrument Serif';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/instrumentserif/v5/jizBRFtNs2ka5fXjeivQ4LroWlx-6zsTjmbI.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Instrument Serif';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/instrumentserif/v5/jizBRFtNs2ka5fXjeivQ4LroWlx-6zUTjg.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+    <style>
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('https://cdn.divriots.com/fonts/inter/v3.19/Inter.var.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: italic;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('https://cdn.divriots.com/fonts/inter/v3.19/Inter.var.woff2') format('woff2');
+  font-variation-settings: 'slnt' -10;
+}</style>
+    <style media="all">
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  -webkit-font-smoothing: auto;
+}
+
+button {
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+  -webkit-appearance: none;
+}
+* {
+  padding: 0;
+  margin: 0;
+}a {
+  color: inherit;
+  text-decoration: inherit;
+}
+input {
+  border: none;
+  font: inherit;
+  outline: none;
+  background-color: inherit;
+}
+button {
+  border-style: none;
+  width: auto;
+  overflow: visible;
+  background: transparent;
+  font: inherit;
+  line-height: normal;
+  color: inherit;
+}
+textarea {
+  font: inherit;
+  background-color: inherit;
+}
+select {
+  font: inherit;
+  background-color: inherit;
+}
+img {
+  display: block;
+}
+picture {
+  display: block;
+}
+video {
+  display: block;
+}
+canvas {
+  display: block;
+}
+svg {
+  display: block;
+}
+
+[data-visible='false']{
+  display:none!important;
+}
+
+.before-hidden::before {
+  display:none;
+}
+
+.after-hidden::after {
+  display:none;
+}
+
+.before-visible::before {
+  content: "";
+}
+
+.after-visible::after {
+  content: "";
+}
+
+.text {
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+}
+</style>
+    <meta charset="utf-8">
+  <style>
+/* ---- GeGe cup sequence: the Figma timeline (69:595/606/623/630/637/647), 6s loop ---- */
+.gg-cup2{animation:ggCup2o 6s linear infinite,ggCup2t 6s linear infinite;will-change:opacity,translate,scale}
+@keyframes ggCup2o{0%{opacity:0}15.833%{opacity:0;animation-timing-function:cubic-bezier(.16,1,.3,1)}
+ 24.167%{opacity:1}77.5%{opacity:1;animation-timing-function:cubic-bezier(.7,0,.84,0)}86.667%{opacity:0}100%{opacity:0}}
+@keyframes ggCup2t{0%{translate:78px 0;scale:.96;animation-timing-function:cubic-bezier(.16,1,.3,1)}
+ 24.167%{translate:0 0;scale:1}77.5%{translate:0 0;scale:1;animation-timing-function:step-end}
+ 100%{translate:78px 0;scale:.96}}
+.gg-cup1{will-change:opacity}
+/* ---- GeGe: the full Figma 6s build-up (cup1 69:595 static, cup2 69:606, cards 69:623/630, stickers 69:637/647) ---- */
+.gg-card1,.gg-card2,.gg-stick1,.gg-stick2{will-change:opacity,rotate,scale,translate;backface-visibility:hidden}
+.gg-card1{animation:ggC1o 6s linear infinite,ggC1t 6s linear infinite}
+.gg-card2{animation:ggC2o 6s linear infinite,ggC2t 6s linear infinite}
+.gg-stick1{animation:ggS1o 6s linear infinite,ggS1t 6s linear infinite}
+.gg-stick2{animation:ggS2o 6s linear infinite,ggS2t 6s linear infinite}
+@keyframes ggC1o{0%{opacity:0}22.5%{opacity:0;animation-timing-function:cubic-bezier(.16,1,.3,1)}32.5%{opacity:1}77.5%{opacity:1;animation-timing-function:cubic-bezier(.7,0,.84,0)}86.667%{opacity:0}100%{opacity:0}}
+@keyframes ggC1t{0%{rotate:4.01deg;translate:-52px 58px;animation-timing-function:cubic-bezier(.16,1,.3,1)}32.5%{rotate:0deg;translate:0 0}77.5%{rotate:0deg;translate:0 0;animation-timing-function:step-end}100%{rotate:-2.41deg;translate:23.4px -34px}}
+@keyframes ggC2o{0%{opacity:0}27%{opacity:0;animation-timing-function:cubic-bezier(.16,1,.3,1)}37%{opacity:1}77.5%{opacity:1;animation-timing-function:cubic-bezier(.7,0,.84,0)}86.667%{opacity:0}100%{opacity:0}}
+@keyframes ggC2t{0%{rotate:0deg;translate:0 0}77.5%{rotate:0deg;translate:0 0;animation-timing-function:step-end}100%{rotate:2.41deg;translate:-26.1px -34px}}
+@keyframes ggS1o{0%{opacity:0}35.333%{opacity:0;animation-timing-function:cubic-bezier(.16,1,.3,1)}43.667%{opacity:1}77.5%{opacity:1;animation-timing-function:cubic-bezier(.7,0,.84,0)}86.667%{opacity:0}100%{opacity:0}}
+@keyframes ggS1t{0%{rotate:13deg;scale:.58}35.333%{rotate:13deg;scale:.58;animation-timing-function:cubic-bezier(.16,1,.3,1)}43.667%{rotate:0deg;scale:1}77.5%{rotate:0deg;scale:1;animation-timing-function:cubic-bezier(.7,0,.84,0)}86.667%{rotate:-5.85deg;scale:1.14}100%{rotate:-5.85deg;scale:1.14}}
+@keyframes ggS2o{0%{opacity:0}39.333%{opacity:0;animation-timing-function:cubic-bezier(.16,1,.3,1)}47.667%{opacity:1}77.5%{opacity:1;animation-timing-function:cubic-bezier(.7,0,.84,0)}86.667%{opacity:0}100%{opacity:0}}
+@keyframes ggS2t{0%{rotate:-13deg;scale:.58}39.333%{rotate:-13deg;scale:.58;animation-timing-function:cubic-bezier(.16,1,.3,1)}47.667%{rotate:0deg;scale:1}77.5%{rotate:0deg;scale:1;animation-timing-function:cubic-bezier(.7,0,.84,0)}86.667%{rotate:5.85deg;scale:1.14}100%{rotate:5.85deg;scale:1.14}}
+@media (prefers-reduced-motion:reduce){.gg-card1,.gg-card2,.gg-stick1,.gg-stick2{animation:none;opacity:1;rotate:0deg;scale:1;translate:0 0}}
+@media (prefers-reduced-motion:reduce){.gg-cup2{animation:none;opacity:1}}
+</style>
+</head>
+  <body style="display: grid;background-color: #f4f1e9;">
+    <div style="background-color: #f4f1e9;overflow: hidden;width: 1440px;min-width: 1440px;max-width: 1440px;min-height: 9369px;max-height: 9369px;position: relative;margin: 0px auto;">
+      <div style="overflow: hidden;left: 23px;top: 13px;width: 1316px;height: 85px;position: absolute;">
+        <span class="text" style="display: inline;text-align: left;line-height: 16px;font-size: 12px;font-family: Inter, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;color: #11110f;left: 10px;top: 0px;width: max-content;position: absolute;">GEMMA YANG</span>
+        <span class="text" style="display: inline;text-align: left;line-height: 16px;font-size: 12px;font-family: Inter, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;color: #11110f;left: 1174px;top: 16px;width: max-content;position: absolute;">WORK</span>
+        <span class="text" style="display: inline;text-align: left;line-height: 16px;font-size: 12px;font-family: Inter, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;color: #11110f;left: 1274px;top: 16px;width: max-content;position: absolute;">ABOUT</span>
+        <div style="border-width: 0.6px;border-style: solid;border-color: #000;border-radius: 50%;left: 1097px;top: 44px;width: 86px;height: 41px;position: absolute;"></div>
+        <div style="overflow: hidden;left: 0px;top: 16px;aspect-ratio: 3;width: auto;height: 69px;position: absolute;"><img src="images/379850143f0ccda8eaa2afbcd80e70729635f460.png" alt="image 3" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+      </div>
+      <div style="overflow: hidden;left: calc(-722px + 50%);top: 2774px;width: 1444px;height: 1123.5px;position: absolute;">
+        <div style="left: 0px;top: 317.5px;width: 1444px;height: 806px;position: absolute;"></div>
+        <div style="background-color: #b8b4aa;left: 64px;top: 0px;width: 1312px;height: 1px;position: absolute;"></div>
+        <div style="background-color: #b8b4aa;left: 64px;top: 1030px;width: 1312px;height: 1px;position: absolute;"></div>
+      </div>
+      <div style="overflow: hidden;transform-origin: 0 0;transform: rotate(6.8deg);left: 64px;top: 497px;aspect-ratio: 0.78;width: auto;height: 722px;opacity: 0.14;position: absolute;"><img src="images/9ccd6aa1cd047470b23bb47a62e6ec7f9a59ccb7.png" alt="图层 1 10" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+      <div style="overflow: hidden;left: 978px;top: 1074px;aspect-ratio: 0.91;width: auto;height: 439.7px;opacity: 0.14;position: absolute;"><img src="images/16874398682d6ea4882eb03ed73f1df5d1997463.png" alt="图层 2 2" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+      <div style="overflow: hidden;left: 828px;top: 2278.5px;aspect-ratio: 0.77;width: auto;height: 465.2px;opacity: 0.14;position: absolute;"><img src="images/cb3293d8d33dd166502851ab1a40c4f65fbdfbd4.png" alt="图层 4 1" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+      <div style="overflow: hidden;left: -119px;top: 1378.5px;aspect-ratio: 0.8;width: auto;height: 543.7px;opacity: 0.14;position: absolute;"><img src="images/2f286c194e8920de82cbc28bfe67729f3a1ad68a.png" alt="图层 3 1" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+      <div data-rv="left" data-rv-fade="0" data-rv-dist="340" data-rv-group="gglogo" style="overflow: hidden;left: 0px;top: 923.5px;aspect-ratio: 0.95;width: auto;height: 382.1px;position: absolute;"><img src="images/3b54010097c120fe5ecc3aa627c5d45f7112ffce.png" alt="白70.75 1" style="inset: 0;width: 100%;height: 100%;position: absolute;transform: translate(-638px,-2.8px) scale(4.86,1.32);"></div>
+      <div data-rv="right" data-rv-fade="0" data-rv-dist="380" data-rv-group="gglogo" style="overflow: hidden;left: calc(-256px + 50%);top: 1222px;aspect-ratio: 4.19;width: auto;height: 217px;position: absolute;"><img src="images/a64be01b6a061fa9794b3066054a0c95bcd5c088.png" alt="无底色 1" style="inset: 0;width: 100%;height: 100%;position: absolute;transform: translate(0.1px,58.2px) scale(1,2.97);"></div>
+      <div style="overflow: hidden;left: 0px;top: 1422.5px;aspect-ratio: 1.34;width: auto;height: 1075px;position: absolute;"><img src="images/8b8af8954fd385e0f21bc534462e0e7f85fdf18f.png" alt="图片生成-1768212093326 2" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+      <div style="overflow: hidden;left: -52px;top: 3106.5px;width: 1544px;height: 940px;position: absolute;"></div>
+      <div style="overflow: hidden;left: 78px;top: 2848.5px;width: 1154.2px;height: 1225.1px;position: absolute;">
+        <div style="overflow: hidden;left: 208px;top: 292.1px;width: 367px;height: 511.9px;position: absolute;">
+          <svg width="330.5" height="424" viewBox="0 0 330.5 424" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none" style="left: 18px;top: 87.9px;width: 330.5px;height: 424px;position: absolute;filter: drop-shadow(1px 4px 24px rgba(0,0,0,0.25));backface-visibility: hidden;transform: translateZ(0);">
+            <defs>
+              <clippath id="def_0">
+                <rect x="0" y="0" width="330.5" height="424"></rect>
+              </clippath>
+              <lineargradient x1="0" y1="0.5" x2="1" y2="0.5" gradientUnits="userSpaceOnUse" gradientTransform="matrix(2.02372892389699e-14 424 -330.5 2.596251327480556e-14 330.5 -2.596251327480556e-14)" id="def_1">
+                <stop stop-color="#f8dde1" offset="0"></stop>
+                <stop stop-color="#928285" offset="1"></stop>
+              </lineargradient>
+              <mask id="def_2" maskUnits="userSpaceOnUse" x="0" y="0" width="330.5" height="424" style="mask-type: alpha;">
+                <path d="M0 0h330.5l-46 424h-241.5z" style="fill-rule: evenodd;fill: url(#def_1);"></path>
+              </mask>
+              <image href="../_assets/images/d496cbcdcbc90e0aa1b01e882c39509a46105882.png" id="def_3"></image>
+              <pattern width="451" height="436" patternUnits="userSpaceOnUse" patternTransform="matrix(1 0 0 1 -52 0)" id="def_4">
+                <use href="#def_3" transform="matrix(0.4404296875 0 0 0.42578125 0 0)"></use>
+              </pattern>
+              <image href="../_assets/images/f330abdc737ac28e33468229ef3c57416fd9667a.png" id="def_5"></image>
+              <pattern width="338" height="601" patternUnits="userSpaceOnUse" patternTransform="matrix(1 0 0 1 -5 -171.00048828125)" id="def_6">
+                <use href="#def_5" transform="matrix(0.29340277777777773 0 0 0.29345703125 0 0)"></use>
+              </pattern>
+              <clippath id="def_7">
+                <path clip-rule="evenodd" d="M-95.3 289.7l520.6 0 0 261.6-520.6 0ZM6 391.0001L324 391 317.6653 450H12.3347L6 391.0001Z"></path>
+              </clippath>
+            </defs>
+            <g style="clip-path: url(#def_0);">
+              <path d="M-52 0L399 0 399 436-52 436Z" style="fill-rule: nonzero;fill: #f9e9ee;mask: url(#def_2);"></path>
+              <path d="M-52 0L399 0 399 436-52 436Z" style="fill-rule: nonzero;fill: url(#def_4);opacity: 0.029999999329447746;mask: url(#def_2);"></path>
+              <path d="M-5-171.0005L333-171.0005 333 429.9995-5 429.9995Z" style="fill-rule: nonzero;fill: url(#def_6);opacity: 0.14000000059604645;mask: url(#def_2);"></path>
+              <path d="M6 391.0001L324 391 317.6653 450H12.3347L6 391.0001Z" style="fill-rule: nonzero;fill: #fffefa;mask: url(#def_2);"></path>
+              <path d="M6 391.0001L324 391 317.6653 450H12.3347L6 391.0001Z" clip-path="url(#def_7)" style="stroke: #d9d9d9;stroke-width: 2.5999999046325684;mask: url(#def_2);"></path>
+            </g>
+          </svg>
+          <div style="overflow: hidden;left: 37px;top: 128.9px;aspect-ratio: 2.9;width: auto;height: 100px;position: absolute;"><img src="images/8cc25c332e996864b814dcd513404fabda59e61e.png" alt="无底 1" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+          <svg width="367" height="87.91514000000001" viewBox="0 0 367 87.91514000000001" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none" style="left: 0px;top: 0px;width: 367px;height: 87.9px;position: absolute;filter: drop-shadow(1px 2px 2px rgba(0,0,0,0.25));">
+            <path d="M339 15.9151c6.6274 0 12 5.3726 12 12v23h4c6.6274 0 12 5.3726 12 12v25h-367v-25c0-6.6274 5.3726-12 12-12h3v-23c0-6.6274 5.3726-12 12-12z" style="fill-rule: nonzero;fill: #fffefa;"></path>
+            <path d="M208.3804 23.494c-7.3898 2.2748-11.5363 10.1095-9.2615 17.4993l4.7533 15.441c2.2568 7.3312 9.9929 11.4812 17.349 9.3068l78.9075-23.3249c8.8771-2.6241 12.8092-12.9871 7.9073-20.8395l-9.3573-14.9892c-3.362-5.3855-9.927-7.8345-15.9948-5.9666z" style="fill-rule: nonzero;fill: #fffefa;"></path>
+          </svg>
+          <div style="overflow: hidden;left: 50px;top: 256.9px;aspect-ratio: 1.39;width: auto;height: 156px;position: absolute;"><img src="images/3a31192b283fd6c7cc426f1111fc7014052a24a2.png" alt="小松饼 1" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+          <div style="overflow: hidden;left: 122px;top: 419.9px;aspect-ratio: 15.38;width: auto;height: 8px;position: absolute;"><img src="images/43de7704cdc6d18e574e2b7feeafcc041836429a.png" alt="font 2" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+        </div>
+        <div style="overflow: hidden;left: 748px;top: 292.1px;width: 367px;height: 511.9px;position: absolute;">
+          <svg width="330.5" height="424" viewBox="0 0 330.5 424" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none" style="left: 18px;top: 87.9px;width: 330.5px;height: 424px;position: absolute;filter: drop-shadow(1px 4px 24px rgba(0,0,0,0.25));backface-visibility: hidden;transform: translateZ(0);">
+            <defs>
+              <clippath id="def_0_0">
+                <rect x="0" y="0" width="330.5" height="424"></rect>
+              </clippath>
+              <lineargradient x1="0" y1="0.5" x2="1" y2="0.5" gradientUnits="userSpaceOnUse" gradientTransform="matrix(2.02372892389699e-14 424 -330.5 2.596251327480556e-14 330.5 -2.596251327480556e-14)" id="def_1_0">
+                <stop stop-color="#f8dde1" offset="0"></stop>
+                <stop stop-color="#928285" offset="1"></stop>
+              </lineargradient>
+              <mask id="def_2_0" maskUnits="userSpaceOnUse" x="0" y="0" width="330.5" height="424" style="mask-type: alpha;">
+                <path d="M0 0h330.5l-46 424h-241.5z" style="fill-rule: evenodd;fill: url(#def_1_0);"></path>
+              </mask>
+              <lineargradient x1="0" y1="0.5" x2="1" y2="0.5" gradientUnits="userSpaceOnUse" gradientTransform="matrix(2.7615786525795535e-14 436 -451 2.669730138635666e-14 399 -2.669730138635666e-14)" id="def_3_0">
+                <stop stop-color="#f8dde1" offset="0"></stop>
+                <stop stop-color="#928285" offset="1"></stop>
+              </lineargradient>
+              <image href="../_assets/images/f330abdc737ac28e33468229ef3c57416fd9667a.png" id="def_4_0"></image>
+              <pattern width="338" height="601" patternUnits="userSpaceOnUse" patternTransform="matrix(1 0 0 1 -5 -171.00048828125)" id="def_5_0">
+                <use href="#def_4_0" transform="matrix(0.29340277777777773 0 0 0.29345703125 0 0)"></use>
+              </pattern>
+            </defs>
+            <g style="clip-path: url(#def_0_0);">
+              <path d="M-52 0L399 0 399 436-52 436Z" style="fill-rule: nonzero;fill: url(#def_3_0);opacity: 0.9800000190734863;mask: url(#def_2_0);"></path>
+              <path d="M-52 0L399 0 399 436-52 436Z" style="fill-rule: nonzero;fill: #fffefa;mask: url(#def_2_0);"></path>
+              <path d="M-5-171.0005L333-171.0005 333 429.9995-5 429.9995Z" style="fill-rule: nonzero;fill: url(#def_5_0);opacity: 0.25999999046325684;mask: url(#def_2_0);"></path>
+              <path d="M6 391.0001L324 391 317.6653 450H12.3347L6 391.0001Z" style="fill-rule: nonzero;fill: #fffefa;mask: url(#def_2_0);"></path>
+              <path d="M6 391.0001L324 391 317.6653 450H12.3347L6 391.0001Z" style="stroke: #d9d9d9;stroke-width: 0.30000001192092896;mask: url(#def_2_0);"></path>
+            </g>
+          </svg>
+          <svg width="367" height="140.91780000000003" viewBox="0 0 367 140.91780000000003" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none" style="left: 0px;top: 0px;width: 367px;height: 140.9px;position: absolute;filter: drop-shadow(1px 2px 2px rgba(0,0,0,0.25));">
+            <path d="M27 15.9178h204.9922l49.6916-15.2967c6.0677-1.8679 12.6328 0.5812 15.9948 5.9666l5.8246 9.3301h35.4968c6.6274 0 12 5.3726 12 12v23h4c6.6274 0 12 5.3726 12 12v25h-367v-25c0-6.6274 5.3726-12 12-12h3v-23c0-6.6274 5.3726-12 12-12z" style="fill-rule: evenodd;fill: #f9e9ed;"></path>
+          </svg>
+          <div style="overflow: hidden;left: 50px;top: 256.9px;aspect-ratio: 1.39;width: auto;height: 156px;position: absolute;"><img src="images/3a31192b283fd6c7cc426f1111fc7014052a24a2.png" alt="小松饼 1" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+          <div style="overflow: hidden;left: 122px;top: 419.9px;aspect-ratio: 15.38;width: auto;height: 8px;position: absolute;"><img src="images/43de7704cdc6d18e574e2b7feeafcc041836429a.png" alt="font 2" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+          <div style="overflow: hidden;left: 37px;top: 128.9px;aspect-ratio: 2.9;width: auto;height: 100px;position: absolute;"><img src="images/8cc25c332e996864b814dcd513404fabda59e61e.png" alt="无底 2" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+        </div>
+        <div class="gg-card1" style="overflow: hidden;transform-origin: 50% 50%;transform: rotate(-71.4deg);left: -293.50px;top: 1624.75px;width: 1201px;height: 243.6px;position: absolute;">
+          <div style="background-color: #fffefa;transform-origin: 0 0;transform: translate(0.00px,222.60px) rotate(-90deg);left: 444.9px;top: 222.6px;width: 222.6px;height: 333.5px;position: absolute;filter: drop-shadow(1px 2px 2px rgba(0,0,0,0.25));"></div>
+          <div style="overflow: hidden;transform-origin: 0 0;left: 436px;top: 50.6px;aspect-ratio: 1.39;width: auto;height: 120px;position: absolute;"><img src="images/3a31192b283fd6c7cc426f1111fc7014052a24a2.png" alt="小松饼 1" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+          <div style="overflow: hidden;transform-origin: 0 0;left: 605px;top: 54.6px;aspect-ratio: 2.9;width: auto;height: 54px;position: absolute;"><img src="images/8cc25c332e996864b814dcd513404fabda59e61e.png" alt="无底 1" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+          <div style="transform-origin: 0 0;left: 0px;top: 138.6px;aspect-ratio: 11.44;width: auto;height: 105px;position: absolute;"></div>
+          <div style="overflow: hidden;transform-origin: 0 0;left: 679px;top: 159.6px;aspect-ratio: 8.65;width: auto;height: 9px;position: absolute;"><img src="images/18af6c5ab29e2a41a700f1720d9e38ab47098746.png" alt="Tel 1" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+          <div style="overflow: hidden;transform-origin: 0 0;left: 650px;top: 145.6px;aspect-ratio: 11.82;width: auto;height: 9px;position: absolute;"><img src="images/e00152e7b195b5599c0d6f70e6379abc54c76914.png" alt="地址 1" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+        </div>
+        <div class="gg-card2" style="overflow: hidden;transform-origin: 50% 50%;transform: rotate(-71.4deg);left: 247.50px;top: 1633.75px;width: 1201px;height: 243.6px;position: absolute;">
+          <div style="background-color: #f9e9ee;transform-origin: 0 0;transform: translate(0.00px,222.60px) rotate(-90deg);left: 444.9px;top: 222.6px;width: 222.6px;height: 333.5px;position: absolute;filter: drop-shadow(1px 2px 2px rgba(0,0,0,0.25));"></div>
+          <div style="overflow: hidden;transform-origin: 0 0;left: 436px;top: 50.6px;aspect-ratio: 1.39;width: auto;height: 120px;position: absolute;"><img src="images/3a31192b283fd6c7cc426f1111fc7014052a24a2.png" alt="小松饼 1" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+          <div style="overflow: hidden;transform-origin: 0 0;left: 605px;top: 54.6px;aspect-ratio: 2.9;width: auto;height: 54px;position: absolute;"><img src="images/8cc25c332e996864b814dcd513404fabda59e61e.png" alt="无底 1" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+          <div style="transform-origin: 0 0;left: 0px;top: 138.6px;aspect-ratio: 11.44;width: auto;height: 105px;position: absolute;"></div>
+          <div style="overflow: hidden;transform-origin: 0 0;left: 679px;top: 159.6px;aspect-ratio: 8.65;width: auto;height: 9px;position: absolute;"><img src="images/18af6c5ab29e2a41a700f1720d9e38ab47098746.png" alt="Tel 1" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+          <div style="overflow: hidden;transform-origin: 0 0;left: 650px;top: 145.6px;aspect-ratio: 11.82;width: auto;height: 9px;position: absolute;"><img src="images/e00152e7b195b5599c0d6f70e6379abc54c76914.png" alt="地址 1" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+        </div>
+        <div class="gg-stick1" style="overflow: hidden;left: 265.6px;top: 324.2px;width: 179.4px;height: 179.8px;position: absolute;">
+          <div style="border-width: 0.3px;border-style: solid;border-color: #f2f2f2;border-radius: calc(0.3px + 50%);background-color: #fffefa;transform-origin: 0 0;transform: translate(54.29px,0.00px) rotate(23.2deg);left: 53.8px;top: -0.4px;width: 137px;height: 137.8px;position: absolute;"></div>
+          <div style="overflow: hidden;left: 1.6px;top: 2px;width: 174.6px;height: 174.6px;position: absolute;">
+            <div style="border-radius: 50%;background-color: #fffefa;left: -2.2px;top: 10.8px;width: 160px;height: 154px;position: absolute;mask-image: url(&quot;data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgxIiBoZWlnaHQ9IjE4MSIgdmlld0JveD0iMCAwIDE4MSAxODEiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiIHN0eWxlPSJ0cmFuc2Zvcm0tb3JpZ2luOiAwIDA7dHJhbnNmb3JtOiBtYXRyaXgoMC45MTkzODMxMDg2MTU4NzUyLDAuMzkzMzYzMzU2NTkwMjcxLC0wLjM5MzM2MzM1NjU5MDI3MSwwLjkxOTM4MzEwODYxNTg3NTIsNTQuMzYyODE1ODA1NzQ3MzQ2LDApO2xlZnQ6IDQ5LjZweDt0b3A6IC0yLjdweDtmaWx0ZXI6IGRyb3Atc2hhZG93KDBweCA0cHggNHB4IHJnYmEoMCwwLDAsMC4yNSkpOyI+PGRlZnM+PGNsaXBQYXRoIGlkPSJkZWZfMCI+PHBhdGggY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNLTEwMS4zLTEwMS4zbDMzNS42IDAgMCAzMzUuNi0zMzUuNiAwWk0xMzMgNjYuNUMxMzMgMTAzLjIyNjkgMTAzLjIyNjkgMTMzIDY2LjUgMTMzIDI5Ljc3MzEgMTMzIDAgMTAzLjIyNjkgMCA2Ni41IDAgMjkuNzczMSAyOS43NzMxIDAgNjYuNSAwIDEwMy4yMjY5IDAgMTMzIDI5Ljc3MzEgMTMzIDY2LjVaIiAvPjwvY2xpcFBhdGg+PC9kZWZzPjxnIGlkPSJtYXNrX3VuZGVmaW5lZCIgbWFza1VuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeD0iMCIgeT0iMCIgd2lkdGg9IjEzMyIgaGVpZ2h0PSIxMzMiIHRyYW5zZm9ybT0iIHRyYW5zbGF0ZSgyLjcwMTY1NDAzMjUxMzYxMTQgMi43MDE2NTQwMzI1MTM2MTE0KSIgc3R5bGU9Im1hc2stdHlwZTogYWxwaGE7Ij48cGF0aCBkPSJNMTMzIDY2LjVDMTMzIDEwMy4yMjY5IDEwMy4yMjY5IDEzMyA2Ni41IDEzMyAyOS43NzMxIDEzMyAwIDEwMy4yMjY5IDAgNjYuNSAwIDI5Ljc3MzEgMjkuNzczMSAwIDY2LjUgMCAxMDMuMjI2OSAwIDEzMyAyOS43NzMxIDEzMyA2Ni41WiIgc3R5bGU9ImZpbGwtcnVsZTogbm9uemVybztmaWxsOiAjZmZmZWZhOyIgLz48cGF0aCBkPSJNMTMzIDY2LjVDMTMzIDEwMy4yMjY5IDEwMy4yMjY5IDEzMyA2Ni41IDEzMyAyOS43NzMxIDEzMyAwIDEwMy4yMjY5IDAgNjYuNSAwIDI5Ljc3MzEgMjkuNzczMSAwIDY2LjUgMCAxMDMuMjI2OSAwIDEzMyAyOS43NzMxIDEzMyA2Ni41WiIgY2xpcC1wYXRoPSJ1cmwoI2RlZl8wKSIgc3R5bGU9InN0cm9rZTogIzhkOGQ4ZDtzdHJva2Utd2lkdGg6IDIuNTk5OTk5OTA0NjMyNTY4NDsiIC8+PC9nPjwvc3ZnPg==&quot;);mask-repeat: no-repeat;mask-type: alpha;mask-position: 0.2px -10.8px;"></div>
+            <div style="overflow: hidden;transform-origin: 0 0;transform: rotate(6.8deg);left: 50.7px;top: 8.8px;aspect-ratio: 0.78;width: auto;height: 58.1px;opacity: 0.14;position: absolute;mask-image: url(&quot;data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTcyIiBoZWlnaHQ9IjE3MiIgdmlld0JveD0iMCAwIDE3MiAxNzIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiIHN0eWxlPSJ0cmFuc2Zvcm0tb3JpZ2luOiAwIDA7dHJhbnNmb3JtOiBtYXRyaXgoMC45NTk0MjQ1MTc5Mzc4NjEzLDAuMjgxOTY1NzkzNjE2ODkyNDUsLTAuMjgxOTY1NzkzNjE2ODkyNDUsMC45NTk0MjQ1MTc5Mzc4NjEzLDM4Ljk2NzY3MjYyNDA3MzgzLDApO2xlZnQ6IDQ5LjZweDt0b3A6IC0yLjdweDtmaWx0ZXI6IGRyb3Atc2hhZG93KDBweCA0cHggNHB4IHJnYmEoMCwwLDAsMC4yNSkpOyI+PGRlZnM+PGNsaXBQYXRoIGlkPSJkZWZfMCI+PHBhdGggY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNLTEwMS4zLTEwMS4zbDMzNS42IDAgMCAzMzUuNi0zMzUuNiAwWk0xMzMgNjYuNUMxMzMgMTAzLjIyNjkgMTAzLjIyNjkgMTMzIDY2LjUgMTMzIDI5Ljc3MzEgMTMzIDAgMTAzLjIyNjkgMCA2Ni41IDAgMjkuNzczMSAyOS43NzMxIDAgNjYuNSAwIDEwMy4yMjY5IDAgMTMzIDI5Ljc3MzEgMTMzIDY2LjVaIiAvPjwvY2xpcFBhdGg+PC9kZWZzPjxnIGlkPSJtYXNrX3VuZGVmaW5lZCIgbWFza1VuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeD0iMCIgeT0iMCIgd2lkdGg9IjEzMyIgaGVpZ2h0PSIxMzMiIHRyYW5zZm9ybT0iIHRyYW5zbGF0ZSgyLjcwMTY1NDAzMjUxMzYxMTQgMi43MDE2NTQwMzI1MTM2MTE0KSIgc3R5bGU9Im1hc2stdHlwZTogYWxwaGE7Ij48cGF0aCBkPSJNMTMzIDY2LjVDMTMzIDEwMy4yMjY5IDEwMy4yMjY5IDEzMyA2Ni41IDEzMyAyOS43NzMxIDEzMyAwIDEwMy4yMjY5IDAgNjYuNSAwIDI5Ljc3MzEgMjkuNzczMSAwIDY2LjUgMCAxMDMuMjI2OSAwIDEzMyAyOS43NzMxIDEzMyA2Ni41WiIgc3R5bGU9ImZpbGwtcnVsZTogbm9uemVybztmaWxsOiAjZmZmZWZhOyIgLz48cGF0aCBkPSJNMTMzIDY2LjVDMTMzIDEwMy4yMjY5IDEwMy4yMjY5IDEzMyA2Ni41IDEzMyAyOS43NzMxIDEzMyAwIDEwMy4yMjY5IDAgNjYuNSAwIDI5Ljc3MzEgMjkuNzczMSAwIDY2LjUgMCAxMDMuMjI2OSAwIDEzMyAyOS43NzMxIDEzMyA2Ni41WiIgY2xpcC1wYXRoPSJ1cmwoI2RlZl8wKSIgc3R5bGU9InN0cm9rZTogIzhkOGQ4ZDtzdHJva2Utd2lkdGg6IDIuNTk5OTk5OTA0NjMyNTY4NDsiIC8+PC9nPjwvc3ZnPg==&quot;);mask-repeat: no-repeat;mask-type: alpha;mask-position: -38.4px -8.9px;"><img src="images/9ccd6aa1cd047470b23bb47a62e6ec7f9a59ccb7.png" alt="图层 1 11" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+            <div style="overflow: hidden;left: 116.8px;top: 56.8px;aspect-ratio: 0.91;width: auto;height: 35px;opacity: 0.14;position: absolute;mask-image: url(&quot;data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgxIiBoZWlnaHQ9IjE4MSIgdmlld0JveD0iMCAwIDE4MSAxODEiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiIHN0eWxlPSJ0cmFuc2Zvcm0tb3JpZ2luOiAwIDA7dHJhbnNmb3JtOiBtYXRyaXgoMC45MTkzODMxMDg2MTU4NzUyLDAuMzkzMzYzMzU2NTkwMjcxLC0wLjM5MzM2MzM1NjU5MDI3MSwwLjkxOTM4MzEwODYxNTg3NTIsNTQuMzYyODE1ODA1NzQ3MzQ2LDApO2xlZnQ6IDQ5LjZweDt0b3A6IC0yLjdweDtmaWx0ZXI6IGRyb3Atc2hhZG93KDBweCA0cHggNHB4IHJnYmEoMCwwLDAsMC4yNSkpOyI+PGRlZnM+PGNsaXBQYXRoIGlkPSJkZWZfMCI+PHBhdGggY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNLTEwMS4zLTEwMS4zbDMzNS42IDAgMCAzMzUuNi0zMzUuNiAwWk0xMzMgNjYuNUMxMzMgMTAzLjIyNjkgMTAzLjIyNjkgMTMzIDY2LjUgMTMzIDI5Ljc3MzEgMTMzIDAgMTAzLjIyNjkgMCA2Ni41IDAgMjkuNzczMSAyOS43NzMxIDAgNjYuNSAwIDEwMy4yMjY5IDAgMTMzIDI5Ljc3MzEgMTMzIDY2LjVaIiAvPjwvY2xpcFBhdGg+PC9kZWZzPjxnIGlkPSJtYXNrX3VuZGVmaW5lZCIgbWFza1VuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeD0iMCIgeT0iMCIgd2lkdGg9IjEzMyIgaGVpZ2h0PSIxMzMiIHRyYW5zZm9ybT0iIHRyYW5zbGF0ZSgyLjcwMTY1NDAzMjUxMzYxMTQgMi43MDE2NTQwMzI1MTM2MTE0KSIgc3R5bGU9Im1hc2stdHlwZTogYWxwaGE7Ij48cGF0aCBkPSJNMTMzIDY2LjVDMTMzIDEwMy4yMjY5IDEwMy4yMjY5IDEzMyA2Ni41IDEzMyAyOS43NzMxIDEzMyAwIDEwMy4yMjY5IDAgNjYuNSAwIDI5Ljc3MzEgMjkuNzczMSAwIDY2LjUgMCAxMDMuMjI2OSAwIDEzMyAyOS43NzMxIDEzMyA2Ni41WiIgc3R5bGU9ImZpbGwtcnVsZTogbm9uemVybztmaWxsOiAjZmZmZWZhOyIgLz48cGF0aCBkPSJNMTMzIDY2LjVDMTMzIDEwMy4yMjY5IDEwMy4yMjY5IDEzMyA2Ni41IDEzMyAyOS43NzMxIDEzMyAwIDEwMy4yMjY5IDAgNjYuNSAwIDI5Ljc3MzEgMjkuNzczMSAwIDY2LjUgMCAxMDMuMjI2OSAwIDEzMyAyOS43NzMxIDEzMyA2Ni41WiIgY2xpcC1wYXRoPSJ1cmwoI2RlZl8wKSIgc3R5bGU9InN0cm9rZTogIzhkOGQ4ZDtzdHJva2Utd2lkdGg6IDIuNTk5OTk5OTA0NjMyNTY4NDsiIC8+PC9nPjwvc3ZnPg==&quot;);mask-repeat: no-repeat;mask-type: alpha;mask-position: -118.8px -56.8px;"><img src="images/16874398682d6ea4882eb03ed73f1df5d1997463.png" alt="图层 2 3" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+            <div style="overflow: hidden;left: 29.8px;top: 78.8px;aspect-ratio: 0.77;width: auto;height: 37px;opacity: 0.14;position: absolute;mask-image: url(&quot;data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgxIiBoZWlnaHQ9IjE4MSIgdmlld0JveD0iMCAwIDE4MSAxODEiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiIHN0eWxlPSJ0cmFuc2Zvcm0tb3JpZ2luOiAwIDA7dHJhbnNmb3JtOiBtYXRyaXgoMC45MTkzODMxMDg2MTU4NzUyLDAuMzkzMzYzMzU2NTkwMjcxLC0wLjM5MzM2MzM1NjU5MDI3MSwwLjkxOTM4MzEwODYxNTg3NTIsNTQuMzYyODE1ODA1NzQ3MzQ2LDApO2xlZnQ6IDQ5LjZweDt0b3A6IC0yLjdweDtmaWx0ZXI6IGRyb3Atc2hhZG93KDBweCA0cHggNHB4IHJnYmEoMCwwLDAsMC4yNSkpOyI+PGRlZnM+PGNsaXBQYXRoIGlkPSJkZWZfMCI+PHBhdGggY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNLTEwMS4zLTEwMS4zbDMzNS42IDAgMCAzMzUuNi0zMzUuNiAwWk0xMzMgNjYuNUMxMzMgMTAzLjIyNjkgMTAzLjIyNjkgMTMzIDY2LjUgMTMzIDI5Ljc3MzEgMTMzIDAgMTAzLjIyNjkgMCA2Ni41IDAgMjkuNzczMSAyOS43NzMxIDAgNjYuNSAwIDEwMy4yMjY5IDAgMTMzIDI5Ljc3MzEgMTMzIDY2LjVaIiAvPjwvY2xpcFBhdGg+PC9kZWZzPjxnIGlkPSJtYXNrX3VuZGVmaW5lZCIgbWFza1VuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeD0iMCIgeT0iMCIgd2lkdGg9IjEzMyIgaGVpZ2h0PSIxMzMiIHRyYW5zZm9ybT0iIHRyYW5zbGF0ZSgyLjcwMTY1NDAzMjUxMzYxMTQgMi43MDE2NTQwMzI1MTM2MTE0KSIgc3R5bGU9Im1hc2stdHlwZTogYWxwaGE7Ij48cGF0aCBkPSJNMTMzIDY2LjVDMTMzIDEwMy4yMjY5IDEwMy4yMjY5IDEzMyA2Ni41IDEzMyAyOS43NzMxIDEzMyAwIDEwMy4yMjY5IDAgNjYuNSAwIDI5Ljc3MzEgMjkuNzczMSAwIDY2LjUgMCAxMDMuMjI2OSAwIDEzMyAyOS43NzMxIDEzMyA2Ni41WiIgc3R5bGU9ImZpbGwtcnVsZTogbm9uemVybztmaWxsOiAjZmZmZWZhOyIgLz48cGF0aCBkPSJNMTMzIDY2LjVDMTMzIDEwMy4yMjY5IDEwMy4yMjY5IDEzMyA2Ni41IDEzMyAyOS43NzMxIDEzMyAwIDEwMy4yMjY5IDAgNjYuNSAwIDI5Ljc3MzEgMjkuNzczMSAwIDY2LjUgMCAxMDMuMjI2OSAwIDEzMyAyOS43NzMxIDEzMyA2Ni41WiIgY2xpcC1wYXRoPSJ1cmwoI2RlZl8wKSIgc3R5bGU9InN0cm9rZTogIzhkOGQ4ZDtzdHJva2Utd2lkdGg6IDIuNTk5OTk5OTA0NjMyNTY4NDsiIC8+PC9nPjwvc3ZnPg==&quot;);mask-repeat: no-repeat;mask-type: alpha;mask-position: -31.8px -78.8px;"><img src="images/cb3293d8d33dd166502851ab1a40c4f65fbdfbd4.png" alt="图层 4 2" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+            <div style="overflow: hidden;left: 86.8px;top: 108.8px;aspect-ratio: 0.8;width: auto;height: 44px;opacity: 0.14;position: absolute;mask-image: url(&quot;data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgxIiBoZWlnaHQ9IjE4MSIgdmlld0JveD0iMCAwIDE4MSAxODEiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiIHN0eWxlPSJ0cmFuc2Zvcm0tb3JpZ2luOiAwIDA7dHJhbnNmb3JtOiBtYXRyaXgoMC45MTkzODMxMDg2MTU4NzUyLDAuMzkzMzYzMzU2NTkwMjcxLC0wLjM5MzM2MzM1NjU5MDI3MSwwLjkxOTM4MzEwODYxNTg3NTIsNTQuMzYyODE1ODA1NzQ3MzQ2LDApO2xlZnQ6IDQ5LjZweDt0b3A6IC0yLjdweDtmaWx0ZXI6IGRyb3Atc2hhZG93KDBweCA0cHggNHB4IHJnYmEoMCwwLDAsMC4yNSkpOyI+PGRlZnM+PGNsaXBQYXRoIGlkPSJkZWZfMCI+PHBhdGggY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNLTEwMS4zLTEwMS4zbDMzNS42IDAgMCAzMzUuNi0zMzUuNiAwWk0xMzMgNjYuNUMxMzMgMTAzLjIyNjkgMTAzLjIyNjkgMTMzIDY2LjUgMTMzIDI5Ljc3MzEgMTMzIDAgMTAzLjIyNjkgMCA2Ni41IDAgMjkuNzczMSAyOS43NzMxIDAgNjYuNSAwIDEwMy4yMjY5IDAgMTMzIDI5Ljc3MzEgMTMzIDY2LjVaIiAvPjwvY2xpcFBhdGg+PC9kZWZzPjxnIGlkPSJtYXNrX3VuZGVmaW5lZCIgbWFza1VuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeD0iMCIgeT0iMCIgd2lkdGg9IjEzMyIgaGVpZ2h0PSIxMzMiIHRyYW5zZm9ybT0iIHRyYW5zbGF0ZSgyLjcwMTY1NDAzMjUxMzYxMTQgMi43MDE2NTQwMzI1MTM2MTE0KSIgc3R5bGU9Im1hc2stdHlwZTogYWxwaGE7Ij48cGF0aCBkPSJNMTMzIDY2LjVDMTMzIDEwMy4yMjY5IDEwMy4yMjY5IDEzMyA2Ni41IDEzMyAyOS43NzMxIDEzMyAwIDEwMy4yMjY5IDAgNjYuNSAwIDI5Ljc3MzEgMjkuNzczMSAwIDY2LjUgMCAxMDMuMjI2OSAwIDEzMyAyOS43NzMxIDEzMyA2Ni41WiIgc3R5bGU9ImZpbGwtcnVsZTogbm9uemVybztmaWxsOiAjZmZmZWZhOyIgLz48cGF0aCBkPSJNMTMzIDY2LjVDMTMzIDEwMy4yMjY5IDEwMy4yMjY5IDEzMyA2Ni41IDEzMyAyOS43NzMxIDEzMyAwIDEwMy4yMjY5IDAgNjYuNSAwIDI5Ljc3MzEgMjkuNzczMSAwIDY2LjUgMCAxMDMuMjI2OSAwIDEzMyAyOS43NzMxIDEzMyA2Ni41WiIgY2xpcC1wYXRoPSJ1cmwoI2RlZl8wKSIgc3R5bGU9InN0cm9rZTogIzhkOGQ4ZDtzdHJva2Utd2lkdGg6IDIuNTk5OTk5OTA0NjMyNTY4NDsiIC8+PC9nPjwvc3ZnPg==&quot;);mask-repeat: no-repeat;mask-type: alpha;mask-position: -88.8px -108.8px;"><img src="images/2f286c194e8920de82cbc28bfe67729f3a1ad68a.png" alt="图层 3 2" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+          </div>
+          <div style="overflow: hidden;transform-origin: 0 0;transform: rotate(23.2deg);left: 56.2px;top: 54.5px;aspect-ratio: 2.9;width: auto;height: 32px;position: absolute;"><img src="images/8cc25c332e996864b814dcd513404fabda59e61e.png" alt="无底 1" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+        </div>
+        <div class="gg-stick2" style="overflow: hidden;left: 798px;top: 324px;width: 179.4px;height: 179.8px;position: absolute;">
+          <div style="border-width: 0.3px;border-style: solid;border-color: #f2f2f2;border-radius: calc(0.3px + 50%);background-color: #fffefa;transform-origin: 0 0;transform: translate(54.29px,0.00px) rotate(23.2deg);left: 53.8px;top: -0.4px;width: 137px;height: 137.8px;position: absolute;"></div>
+          <div style="overflow: hidden;left: 1.6px;top: 2px;width: 174.6px;height: 174.6px;position: absolute;">
+            <div style="border-radius: 50%;background-color: #fffefa;left: -2.2px;top: 10.8px;width: 160px;height: 154px;position: absolute;mask-image: url(&quot;data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgxIiBoZWlnaHQ9IjE4MSIgdmlld0JveD0iMCAwIDE4MSAxODEiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiIHN0eWxlPSJ0cmFuc2Zvcm0tb3JpZ2luOiAwIDA7dHJhbnNmb3JtOiBtYXRyaXgoMC45MTkzODMxMDg2MTU4NzUyLDAuMzkzMzYzMzU2NTkwMjcxLC0wLjM5MzM2MzM1NjU5MDI3MSwwLjkxOTM4MzEwODYxNTg3NTIsNTQuMzYyODE1ODA1NzQ3MzQ2LDApO2xlZnQ6IDQ5LjZweDt0b3A6IC0yLjdweDtmaWx0ZXI6IGRyb3Atc2hhZG93KDBweCA0cHggNHB4IHJnYmEoMCwwLDAsMC4yNSkpOyI+PGRlZnM+PGNsaXBQYXRoIGlkPSJkZWZfMCI+PHBhdGggY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNLTEwMS4zLTEwMS4zbDMzNS42IDAgMCAzMzUuNi0zMzUuNiAwWk0xMzMgNjYuNUMxMzMgMTAzLjIyNjkgMTAzLjIyNjkgMTMzIDY2LjUgMTMzIDI5Ljc3MzEgMTMzIDAgMTAzLjIyNjkgMCA2Ni41IDAgMjkuNzczMSAyOS43NzMxIDAgNjYuNSAwIDEwMy4yMjY5IDAgMTMzIDI5Ljc3MzEgMTMzIDY2LjVaIiAvPjwvY2xpcFBhdGg+PC9kZWZzPjxnIGlkPSJtYXNrX3VuZGVmaW5lZCIgbWFza1VuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeD0iMCIgeT0iMCIgd2lkdGg9IjEzMyIgaGVpZ2h0PSIxMzMiIHRyYW5zZm9ybT0iIHRyYW5zbGF0ZSgyLjcwMTY1NDAzMjUxMzYxMTQgMi43MDE2NTQwMzI1MTM2MTE0KSIgc3R5bGU9Im1hc2stdHlwZTogYWxwaGE7Ij48cGF0aCBkPSJNMTMzIDY2LjVDMTMzIDEwMy4yMjY5IDEwMy4yMjY5IDEzMyA2Ni41IDEzMyAyOS43NzMxIDEzMyAwIDEwMy4yMjY5IDAgNjYuNSAwIDI5Ljc3MzEgMjkuNzczMSAwIDY2LjUgMCAxMDMuMjI2OSAwIDEzMyAyOS43NzMxIDEzMyA2Ni41WiIgc3R5bGU9ImZpbGwtcnVsZTogbm9uemVybztmaWxsOiAjZmZmZWZhOyIgLz48cGF0aCBkPSJNMTMzIDY2LjVDMTMzIDEwMy4yMjY5IDEwMy4yMjY5IDEzMyA2Ni41IDEzMyAyOS43NzMxIDEzMyAwIDEwMy4yMjY5IDAgNjYuNSAwIDI5Ljc3MzEgMjkuNzczMSAwIDY2LjUgMCAxMDMuMjI2OSAwIDEzMyAyOS43NzMxIDEzMyA2Ni41WiIgY2xpcC1wYXRoPSJ1cmwoI2RlZl8wKSIgc3R5bGU9InN0cm9rZTogIzhkOGQ4ZDtzdHJva2Utd2lkdGg6IDIuNTk5OTk5OTA0NjMyNTY4NDsiIC8+PC9nPjwvc3ZnPg==&quot;);mask-repeat: no-repeat;mask-type: alpha;mask-position: 0.2px -10.8px;"></div>
+            <div style="overflow: hidden;transform-origin: 0 0;transform: rotate(6.8deg);left: 50.7px;top: 8.8px;aspect-ratio: 0.78;width: auto;height: 58.1px;opacity: 0.14;position: absolute;mask-image: url(&quot;data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTcyIiBoZWlnaHQ9IjE3MiIgdmlld0JveD0iMCAwIDE3MiAxNzIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiIHN0eWxlPSJ0cmFuc2Zvcm0tb3JpZ2luOiAwIDA7dHJhbnNmb3JtOiBtYXRyaXgoMC45NTk0MjQ1MTc5Mzc4NjEzLDAuMjgxOTY1NzkzNjE2ODkyNDUsLTAuMjgxOTY1NzkzNjE2ODkyNDUsMC45NTk0MjQ1MTc5Mzc4NjEzLDM4Ljk2NzY3MjYyNDA3MzgzLDApO2xlZnQ6IDQ5LjZweDt0b3A6IC0yLjdweDtmaWx0ZXI6IGRyb3Atc2hhZG93KDBweCA0cHggNHB4IHJnYmEoMCwwLDAsMC4yNSkpOyI+PGRlZnM+PGNsaXBQYXRoIGlkPSJkZWZfMCI+PHBhdGggY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNLTEwMS4zLTEwMS4zbDMzNS42IDAgMCAzMzUuNi0zMzUuNiAwWk0xMzMgNjYuNUMxMzMgMTAzLjIyNjkgMTAzLjIyNjkgMTMzIDY2LjUgMTMzIDI5Ljc3MzEgMTMzIDAgMTAzLjIyNjkgMCA2Ni41IDAgMjkuNzczMSAyOS43NzMxIDAgNjYuNSAwIDEwMy4yMjY5IDAgMTMzIDI5Ljc3MzEgMTMzIDY2LjVaIiAvPjwvY2xpcFBhdGg+PC9kZWZzPjxnIGlkPSJtYXNrX3VuZGVmaW5lZCIgbWFza1VuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeD0iMCIgeT0iMCIgd2lkdGg9IjEzMyIgaGVpZ2h0PSIxMzMiIHRyYW5zZm9ybT0iIHRyYW5zbGF0ZSgyLjcwMTY1NDAzMjUxMzYxMTQgMi43MDE2NTQwMzI1MTM2MTE0KSIgc3R5bGU9Im1hc2stdHlwZTogYWxwaGE7Ij48cGF0aCBkPSJNMTMzIDY2LjVDMTMzIDEwMy4yMjY5IDEwMy4yMjY5IDEzMyA2Ni41IDEzMyAyOS43NzMxIDEzMyAwIDEwMy4yMjY5IDAgNjYuNSAwIDI5Ljc3MzEgMjkuNzczMSAwIDY2LjUgMCAxMDMuMjI2OSAwIDEzMyAyOS43NzMxIDEzMyA2Ni41WiIgc3R5bGU9ImZpbGwtcnVsZTogbm9uemVybztmaWxsOiAjZmZmZWZhOyIgLz48cGF0aCBkPSJNMTMzIDY2LjVDMTMzIDEwMy4yMjY5IDEwMy4yMjY5IDEzMyA2Ni41IDEzMyAyOS43NzMxIDEzMyAwIDEwMy4yMjY5IDAgNjYuNSAwIDI5Ljc3MzEgMjkuNzczMSAwIDY2LjUgMCAxMDMuMjI2OSAwIDEzMyAyOS43NzMxIDEzMyA2Ni41WiIgY2xpcC1wYXRoPSJ1cmwoI2RlZl8wKSIgc3R5bGU9InN0cm9rZTogIzhkOGQ4ZDtzdHJva2Utd2lkdGg6IDIuNTk5OTk5OTA0NjMyNTY4NDsiIC8+PC9nPjwvc3ZnPg==&quot;);mask-repeat: no-repeat;mask-type: alpha;mask-position: -38.4px -8.9px;"><img src="images/9ccd6aa1cd047470b23bb47a62e6ec7f9a59ccb7.png" alt="图层 1 11" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+            <div style="overflow: hidden;left: 116.8px;top: 56.8px;aspect-ratio: 0.91;width: auto;height: 35px;opacity: 0.14;position: absolute;mask-image: url(&quot;data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgxIiBoZWlnaHQ9IjE4MSIgdmlld0JveD0iMCAwIDE4MSAxODEiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiIHN0eWxlPSJ0cmFuc2Zvcm0tb3JpZ2luOiAwIDA7dHJhbnNmb3JtOiBtYXRyaXgoMC45MTkzODMxMDg2MTU4NzUyLDAuMzkzMzYzMzU2NTkwMjcxLC0wLjM5MzM2MzM1NjU5MDI3MSwwLjkxOTM4MzEwODYxNTg3NTIsNTQuMzYyODE1ODA1NzQ3MzQ2LDApO2xlZnQ6IDQ5LjZweDt0b3A6IC0yLjdweDtmaWx0ZXI6IGRyb3Atc2hhZG93KDBweCA0cHggNHB4IHJnYmEoMCwwLDAsMC4yNSkpOyI+PGRlZnM+PGNsaXBQYXRoIGlkPSJkZWZfMCI+PHBhdGggY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNLTEwMS4zLTEwMS4zbDMzNS42IDAgMCAzMzUuNi0zMzUuNiAwWk0xMzMgNjYuNUMxMzMgMTAzLjIyNjkgMTAzLjIyNjkgMTMzIDY2LjUgMTMzIDI5Ljc3MzEgMTMzIDAgMTAzLjIyNjkgMCA2Ni41IDAgMjkuNzczMSAyOS43NzMxIDAgNjYuNSAwIDEwMy4yMjY5IDAgMTMzIDI5Ljc3MzEgMTMzIDY2LjVaIiAvPjwvY2xpcFBhdGg+PC9kZWZzPjxnIGlkPSJtYXNrX3VuZGVmaW5lZCIgbWFza1VuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeD0iMCIgeT0iMCIgd2lkdGg9IjEzMyIgaGVpZ2h0PSIxMzMiIHRyYW5zZm9ybT0iIHRyYW5zbGF0ZSgyLjcwMTY1NDAzMjUxMzYxMTQgMi43MDE2NTQwMzI1MTM2MTE0KSIgc3R5bGU9Im1hc2stdHlwZTogYWxwaGE7Ij48cGF0aCBkPSJNMTMzIDY2LjVDMTMzIDEwMy4yMjY5IDEwMy4yMjY5IDEzMyA2Ni41IDEzMyAyOS43NzMxIDEzMyAwIDEwMy4yMjY5IDAgNjYuNSAwIDI5Ljc3MzEgMjkuNzczMSAwIDY2LjUgMCAxMDMuMjI2OSAwIDEzMyAyOS43NzMxIDEzMyA2Ni41WiIgc3R5bGU9ImZpbGwtcnVsZTogbm9uemVybztmaWxsOiAjZmZmZWZhOyIgLz48cGF0aCBkPSJNMTMzIDY2LjVDMTMzIDEwMy4yMjY5IDEwMy4yMjY5IDEzMyA2Ni41IDEzMyAyOS43NzMxIDEzMyAwIDEwMy4yMjY5IDAgNjYuNSAwIDI5Ljc3MzEgMjkuNzczMSAwIDY2LjUgMCAxMDMuMjI2OSAwIDEzMyAyOS43NzMxIDEzMyA2Ni41WiIgY2xpcC1wYXRoPSJ1cmwoI2RlZl8wKSIgc3R5bGU9InN0cm9rZTogIzhkOGQ4ZDtzdHJva2Utd2lkdGg6IDIuNTk5OTk5OTA0NjMyNTY4NDsiIC8+PC9nPjwvc3ZnPg==&quot;);mask-repeat: no-repeat;mask-type: alpha;mask-position: -118.8px -56.8px;"><img src="images/16874398682d6ea4882eb03ed73f1df5d1997463.png" alt="图层 2 3" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+            <div style="overflow: hidden;left: 29.8px;top: 78.8px;aspect-ratio: 0.77;width: auto;height: 37px;opacity: 0.14;position: absolute;mask-image: url(&quot;data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgxIiBoZWlnaHQ9IjE4MSIgdmlld0JveD0iMCAwIDE4MSAxODEiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiIHN0eWxlPSJ0cmFuc2Zvcm0tb3JpZ2luOiAwIDA7dHJhbnNmb3JtOiBtYXRyaXgoMC45MTkzODMxMDg2MTU4NzUyLDAuMzkzMzYzMzU2NTkwMjcxLC0wLjM5MzM2MzM1NjU5MDI3MSwwLjkxOTM4MzEwODYxNTg3NTIsNTQuMzYyODE1ODA1NzQ3MzQ2LDApO2xlZnQ6IDQ5LjZweDt0b3A6IC0yLjdweDtmaWx0ZXI6IGRyb3Atc2hhZG93KDBweCA0cHggNHB4IHJnYmEoMCwwLDAsMC4yNSkpOyI+PGRlZnM+PGNsaXBQYXRoIGlkPSJkZWZfMCI+PHBhdGggY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNLTEwMS4zLTEwMS4zbDMzNS42IDAgMCAzMzUuNi0zMzUuNiAwWk0xMzMgNjYuNUMxMzMgMTAzLjIyNjkgMTAzLjIyNjkgMTMzIDY2LjUgMTMzIDI5Ljc3MzEgMTMzIDAgMTAzLjIyNjkgMCA2Ni41IDAgMjkuNzczMSAyOS43NzMxIDAgNjYuNSAwIDEwMy4yMjY5IDAgMTMzIDI5Ljc3MzEgMTMzIDY2LjVaIiAvPjwvY2xpcFBhdGg+PC9kZWZzPjxnIGlkPSJtYXNrX3VuZGVmaW5lZCIgbWFza1VuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeD0iMCIgeT0iMCIgd2lkdGg9IjEzMyIgaGVpZ2h0PSIxMzMiIHRyYW5zZm9ybT0iIHRyYW5zbGF0ZSgyLjcwMTY1NDAzMjUxMzYxMTQgMi43MDE2NTQwMzI1MTM2MTE0KSIgc3R5bGU9Im1hc2stdHlwZTogYWxwaGE7Ij48cGF0aCBkPSJNMTMzIDY2LjVDMTMzIDEwMy4yMjY5IDEwMy4yMjY5IDEzMyA2Ni41IDEzMyAyOS43NzMxIDEzMyAwIDEwMy4yMjY5IDAgNjYuNSAwIDI5Ljc3MzEgMjkuNzczMSAwIDY2LjUgMCAxMDMuMjI2OSAwIDEzMyAyOS43NzMxIDEzMyA2Ni41WiIgc3R5bGU9ImZpbGwtcnVsZTogbm9uemVybztmaWxsOiAjZmZmZWZhOyIgLz48cGF0aCBkPSJNMTMzIDY2LjVDMTMzIDEwMy4yMjY5IDEwMy4yMjY5IDEzMyA2Ni41IDEzMyAyOS43NzMxIDEzMyAwIDEwMy4yMjY5IDAgNjYuNSAwIDI5Ljc3MzEgMjkuNzczMSAwIDY2LjUgMCAxMDMuMjI2OSAwIDEzMyAyOS43NzMxIDEzMyA2Ni41WiIgY2xpcC1wYXRoPSJ1cmwoI2RlZl8wKSIgc3R5bGU9InN0cm9rZTogIzhkOGQ4ZDtzdHJva2Utd2lkdGg6IDIuNTk5OTk5OTA0NjMyNTY4NDsiIC8+PC9nPjwvc3ZnPg==&quot;);mask-repeat: no-repeat;mask-type: alpha;mask-position: -31.8px -78.8px;"><img src="images/cb3293d8d33dd166502851ab1a40c4f65fbdfbd4.png" alt="图层 4 2" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+            <div style="overflow: hidden;left: 86.8px;top: 108.8px;aspect-ratio: 0.8;width: auto;height: 44px;opacity: 0.14;position: absolute;mask-image: url(&quot;data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgxIiBoZWlnaHQ9IjE4MSIgdmlld0JveD0iMCAwIDE4MSAxODEiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiIHN0eWxlPSJ0cmFuc2Zvcm0tb3JpZ2luOiAwIDA7dHJhbnNmb3JtOiBtYXRyaXgoMC45MTkzODMxMDg2MTU4NzUyLDAuMzkzMzYzMzU2NTkwMjcxLC0wLjM5MzM2MzM1NjU5MDI3MSwwLjkxOTM4MzEwODYxNTg3NTIsNTQuMzYyODE1ODA1NzQ3MzQ2LDApO2xlZnQ6IDQ5LjZweDt0b3A6IC0yLjdweDtmaWx0ZXI6IGRyb3Atc2hhZG93KDBweCA0cHggNHB4IHJnYmEoMCwwLDAsMC4yNSkpOyI+PGRlZnM+PGNsaXBQYXRoIGlkPSJkZWZfMCI+PHBhdGggY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNLTEwMS4zLTEwMS4zbDMzNS42IDAgMCAzMzUuNi0zMzUuNiAwWk0xMzMgNjYuNUMxMzMgMTAzLjIyNjkgMTAzLjIyNjkgMTMzIDY2LjUgMTMzIDI5Ljc3MzEgMTMzIDAgMTAzLjIyNjkgMCA2Ni41IDAgMjkuNzczMSAyOS43NzMxIDAgNjYuNSAwIDEwMy4yMjY5IDAgMTMzIDI5Ljc3MzEgMTMzIDY2LjVaIiAvPjwvY2xpcFBhdGg+PC9kZWZzPjxnIGlkPSJtYXNrX3VuZGVmaW5lZCIgbWFza1VuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeD0iMCIgeT0iMCIgd2lkdGg9IjEzMyIgaGVpZ2h0PSIxMzMiIHRyYW5zZm9ybT0iIHRyYW5zbGF0ZSgyLjcwMTY1NDAzMjUxMzYxMTQgMi43MDE2NTQwMzI1MTM2MTE0KSIgc3R5bGU9Im1hc2stdHlwZTogYWxwaGE7Ij48cGF0aCBkPSJNMTMzIDY2LjVDMTMzIDEwMy4yMjY5IDEwMy4yMjY5IDEzMyA2Ni41IDEzMyAyOS43NzMxIDEzMyAwIDEwMy4yMjY5IDAgNjYuNSAwIDI5Ljc3MzEgMjkuNzczMSAwIDY2LjUgMCAxMDMuMjI2OSAwIDEzMyAyOS43NzMxIDEzMyA2Ni41WiIgc3R5bGU9ImZpbGwtcnVsZTogbm9uemVybztmaWxsOiAjZmZmZWZhOyIgLz48cGF0aCBkPSJNMTMzIDY2LjVDMTMzIDEwMy4yMjY5IDEwMy4yMjY5IDEzMyA2Ni41IDEzMyAyOS43NzMxIDEzMyAwIDEwMy4yMjY5IDAgNjYuNSAwIDI5Ljc3MzEgMjkuNzczMSAwIDY2LjUgMCAxMDMuMjI2OSAwIDEzMyAyOS43NzMxIDEzMyA2Ni41WiIgY2xpcC1wYXRoPSJ1cmwoI2RlZl8wKSIgc3R5bGU9InN0cm9rZTogIzhkOGQ4ZDtzdHJva2Utd2lkdGg6IDIuNTk5OTk5OTA0NjMyNTY4NDsiIC8+PC9nPjwvc3ZnPg==&quot;);mask-repeat: no-repeat;mask-type: alpha;mask-position: -88.8px -108.8px;"><img src="images/2f286c194e8920de82cbc28bfe67729f3a1ad68a.png" alt="图层 3 2" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+          </div>
+          <div style="overflow: hidden;transform-origin: 0 0;transform: rotate(23.2deg);left: 56.2px;top: 54.5px;aspect-ratio: 2.9;width: auto;height: 32px;position: absolute;"><img src="images/8cc25c332e996864b814dcd513404fabda59e61e.png" alt="无底 1" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+        </div>
+      </div>
+      <div style="overflow: hidden;left: -25px;top: 6984.5px;aspect-ratio: 1.41;width: auto;height: 1055px;position: absolute;"><img src="images/65ea9bc52dd8f55c2eb8cf01556f87a9d65303ba.png" alt="ChatGPT Image Aug 27, 2026, 02_47_40 PM 1" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+      <div style="overflow: hidden;left: calc(-726px + 50%);top: 3897.5px;aspect-ratio: 1.41;width: auto;height: 1027px;position: absolute;"><img src="images/a022b14e57ba6488ff8729c6d2551158c8508b54.png" alt="ChatGPT Image Aug 27, 2026, 02_47_58 PM 1" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+      <div style="overflow: hidden;left: -43px;top: 4932.5px;aspect-ratio: 1.52;width: auto;height: 1018px;position: absolute;"><img src="images/5384a32704d447df3e714a059cc9f019a98b1ecc.png" alt="ChatGPT Image Aug 26, 2026, 11_51_35 PM 1" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+      <div style="overflow: hidden;left: -55px;top: 8047.5px;aspect-ratio: 1.57;width: auto;height: 1002px;position: absolute;"><img src="images/057a9c646e171a86fcfaab178f6e7b7ce7065218.png" alt="ChatGPT Image Aug 26, 2026, 11_51_59 PM 1" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+      <div style="overflow: hidden;left: 0px;top: 5959.5px;aspect-ratio: 1.42;width: auto;height: 1016px;position: absolute;"><img src="images/f77758a25a7123e390f73ccf72a97aafda228eb1.png" alt="image 24" style="inset: 0;width: 100%;height: 100%;position: absolute;object-fit: cover;"></div>
+      <div style="overflow: hidden;display: flex;flex-direction: column;row-gap: 36px;align-items: start;justify-content: flex-start;left: 57px;top: 355px;width: 1312px;position: absolute;">
+        <div style="overflow: hidden;display: flex;flex-direction: row;grid-column-gap: 0px;align-items: start;justify-content: flex-start;width: 100%;position: relative;flex-shrink: 0;"><span class="text" style="display: inline;text-align: left;line-height: 16px;font-size: 12px;font-family: Inter, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;text-transform: uppercase;color: #55544f;width: 336px;position: relative;flex-shrink: 0;">Project Background</span><span class="text" style="display: inline;text-align: left;line-height: 24px;font-size: 15px;font-family: Inter, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;color: #11110f;width: 528px;position: relative;flex-shrink: 0;">GeGe is a local pancake shop whose name suggests the feeling of satisfaction after eating. The redesign develops this playful idea into a more distinctive identity while retaining the shop’s familiar pink colour palette.</span></div>
+        <div style="overflow: hidden;display: flex;flex-direction: row;grid-column-gap: 0px;align-items: start;justify-content: flex-start;width: 100%;position: relative;flex-shrink: 0;"><span class="text" style="display: inline;text-align: left;line-height: 16px;font-size: 12px;font-family: Inter, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;text-transform: uppercase;color: #55544f;width: 336px;position: relative;flex-shrink: 0;">Design Scope</span><span class="text" style="display: inline;text-align: left;line-height: 24px;font-size: 15px;font-family: Inter, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;color: #11110f;width: 528px;position: relative;flex-shrink: 0;">Logo Redesign · Custom Lettering · Character Illustration · Packaging · Brand Applications</span></div>
+        <div style="overflow: hidden;display: flex;flex-direction: row;grid-column-gap: 0px;align-items: start;justify-content: flex-start;width: 100%;position: relative;flex-shrink: 0;"><span class="text" style="display: inline;text-align: left;line-height: 16px;font-size: 12px;font-family: Inter, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;text-transform: uppercase;color: #55544f;width: 336px;position: relative;flex-shrink: 0;">Design Approach</span><span class="text" style="display: inline;text-align: left;line-height: 24px;font-size: 15px;font-family: Inter, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;color: #11110f;width: 528px;position: relative;flex-shrink: 0;">Rounded and inflated letterforms reference the soft texture of pancakes, while melting and bitten details introduce associations with butter, sweetness and appetite. The lettering, colour palette and character illustration are extended across different touchpoints to create a friendly and cohesive visual language.</span></div>
+      </div>
+      <div style="background-color: #f4f1e9;overflow: hidden;left: 0px;top: 0px;width: 1440px;height: 342px;position: absolute;">
+        <span class="text" style="display: inline;text-align: left;line-height: 16px;font-size: 12px;font-family: Inter, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;color: #55544f;left: 56px;top: 116px;width: 500px;position: absolute;">VISUAL · IDENTITY</span>
+        <span class="text" style="display: inline;text-align: left;line-height: 66px;font-size: 64px;font-family: &quot;Instrument Serif&quot;, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;letter-spacing: -1px;color: #55544f;left: 56px;top: 150px;width: 1100px;position: absolute;">GeGe Pancake Shop</span>
+        <span class="text" style="display: inline;text-align: left;line-height: 16px;font-size: 12px;font-family: Inter, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;color: #55544f;left: 56px;top: 290px;width: 140px;position: absolute;">← ALL WORK</span>
+        <div style="background-color: #b8b4aa;left: 56px;top: 78px;width: 1328px;height: 1px;position: absolute;"></div>
+      </div>
+      <span class="text" style="display: inline;text-align: left;line-height: 48px;font-size: 46px;font-family: &quot;Instrument Serif&quot;, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;letter-spacing: -0.5px;color: #11110f;left: 68px;top: 2868px;width: 398px;position: absolute;">Takeaway System</span>
+      <span class="text" style="display: inline;text-align: left;line-height: 24px;font-size: 15px;font-family: Inter, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;color: #11110f;left: 68px;top: 2937px;width: 480px;position: absolute;">Cups, cards and stickers operate as one coordinated family. The primary cup forms establish the character-led identity; supporting print pieces extend it through ordering, gifting and takeaway moments.</span>
+      <div style="background-color: #f4f1e9;overflow: hidden;left: 0px;top: 9049px;width: 1440px;height: 320px;position: absolute;">
+        
+        <span class="text" style="display: inline;text-align: left;line-height: 16px;font-size: 12px;font-family: Inter, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;letter-spacing: 0.5px;color: rgba(15,15,14,0.65);left: 64px;top: 72px;width: max-content;position: absolute;">NEXT PROJECT</span>
+        <span class="text" style="display: inline;text-align: left;line-height: 16px;font-size: 12px;font-family: Inter, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;color: rgba(15,15,14,0.65);left: 64px;top: 104px;width: max-content;position: absolute;">SYDNEY OPEN 2021</span>
+        <span class="text" style="display: inline;text-align: right;line-height: 56px;font-size: 52px;font-family: &quot;Instrument Serif&quot;, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;color: #0f0f0e;left: 1016px;top: 74px;width: 360px;height: 64px;position: absolute;">NEXT →</span>
+      </div>
+      <div style="background-color: #f4f1e9;left: 0px;top: 0px;width: 1440px;height: 80px;position: absolute;">
+        <span class="text" style="display: inline;text-align: left;line-height: 16px;font-size: 12px;font-family: Inter, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;color: #11110f;left: 32px;top: 32px;width: 160px;position: absolute;">GEMMA YANG</span>
+        <span class="text" style="display: inline;text-align: left;line-height: 16px;font-size: 12px;font-family: Inter, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;color: #11110f;left: 182px;top: 32px;width: 60px;position: absolute;">WORK</span>
+        <span class="text" style="display: inline;text-align: left;line-height: 16px;font-size: 12px;font-family: Inter, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;color: #11110f;left: 268px;top: 32px;width: 70px;position: absolute;">ABOUT</span>
+        <span class="text" style="display: inline;text-align: left;line-height: 16px;font-size: 12px;font-family: Inter, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;color: #11110f;left: 1164px;top: 32px;width: 244px;position: absolute;">GEMMAYANG22@GMAIL.COM</span>
+        <div style="background-color: #b8b4aa;left: 0px;top: 79px;width: 1440px;height: 1px;position: absolute;"></div>
+      </div>
+    </div>
+  
+<script src="../site.js"></script>
+<script>
+/* The exporter flattened Figma's cup1 / cup2 into two sibling copies. Find them by
+   walking up from the "font 2" artwork (it appears once in each) to the first level
+   where their ancestor chains diverge, then run the Figma 6s sequence on the pair. */
+(function () {
+  var marks = [].slice.call(document.querySelectorAll('img[alt="font 2"]'));
+  if (marks.length < 2) return;
+  function chain(el) { var a = []; while (el) { a.unshift(el); el = el.parentElement; } return a; }
+  var A = chain(marks[0]), B = chain(marks[1]), i = 0;
+  while (i < A.length && i < B.length && A[i] === B[i]) i++;
+  var g1 = A[i], g2 = B[i];
+  if (!g1 || !g2) return;
+  if (g1.offsetLeft > g2.offsetLeft) { var t = g1; g1 = g2; g2 = t; }
+  g1.classList.add('gg-cup1');
+  g2.classList.add('gg-cup2');
+})();
+</script>
+</body>
+</html>

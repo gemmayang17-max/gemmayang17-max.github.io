@@ -1,0 +1,82 @@
+@view-transition {
+  navigation: auto;
+}
+
+html,
+body {
+  background: #f4f1e9;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 260ms;
+  animation-timing-function: cubic-bezier(.22, 1, .36, 1);
+  mix-blend-mode: normal;
+}
+
+::view-transition-old(root) {
+  animation-name: portfolio-page-out;
+}
+
+::view-transition-new(root) {
+  animation-name: portfolio-page-in;
+}
+
+@keyframes portfolio-page-out {
+  from { opacity: 1; }
+  to { opacity: .995; }
+}
+
+@keyframes portfolio-page-in {
+  from { opacity: .995; }
+  to { opacity: 1; }
+}
+
+html:not(.portfolio-motion-ready) .seq,
+html:not(.portfolio-motion-ready) .cu-gif > div,
+html:not(.portfolio-motion-ready) .pstand > div,
+html:not(.portfolio-motion-ready) .tag-a,
+html:not(.portfolio-motion-ready) .tag-b,
+html:not(.portfolio-motion-ready) #hero .anim,
+html:not(.portfolio-motion-ready) #track {
+  animation-play-state: paused !important;
+}
+
+html:not(.portfolio-motion-ready) .seq:not(.s1),
+html:not(.portfolio-motion-ready) .cu-gif > div:not(:first-child),
+html:not(.portfolio-motion-ready) .pstand > div:not(:first-child),
+html:not(.portfolio-motion-ready) img[src$=".gif"],
+html:not(.portfolio-motion-ready) img[src*=".gif?"] {
+  opacity: 0 !important;
+}
+
+
+html.portfolio-page-leaving::before,
+html.portfolio-page-entering::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 2147483647;
+  pointer-events: none;
+  background: #f4f1e9;
+}
+
+html.portfolio-page-leaving::before {
+  opacity: 0;
+  animation: portfolio-cover-in 160ms cubic-bezier(.22, 1, .36, 1) forwards;
+}
+
+html.portfolio-page-entering::before {
+  opacity: 1;
+  animation: portfolio-cover-out 240ms cubic-bezier(.22, 1, .36, 1) forwards;
+}
+
+@keyframes portfolio-cover-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes portfolio-cover-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
