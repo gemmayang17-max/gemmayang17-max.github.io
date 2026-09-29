@@ -6,6 +6,7 @@
     <link rel="preconnect" href="https://cdn.divriots.com/" crossorigin="">
     <link rel="preconnect" href="https://fonts.googleapis.com/">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Source+Sans+3:wght@400;700&amp;display=swap" rel="stylesheet">
     <style>
 /* latin-ext */
 @font-face {
@@ -28,17 +29,122 @@
 </style>
     <style>
       #home-turntable { position:absolute; left:924px; top:345px; width:486px; height:340px; transform:scale(.9); transform-origin:top left; }
-      #home-vinyl { position:absolute; left:0; top:8px; width:322px; height:322px; border-radius:50%; overflow:hidden; transform-origin:50% 50%; }
+      #home-vinyl { position:absolute; left:0; top:8px; width:322px; height:322px; border-radius:50%; overflow:hidden; transform-origin:50% 50%; cursor:pointer; z-index:1; animation:home-vinyl-spin 8s linear infinite; animation-play-state:paused; }
       #home-vinyl-art { position:absolute; left:-12px; top:-12px; width:346px; height:334px; max-width:none; }
       #home-tonearm-control { position:absolute; left:144px; top:-79px; width:360px; height:360px; z-index:2; cursor:pointer; }
       #home-tonearm { width:100%; height:100%; object-fit:contain; transform-origin:82% 34%; transform:rotate(38deg); transition:transform .8s cubic-bezier(.22,1,.36,1); }
+      #home-player-prompt { position:absolute; left:0; top:337px; width:322px; color:#cd3023; text-align:center; font:500 10px/1 Inter,system-ui,sans-serif; letter-spacing:.03em; opacity:0; transform:translateY(-2px); transition:opacity .14s ease-out,transform .24s cubic-bezier(.16,1,.3,1); pointer-events:none; }
+      @media (hover:hover) and (pointer:fine) {
+        #home-turntable.is-previewing #home-tonearm { transform:rotate(0deg) translate(0,0); }
+        #home-turntable.is-previewing #home-player-prompt { opacity:1; transform:translateY(0); }
+      }
       #home-turntable.is-playing #home-tonearm { transform:rotate(0deg) translate(0,0); }
-      #home-turntable.is-playing #home-vinyl { animation:home-vinyl-spin 8s linear infinite; }
-      #home-tonearm-control:focus-visible { outline:1px solid #cd3023; outline-offset:-44px; }
+      #home-turntable.is-playing #home-vinyl { animation-play-state:running; }
+      #home-tonearm-control:focus-visible,#home-vinyl:focus-visible { outline:1px solid #cd3023; outline-offset:-4px; }
       @keyframes home-vinyl-spin { to { transform:rotate(360deg); } }
       @media (prefers-reduced-motion:reduce) {
-        #home-tonearm { transition:none; }
-        #home-turntable.is-playing #home-vinyl { animation:none; }
+        #home-tonearm,#home-player-prompt { transition:none; }
+        #home-vinyl,#home-turntable.is-playing #home-vinyl { animation:none; }
+      }
+    </style>
+    <style>
+      html { scroll-behavior:smooth; }
+      #home-original-cta { display:none !important; }
+      #home-selected-cta { position:absolute; left:412px; top:333px; z-index:5; width:184px; height:46px; padding:0 16px 0 18px; display:flex; align-items:center; justify-content:space-between; background:#11110f; color:#f4f1e9; font:500 10px/1 Inter,system-ui,sans-serif; transition:background-color .22s ease; }
+      #home-selected-cta:hover { background:#cd3023; opacity:1 !important; }
+      #home-selected-cta svg { width:15px; height:15px; transition:transform .35s cubic-bezier(.16,1,.3,1); }
+      #home-selected-cta:hover svg { transform:translate(3px,3px); }
+      #home-selected-cta:focus-visible,#home-view-all:focus-visible,.selected-work-card:focus-visible { outline:1px solid #cd3023; outline-offset:4px; }
+      #selected-work { position:absolute; left:0; top:1020px; width:1440px; height:1764px; padding:78px 32px 0; scroll-margin-top:40px; }
+      .selected-work-heading { color:#11110f; font:400 36.8px/38.4px "Instrument Serif",system-ui,sans-serif; }
+      .selected-work-header { height:105px; display:flex; justify-content:space-between; align-items:baseline; }
+      #home-view-all { position:relative; display:inline-flex; align-items:center; gap:9px; color:#cd3023; font:400 10px/1 Inter,system-ui,sans-serif; }
+      #home-view-all::after,#home-back-to-top::after { content:""; position:absolute; left:0; right:0; bottom:-5px; height:1px; background:currentColor; transform:scaleX(0); transform-origin:left center; transition:transform .35s cubic-bezier(.16,1,.3,1); }
+      #home-view-all:hover::after,#home-back-to-top:hover::after { transform:scaleX(1); }
+      #home-view-all svg { width:12px; height:12px; transition:transform .35s cubic-bezier(.16,1,.3,1); }
+      #home-view-all:hover { opacity:1 !important; }
+      #home-view-all:hover svg { transform:translate(3px,-3px); }
+      .selected-work-window { position:relative; left:calc((1440px - var(--canvas-viewport-width,1440px))/2 - 32px); width:var(--canvas-viewport-width,1440px); overflow:hidden; }
+      .selected-work-track { display:block; width:100%; counter-reset:selected-project; }
+      .selected-work-card { position:relative; display:block; width:100%; height:280px; color:#11110f; border-bottom:1px solid #b8b4aa; counter-increment:selected-project; scroll-margin-top:40px; }
+      .selected-work-arrow { position:absolute; right:calc((var(--canvas-viewport-width,1440px) - 1440px)/2 + 32px); top:129px; width:22px; height:22px; color:#11110f; transition:transform .35s cubic-bezier(.16,1,.3,1),color .2s ease; }
+      .selected-work-arrow svg { display:block; width:100%; height:100%; }
+      .selected-work-image { position:absolute; left:calc((var(--canvas-viewport-width,1440px) - 1440px)/2 + 412px); top:23.7px; width:600px; height:232.6px; overflow:hidden; border-radius:16px; background:#e6e1d7; }
+      .selected-work-image > img { width:100%; height:100%; object-fit:cover; }
+      #project-beerfest .selected-work-image { contain:paint; isolation:isolate; transform:translateZ(0); backface-visibility:hidden; }
+      #project-beerfest .selected-work-image > img { transform:translateZ(0); backface-visibility:hidden; }
+      .omc-preview { background:#f4f1e9 url("../Project%20%E2%80%94%20onemorecase/images/70fdb0476e704ee888ca521db76359100ad1540d.png") center/cover no-repeat; }
+      .omc-preview .omc-fox { position:absolute; left:172.6px; top:21.1px; width:254.8px; height:190.4px; object-fit:contain; transition:none; }
+      .able-preview { background:#81c5ff; }
+      .able-preview { contain:paint; isolation:isolate; }
+      .able-preview .able-layer { position:absolute; opacity:0; animation-duration:12.5s; animation-timing-function:linear; animation-iteration-count:infinite; animation-fill-mode:both; backface-visibility:hidden; }
+      .able-preview .able-yellow,.able-preview .able-logo-one { opacity:1; }
+      .able-preview .able-plate { inset:0; }
+      .able-preview .able-blue { background:#81c5ff; animation-name:home-able-blue; }
+      .able-preview .able-yellow { background:#ffff8c; animation-name:home-able-yellow; }
+      .able-preview .able-logo { left:50%; top:50%; width:184.5px; height:144.3px; transform:translate(-50%,-50%); background-position:center; background-repeat:no-repeat; background-size:cover; }
+      .able-preview .able-logo-one { background-image:url("../Project%20%E2%80%94%20Able%20Australia/images/1d29962ae897f049f9873712535e0a9b465da2bc.png"); animation-name:home-able-logo-one; }
+      .able-preview .able-logo-two { background-image:url("../Project%20%E2%80%94%20Able%20Australia/images/7648e26b9eb2c6ea39a7d62be9f43af5d70b4739.png"); animation-name:home-able-logo-two; }
+      .able-preview .able-logo-three { background-image:url("../Project%20%E2%80%94%20Able%20Australia/images/c09b20201bf90276ef24efe62022eb35f2e22162.png"); animation-name:home-able-logo-three; }
+      .able-preview .able-word { left:50%; top:50%; width:100%; transform:translate(-50%,-50%); color:#fff; text-align:center; white-space:nowrap; font:400 98px/98px "Source Sans 3",Arial,sans-serif; }
+      .able-preview .able-brand { font-family:Anton,Impact,"Arial Narrow",sans-serif; }
+      .able-preview .able-lockup { position:absolute; left:50%; top:50%; width:210px; height:154.8px; transform:translate(-50%,-50%); }
+      .able-preview .able-lockup .able-layer { left:0; width:100%; text-align:center; color:#fff; white-space:nowrap; }
+      .able-preview .able-australia { top:113px; font:700 41.9px/41.9px "Source Sans 3",Arial,sans-serif; letter-spacing:2.93px; text-indent:2.93px; animation-name:home-able-australia; }
+      .able-preview .able-name { top:0; font:400 112.8px/112.8px Anton,Impact,"Arial Narrow",sans-serif; animation-name:home-able-name; }
+      .able-preview .able-together { animation-name:home-able-together; }
+      .able-preview .able-we-are { animation-name:home-able-we-are; }
+      .able-preview .able-final { animation-name:home-able-final; }
+      .selected-work-meta { position:absolute; left:calc((var(--canvas-viewport-width,1440px) - 1440px)/2 + 32px); top:44px; width:280px; display:grid; grid-template-columns:30px 1fr; row-gap:6px; align-items:start; }
+      .selected-work-meta::before { content:counter(selected-project,decimal-leading-zero); grid-column:1; grid-row:1 / 3; padding-top:3px; color:rgba(17,17,15,.72); font:400 10px/1 Inter,system-ui,sans-serif; }
+      .selected-work-name { grid-column:2; }
+      .selected-work-type { grid-column:2; }
+      .selected-work-name { color:#11110f; font:400 29px/1 "Instrument Serif",system-ui,sans-serif; transition:color .2s ease; }
+      .selected-work-type { color:#cd3023; font:400 9px/1.2 Inter,system-ui,sans-serif; letter-spacing:.03em; text-transform:uppercase; transition:color .2s ease; }
+      .selected-work-card:hover { opacity:1 !important; }
+      .selected-work-card:hover .selected-work-name,.selected-work-card:hover .selected-work-type,.selected-work-card:hover .selected-work-meta::before { color:#cd3023; }
+      .selected-work-card:hover .selected-work-arrow { color:#cd3023; transform:translate(3px,-3px); }
+      .typography-preview > img { position:absolute; inset:0; }
+      .typography-preview .typography-lines { animation:typography-lines-draw 4.8s cubic-bezier(.22,1,.36,1) infinite; }
+      .selected-work-footer { position:relative; height:180px; border-bottom:1px solid #b8b4aa; }
+      #home-back-to-top { position:absolute; right:calc((var(--canvas-viewport-width,1440px) - 1440px)/2 + 32px); top:83px; display:inline-flex; align-items:center; gap:9px; color:#cd3023; font:400 10px/1 Inter,system-ui,sans-serif; }
+      #home-back-to-top svg { width:12px; height:12px; transition:transform .35s cubic-bezier(.16,1,.3,1); }
+      #home-back-to-top:hover { opacity:1 !important; }
+      #home-back-to-top:hover svg { transform:translate(3px,-3px); }
+      .home-category-nav { transition:transform .45s cubic-bezier(.16,1,.3,1); }
+      .home-category-nav:has(.home-category-link:hover) { transform:translateX(-14px); }
+      .home-category-link { position:relative; display:inline-block; color:inherit; font-size:inherit; line-height:inherit; text-decoration:none; transition:color .22s ease,font-size .45s cubic-bezier(.16,1,.3,1); }
+      .home-category-link::after { content:""; position:absolute; left:0; right:0; bottom:-3px; height:1px; background:currentColor; transform:scaleX(0); transform-origin:center; transition:transform .35s cubic-bezier(.16,1,.3,1); }
+      .home-category-link:hover { color:#cd3023; font-size:44.16px; opacity:1 !important; }
+      .home-category-link:hover::after { transform:scaleX(1); }
+      #siteheader [style*="cursor"]:hover,#siteheader a:hover { color:#cd3023 !important; opacity:1 !important; }
+      @keyframes typography-lines-draw { 0%,10%{clip-path:inset(0 0 100% 0);opacity:1} 62%,78%{clip-path:inset(0 0 0 0);opacity:1} 92%,100%{clip-path:inset(0 0 0 0);opacity:0} }
+      @keyframes home-able-yellow { 0%,27.601%{opacity:1;animation-timing-function:cubic-bezier(.65,0,.35,1)}32.401%,96.401%{opacity:0;animation-timing-function:cubic-bezier(.65,0,.35,1)}100%{opacity:1} }
+      @keyframes home-able-blue { 0%,27.601%{opacity:0;animation-timing-function:cubic-bezier(.65,0,.35,1)}32.401%,96.401%{opacity:1;animation-timing-function:cubic-bezier(.65,0,.35,1)}100%{opacity:0} }
+      @keyframes home-able-logo-one { 0%,8.401%{opacity:1;animation-timing-function:cubic-bezier(.65,0,.35,1)}12.96%,100%{opacity:0} }
+      @keyframes home-able-logo-two { 0%,7.36%{opacity:0;animation-timing-function:cubic-bezier(.16,1,.3,1)}12%,17.44%{opacity:1;animation-timing-function:cubic-bezier(.65,0,.35,1)}21.76%,100%{opacity:0} }
+      @keyframes home-able-logo-three { 0%,16.16%{opacity:0;animation-timing-function:cubic-bezier(.16,1,.3,1)}20.96%,26.001%{opacity:1;animation-timing-function:cubic-bezier(.65,0,.35,1)}29.76%,100%{opacity:0} }
+      @keyframes home-able-name { 0%,31.2%{opacity:0;translate:0 4.8px;animation-timing-function:cubic-bezier(.16,1,.3,1)}35.84%{opacity:1;translate:0 0}44.401%{opacity:1;animation-timing-function:cubic-bezier(.4,0,1,1)}48%,100%{opacity:0;translate:0 0} }
+      @keyframes home-able-australia { 0%,32.16%{opacity:0;translate:0 6.4px;animation-timing-function:cubic-bezier(.16,1,.3,1)}36.8%{opacity:1;translate:0 0}44.401%{opacity:1;animation-timing-function:cubic-bezier(.4,0,1,1)}48%,100%{opacity:0;translate:0 0} }
+      @keyframes home-able-together { 0%,47.36%{opacity:0;translate:-23.3px 0;animation-timing-function:cubic-bezier(.16,1,.3,1)}52.96%{opacity:1;translate:0 0}61.6%{opacity:1;animation-timing-function:cubic-bezier(.4,0,1,1)}64.96%,100%{opacity:0;translate:0 0} }
+      @keyframes home-able-we-are { 0%,64.32%{opacity:0;translate:0 -19.1px;animation-timing-function:cubic-bezier(.16,1,.3,1)}69.6%{opacity:1;translate:0 0}78.08%{opacity:1;animation-timing-function:cubic-bezier(.4,0,1,1)}81.28%,100%{opacity:0;translate:0 0} }
+      @keyframes home-able-final { 0%,80.64%{opacity:0;scale:.94;animation-timing-function:cubic-bezier(.16,1,.3,1)}86.24%{opacity:1}87.04%{scale:1.025;animation-timing-function:cubic-bezier(.65,0,.35,1)}90.801%{scale:1}95.36%{opacity:1;animation-timing-function:cubic-bezier(.4,0,1,1)}100%{opacity:0} }
+      @media (prefers-reduced-motion:reduce) {
+        html { scroll-behavior:auto; }
+        #home-selected-cta svg,#home-view-all svg,#home-back-to-top svg { transition:none; }
+        .home-category-nav { transition:none; }
+        .home-category-nav:has(.home-category-link:hover) { transform:none; }
+        .home-category-link { transition:color .15s ease; }
+        .home-category-link:hover { font-size:inherit; }
+        .able-preview .able-layer { animation:none !important; opacity:0 !important; }
+        .able-preview .able-blue,.able-preview .able-final { opacity:1 !important; }
+        .omc-preview { background:#f4f1e9 url("../work-index/hover-assets/04.png") center/cover no-repeat; }
+        .omc-preview .omc-fox { display:none; }
+        .typography-preview .typography-lines { display:none; }
+      }
+      @media (max-width:767px) {
+        #home-original-cta { display:block !important; }
+        #home-selected-cta,#selected-work,[data-fullbleed-rule] { display:none !important; }
       }
     </style>
     <style>
@@ -149,22 +255,67 @@ svg {
   <link rel="stylesheet" href="../page-transition.css?v=smooth-20260916">
 </head>
   <body style="display: grid;background-color: #f4f1e9;">
-    <div data-fit-screen style="background-color: #f4f1e9;overflow: hidden;width: 1440px;min-width: 1440px;max-width: 1440px;min-height: 900px;max-height: 900px;position: relative;margin: 0px auto;">
+    <div id="home-top" data-fit-screen data-scroll-page data-fit-first-screen="900" style="background-color: #f4f1e9;overflow: hidden;width: 1440px;min-width: 1440px;max-width: 1440px;height: 2784px;min-height: 2784px;max-height: 2784px;position: relative;margin: 0px auto;">
       <span id="home-static-name" class="text" style="display: inline;text-align: left;line-height: 38.4px;font-size: 36.8px;font-family: &quot;Instrument Serif&quot;, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;color: #11110f;left: 32px;top: 86px;width: 225px;height: 40px;position: absolute;">GEMMA YANG</span>
-      <span class="text" style="display: inline;text-align: left;line-height: 68px;font-size: 77px;font-family: &quot;Instrument Serif&quot;, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;color: #11110f;left: 412px;top: 86px;width: 752px;height: 326px;position: absolute;">DESIGN FOR SCREENS,<br>PAPER AND THINGS<br>YOU CAN HOLD.</span>
-      <span class="text" style="display: inline;text-align: left;line-height: 22.4px;font-size: 14px;font-family: Inter, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;color: #11110f;left: 32px;top: 470px;width: 222px;height: 165px;position: absolute;">A collection of things I’ve made, moved around, overthought and eventually decided were finished.</span>
-      <span class="text" style="display: inline;text-align: left;line-height: 38.4px;font-size: 36.8px;font-family: &quot;Instrument Serif&quot;, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;color: #11110f;left: 412px;top: 718px;width: 900px;height: 45px;position: absolute;">IDENTITY / EDITORIAL / DIGITAL / MOTION / PACKAGING</span>
-      <span class="text" style="display: inline;text-align: left;line-height: 12.8px;font-size: 10px;font-family: Inter, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;color: #11110f;left: 32px;top: 850px;width: 260px;height: 10px;position: absolute;">MELBOURNE, AUSTRALIA</span>
-      <span class="text" style="display: inline;text-align: right;line-height: 12.8px;font-size: 10px;font-family: Inter, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;color: #cd3023;left: 1122px;top: 850px;width: 286px;height: 10px;position: absolute;">VIEW SELECTED WORK ↗</span>
-      <div style="background-color: #b8b4aa;left: 348px;top: 64px;width: 1px;height: 788px;position: absolute;"></div>
-      <div style="background-color: #b8b4aa;left: 412px;top: 690px;width: 996px;height: 1px;position: absolute;"></div>
+      <span id="home-hero-title" class="text" style="display: inline;text-align: left;line-height: 68px;font-size: 77px;font-family: &quot;Instrument Serif&quot;, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;color: #11110f;left: 412px;top: 86px;width: 752px;height: 326px;position: absolute;">DESIGN FOR SCREENS,<br>PAPER AND THINGS<br>YOU CAN HOLD.</span>
+      <span id="home-intro" class="text" style="display: inline;text-align: left;line-height: 22.4px;font-size: 14px;font-family: Inter, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;color: #11110f;left: 32px;top: 470px;width: 222px;height: 165px;position: absolute;">A collection of things I’ve made, moved around, overthought and eventually decided were finished.</span>
+      <span id="home-categories" class="text home-category-nav" style="display: inline;text-align: left;line-height: 38.4px;font-size: 36.8px;font-family: &quot;Instrument Serif&quot;, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;color: #11110f;left: 412px;top: 718px;width: 900px;height: 45px;position: absolute;"><a class="home-category-link" href="#project-able">IDENTITY</a> / <a class="home-category-link" href="#project-type">EDITORIAL</a> / <a class="home-category-link" href="#project-beerfest">DIGITAL</a> / <a class="home-category-link" href="#project-able">MOTION</a> / <a class="home-category-link" href="#project-onemorecase">PACKAGING</a></span>
+      <span id="home-location" class="text" style="display: inline;text-align: left;line-height: 12.8px;font-size: 10px;font-family: Inter, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;color: #11110f;left: 32px;top: 850px;width: 260px;height: 10px;position: absolute;">MELBOURNE, AUSTRALIA</span>
+      <span id="home-original-cta" class="text" style="display: inline;text-align: right;line-height: 12.8px;font-size: 10px;font-family: Inter, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;color: #cd3023;left: 1122px;top: 850px;width: 286px;height: 10px;position: absolute;">VIEW SELECTED WORK ↗</span>
+      <a id="home-selected-cta" href="#selected-work"><span>VIEW SELECTED WORK</span><svg aria-hidden="true" viewBox="0 0 16 16" fill="none"><path d="M4 4l8 8M5 12h7V5" stroke="currentColor" stroke-width="1.25"/></svg></a>
+      <div id="home-vertical-rule" aria-hidden="true" style="background-color: #b8b4aa;left: 348px;top: 64px;width: 1px;height: 2539px;position: absolute;"></div>
+      <div id="home-category-rule" aria-hidden="true" style="background-color: #b8b4aa;left: 412px;top: 690px;width: 996px;height: 1px;position: absolute;"></div>
       <div id="home-turntable">
-        <div id="home-vinyl"><img id="home-vinyl-art" src="./index 2_files/1.png" alt="Have a look — Good stuff inside vinyl record"></div>
+        <button id="home-vinyl" type="button" aria-label="Start the record player" aria-pressed="false"><img id="home-vinyl-art" src="./index 2_files/1.png" alt="Have a look — Good stuff inside vinyl record"></button>
         <button id="home-tonearm-control" type="button" aria-label="Start the record player" aria-pressed="false">
           <img id="home-tonearm" src="./index 2_files/2.png" alt="">
         </button>
+        <span id="home-player-prompt" aria-hidden="true">DROP THE BEAT</span>
       </div>
-      <div style="background-color: #f4f1e9;left: 0px;top: 0px;width: 1440px;height: 80px;position: absolute;">
+      <div data-fullbleed="#b8b4aa" data-fullbleed-rule style="background-color:#b8b4aa;left:0;top:1020px;width:1440px;height:1px;position:absolute;"></div>
+      <div data-fullbleed="#b8b4aa" data-fullbleed-rule style="background-color:#b8b4aa;left:0;top:1203px;width:1440px;height:1px;position:absolute;"></div>
+      <section id="selected-work" aria-labelledby="selected-work-heading">
+        <div class="selected-work-header">
+          <h2 id="selected-work-heading" class="selected-work-heading">WORK</h2>
+          <a id="home-view-all" href="../work-index/index.html"><span>VIEW ALL PROJECTS</span><svg aria-hidden="true" viewBox="0 0 14 14" fill="none"><path d="M3 11 11 3M5 3h6v6" stroke="currentColor" stroke-width="1.1"/></svg></a>
+        </div>
+        <div class="selected-work-window" aria-label="All projects">
+          <div class="selected-work-track">
+            <a id="project-able" class="selected-work-card" href="../Project%20%E2%80%94%20Able%20Australia/index3.html">
+              <div class="selected-work-image able-preview" role="img" aria-label="Animated Together We Are Able identity sequence">
+                <span class="able-layer able-plate able-blue"></span><span class="able-layer able-plate able-yellow"></span>
+                <span class="able-layer able-logo able-logo-one"></span><span class="able-layer able-logo able-logo-two"></span><span class="able-layer able-logo able-logo-three"></span>
+                <span class="able-lockup"><span class="able-layer able-name">Able</span><span class="able-layer able-australia">Australia</span></span>
+                <span class="able-layer able-word able-together">Together</span><span class="able-layer able-word able-we-are">We are</span><span class="able-layer able-word able-brand able-final">Able</span>
+              </div>
+              <div class="selected-work-meta"><span class="selected-work-name">Able Australia</span><span class="selected-work-type">Identity / Motion</span></div>
+              <span class="selected-work-arrow" aria-hidden="true"><svg viewBox="0 0 22 22" fill="none"><path d="M4 18 18 4M8 4h10v10" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter"/></svg></span>
+            </a>
+            <a id="project-type" class="selected-work-card" href="../Project%20%E2%80%94%20Custom%20Typeface%20%26%20Editorial%20Series/index.html">
+              <div class="selected-work-image typography-preview"><img src="selected-work-assets/typography-still.png" alt="Custom Typeface and Editorial Series project preview"><img class="typography-lines" src="selected-work-assets/typography-lines.png" alt=""></div>
+              <div class="selected-work-meta"><span class="selected-work-name">Custom Typeface &amp; Editorial</span><span class="selected-work-type">Editorial / Identity</span></div>
+              <span class="selected-work-arrow" aria-hidden="true"><svg viewBox="0 0 22 22" fill="none"><path d="M4 18 18 4M8 4h10v10" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter"/></svg></span>
+            </a>
+            <a id="project-onemorecase" class="selected-work-card" href="../Project%20%E2%80%94%20onemorecase/index.html">
+              <div class="selected-work-image omc-preview"><img class="omc-fox" src="../Project%20%E2%80%94%20onemorecase/images/%E7%8B%90%E7%8B%B8_%E9%80%8F%E6%98%8E%E8%83%8C%E6%99%AF.gif" alt="Animated OneMoreCase fox"></div>
+              <div class="selected-work-meta"><span class="selected-work-name">OneMoreCase</span><span class="selected-work-type">Identity / Packaging</span></div>
+              <span class="selected-work-arrow" aria-hidden="true"><svg viewBox="0 0 22 22" fill="none"><path d="M4 18 18 4M8 4h10v10" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter"/></svg></span>
+            </a>
+            <a id="project-gege" class="selected-work-card" href="../Project%20%E2%80%94%20GeGe%20Pancake%20Shop/index.html">
+              <div class="selected-work-image"><img src="../work-index/hover-assets/10.png" alt="GeGe Pancake Shop project preview"></div>
+              <div class="selected-work-meta"><span class="selected-work-name">GeGe Pancake Shop</span><span class="selected-work-type">Identity / Packaging</span></div>
+              <span class="selected-work-arrow" aria-hidden="true"><svg viewBox="0 0 22 22" fill="none"><path d="M4 18 18 4M8 4h10v10" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter"/></svg></span>
+            </a>
+            <a id="project-beerfest" class="selected-work-card" href="../Project%20%E2%80%94%20Beerfest%20Australia/index.html">
+              <div class="selected-work-image"><img src="../work-index/hover-assets/05.png" alt="Beerfest Australia project preview"></div>
+              <div class="selected-work-meta"><span class="selected-work-name">Beerfest Australia</span><span class="selected-work-type">Identity / Digital</span></div>
+              <span class="selected-work-arrow" aria-hidden="true"><svg viewBox="0 0 22 22" fill="none"><path d="M4 18 18 4M8 4h10v10" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter"/></svg></span>
+            </a>
+            <div class="selected-work-footer"><a id="home-back-to-top" href="#home-top"><span>BACK TO TOP</span><svg aria-hidden="true" viewBox="0 0 14 14" fill="none"><path d="M3 11 11 3M5 3h6v6" stroke="currentColor" stroke-width="1.1"/></svg></a></div>
+          </div>
+        </div>
+      </section>
+      <div id="siteheader" style="background-color: #f4f1e9;left: 0px;top: 0px;width: 1440px;height: 80px;position: absolute;">
         <span class="text" style="display: inline;text-align: left;line-height: 16px;font-size: 12px;font-family: Inter, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;color: #11110f;left: 32px;top: 29px;width: 60px;position: absolute;">WORK</span>
         <span class="text" style="display: inline;text-align: left;line-height: 16px;font-size: 12px;font-family: Inter, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;color: #11110f;left: 118px;top: 29px;width: 70px;position: absolute;">ABOUT</span>
         <span class="text" style="display: inline;text-align: right;line-height: 16px;font-size: 12px;font-family: Inter, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;color: #11110f;left: 1164px;top: 29px;width: 244px;position: absolute;">GEMMAYANG22@GMAIL.COM</span>
@@ -172,7 +323,7 @@ svg {
       </div>
     </div>
 <script src="../site-layout.js?v=width-only-20260912"></script>
-<script src="../site.js?v=responsive-20260916"></script>
+<script src="../site.js?v=responsive-20260924-mobile-layout-4"></script>
 <script>
   (function () {
     var linkedName = document.getElementById('home-static-name');
@@ -185,20 +336,68 @@ svg {
     }
     var player = document.getElementById('home-turntable');
     var control = document.getElementById('home-tonearm-control');
-    if (!player || !control) return;
+    var vinyl = document.getElementById('home-vinyl');
+    if (!player || !control || !vinyl) return;
     var audioController = window.PortfolioAudio;
+    var hoverPreview = window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)');
+    function setPreview(active) {
+      player.classList.toggle('is-previewing', !!(active && hoverPreview && hoverPreview.matches));
+    }
     function syncPlayer(playing) {
       player.classList.toggle('is-playing', playing);
       control.setAttribute('aria-pressed', playing ? 'true' : 'false');
       control.setAttribute('aria-label', playing ? 'Stop the record player' : 'Start the record player');
+      vinyl.setAttribute('aria-pressed', playing ? 'true' : 'false');
+      vinyl.setAttribute('aria-label', playing ? 'Stop the record player' : 'Start the record player');
     }
     syncPlayer(!!(audioController && audioController.isPlaying()));
     document.addEventListener('portfolio-audio-change', function (event) {
       syncPlayer(!!event.detail.playing);
     });
-    control.addEventListener('click', function () {
+    function togglePlayer() {
       if (audioController) audioController.toggle(true);
-    });
+    }
+    control.addEventListener('click', togglePlayer);
+    vinyl.addEventListener('click', togglePlayer);
+    player.addEventListener('pointerenter', function () { setPreview(true); });
+    player.addEventListener('pointerleave', function () { setPreview(false); });
+    if (hoverPreview && hoverPreview.addEventListener) hoverPreview.addEventListener('change', function () { setPreview(false); });
+    var selectedSection = document.getElementById('selected-work');
+    if (selectedSection) {
+      var firstScrollSnapDone = window.scrollY > 4;
+      var firstScrollSnapActive = false;
+      var firstScrollSnapTimer = 0;
+      function snapToSelectedWork() {
+        firstScrollSnapActive = true;
+        firstScrollSnapDone = true;
+        selectedSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        window.clearTimeout(firstScrollSnapTimer);
+        firstScrollSnapTimer = window.setTimeout(function () {
+          firstScrollSnapActive = false;
+        }, 850);
+      }
+      window.addEventListener('wheel', function (event) {
+        if (window.matchMedia('(max-width: 767px)').matches || event.ctrlKey) return;
+        if (firstScrollSnapActive) {
+          event.preventDefault();
+          return;
+        }
+        if (event.deltaY > 0 && !firstScrollSnapDone && window.scrollY <= 4) {
+          event.preventDefault();
+          snapToSelectedWork();
+        }
+      }, { passive: false });
+      window.addEventListener('scroll', function () {
+        if (!firstScrollSnapActive && window.scrollY <= 2) firstScrollSnapDone = false;
+      }, { passive: true });
+      if ('IntersectionObserver' in window) {
+        new IntersectionObserver(function (entries) {
+          selectedSection.classList.toggle('is-visible', entries[0].isIntersecting && !document.hidden);
+        }, { threshold: 0.08 }).observe(selectedSection);
+      } else {
+        selectedSection.classList.add('is-visible');
+      }
+    }
   })();
 </script>
 </body></html>

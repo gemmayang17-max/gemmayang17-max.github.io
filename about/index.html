@@ -134,18 +134,30 @@ svg {
   display: inline-block;
   position: relative;
 }
+#siteheader a,
+#siteheader [role="link"] {
+  transition: color .22s ease !important;
+}
+#siteheader a:hover,
+#siteheader [role="link"]:hover {
+  color: #cd3023 !important;
+  opacity: 1 !important;
+}
+#about-background-section [style*="font-family:Inter"] {
+  font-weight: 350 !important;
+}
 </style>
     
   <link rel="stylesheet" href="../page-transition.css?v=smooth-20260916">
 </head>
   <body style="display: grid;background-color: #f4f1e9;">
-    <div data-fit-screen style="background-color: #f4f1e9;overflow: hidden;width: 1440px;min-width: 1440px;max-width: 1440px;min-height: 900px;max-height: 900px;position: relative;margin: 0px auto;">
+    <div data-fit-screen data-scroll-page data-fit-first-screen="900" style="background-color: #f4f1e9;overflow: hidden;width: 1440px;min-width: 1440px;max-width: 1440px;height: 1800px;min-height: 1800px;max-height: 1800px;position: relative;margin: 0px auto;">
       <span class="text" style="display: inline;text-align: left;line-height: 70.4px;font-size: 70px;font-family: &quot;Instrument Serif&quot;, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;letter-spacing: -1.52px;color: #11110f;left: 32px;top: 700px;width: 272px;height: 77px;position: absolute;">GEMMA</span>
       <span class="text" style="display: inline;text-align: left;line-height: 70.4px;font-size: 70px;font-family: &quot;Instrument Serif&quot;, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;letter-spacing: -1.52px;color: #11110f;left: 32px;top: 780px;width: 178px;height: 76px;position: absolute;">YANG</span>
       <div style="background-color: #b8b4aa;left: 400px;top: 56px;width: 1px;height: 844px;position: absolute;"></div>
       <span id="about-hover-title" class="text" aria-label="I LIKE MAKING THINGS WITH A PERSONALITY OF THEIR OWN." style="display: inline;text-align: left;line-height: 68px;font-size: 70px;font-family: &quot;Instrument Serif&quot;, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;letter-spacing: -1px;color: #11110f;left: 568px;top: 96px;width: 760px;height: 204px;position: absolute;">I LIKE MAKING THINGS WITH A<br>PERSONALITY OF THEIR OWN.</span>
       <div style="background-color: #b8b4aa;left: 464px;top: 330px;width: 864px;height: 1px;position: absolute;"></div>
-      <span class="text" style="display: inline;text-align: left;line-height: 22.4px;font-size: 14px;font-family: Inter, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;color: #11110f;left: 568px;top: 430px;width: 687px;height: 274px;position: absolute;">Hi, I’m Gemma, a designer based in Melbourne.<br><br>Most of my projects begin with something small—a shape, a phrase, a colour or an image I can’t stop thinking about. I follow it until it becomes a typeface, a book, a brand, a website—or sometimes several of those at once.<br><br>I like taking one idea apart, moving it between formats and finding the detail that makes everything click. Then I usually try one more version :)</span>
+      <span class="text" style="display: inline;text-align: left;line-height: 22.4px;font-size: 14px;font-family: Inter, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;color: #11110f;left: 568px;top: 430px;width: 687px;height: 274px;position: absolute;">Hi, I’m Gemma, a designer based in Melbourne.<br><br>Most of my projects begin with something small. It might be a shape, a phrase, a colour or an image I can’t stop thinking about. I follow it until it becomes a typeface, a book, a brand, a website, or sometimes several of those at once.<br><br>I like taking one idea apart, moving it between formats and finding the detail that makes everything click. Then I usually try one more version :)</span>
       <span class="text" style="display: inline;text-align: left;line-height: 12.8px;font-size: 10px;font-family: Inter, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;color: #cd3023;left: 568px;top: 820px;width: 500px;position: absolute;">IF SOMETHING HERE MAKES YOU CURIOUS, SAY HELLO👋.<a href="mailto:GEMMAYANG22@GMAIL.COM" target="_blank" style="text-decoration: underline;text-decoration-skip-ink: none;"><br>GEMMAYANG22@GMAIL.COM</a></span>
       <div style="overflow: hidden;left: 32px;top: 96px;aspect-ratio: 1.43;width: auto;height: 232.9px;position: absolute;"><img src="./index_files/1.JPG" alt="6588afb41cfa2e6f16d7d8c4fae4a797 1" style="inset: 0;width: 100%;height: 100%;position: absolute;transform: scale(1.15,1.15);"></div>
       <div style="background-color: #f4f1e9;left: 0px;top: 0px;width: 1440px;height: 80px;position: absolute;">
@@ -155,9 +167,74 @@ svg {
         <span class="text" style="display: inline;text-align: right;line-height: 16px;font-size: 12px;font-family: Inter, system-ui, sans-serif;font-weight: 400;font-stretch: 100%;color: #11110f;left: 1164px;top: 22px;width: 244px;height: 12.6px;position: absolute;">GEMMAYANG22@GMAIL.COM</span>
         <div style="background-color: #b8b4aa;left: 0px;top: 59px;width: 1440px;height: 1px;position: absolute;"></div>
       </div>
+      <section id="about-background-section" aria-labelledby="about-background-heading" style="background-color:#f4f1e9;left:0;top:900px;width:1440px;height:900px;position:absolute;">
+        <div class="background-top-rule" style="background-color:#b8b4aa;left:32px;top:17px;width:1376px;height:1px;position:absolute;"></div>
+        <h2 id="about-background-heading" style="font-family:&quot;Instrument Serif&quot;,system-ui,sans-serif;font-size:70px;font-weight:400;letter-spacing:-1.52px;line-height:70.4px;color:#11110f;left:32px;top:68px;position:absolute;">BACKGROUND</h2>
+        <div class="background-heading-rule" style="background-color:#b8b4aa;left:32px;top:160px;width:1376px;height:1px;position:absolute;"></div>
+
+        <div class="background-work" style="left:64px;top:214px;width:736px;position:absolute;">
+          <h3 style="font-family:Inter,system-ui,sans-serif;font-size:12px;font-weight:400;line-height:16px;letter-spacing:0.2px;color:#cd3023;">WORK EXPERIENCE</h3>
+
+          <div class="background-entry" style="top:42px;width:736px;height:108px;position:absolute;">
+            <div style="font-family:&quot;Instrument Serif&quot;,system-ui,sans-serif;font-size:20px;font-weight:400;line-height:24px;letter-spacing:0.3px;color:#11110f;-webkit-text-stroke:0.2px #f4f1e9;">Founder &amp; Graphic / Brand Designer</div>
+            <div data-no-auto-link style="font-family:Inter,system-ui,sans-serif;font-size:14px;font-weight:400;line-height:20px;color:#11110f;margin-top:10px;">onemorecase</div>
+            <div style="font-family:Inter,system-ui,sans-serif;font-size:12px;font-weight:400;line-height:18px;color:#11110f;right:0;top:5px;position:absolute;">Sep 2024 – Present</div>
+            <div style="font-family:Inter,system-ui,sans-serif;font-size:12px;font-weight:400;line-height:20px;color:#11110f;right:0;top:35px;position:absolute;">Asian market</div>
+          </div>
+          <div class="background-entry-rule" style="background-color:#b8b4aa;left:0;top:150px;width:736px;height:1px;position:absolute;"></div>
+
+          <div class="background-entry" style="top:180px;width:736px;height:92px;position:absolute;">
+            <div style="font-family:&quot;Instrument Serif&quot;,system-ui,sans-serif;font-size:20px;font-weight:400;line-height:24px;letter-spacing:0.3px;color:#11110f;-webkit-text-stroke:0.2px #f4f1e9;">Digital Designer</div>
+            <div style="font-family:Inter,system-ui,sans-serif;font-size:14px;font-weight:400;line-height:20px;color:#11110f;margin-top:10px;">Generic Publications Advertising</div>
+            <div style="font-family:Inter,system-ui,sans-serif;font-size:12px;font-weight:400;line-height:18px;color:#11110f;right:0;top:5px;position:absolute;">Nov 2022 – Aug 2024</div>
+            <div style="font-family:Inter,system-ui,sans-serif;font-size:12px;font-weight:400;line-height:20px;color:#11110f;right:0;top:35px;position:absolute;">Sydney, Australia</div>
+          </div>
+          <div class="background-entry-rule" style="background-color:#b8b4aa;left:0;top:288px;width:736px;height:1px;position:absolute;"></div>
+
+          <div class="background-entry" style="top:318px;width:736px;height:92px;position:absolute;">
+            <div style="font-family:&quot;Instrument Serif&quot;,system-ui,sans-serif;font-size:20px;font-weight:400;line-height:24px;letter-spacing:0.3px;color:#11110f;-webkit-text-stroke:0.2px #f4f1e9;">Fashion Week Graphic Designer (Project-Based)</div>
+            <div style="font-family:Inter,system-ui,sans-serif;font-size:14px;font-weight:400;line-height:20px;color:#11110f;margin-top:10px;">Labelbood</div>
+            <div style="font-family:Inter,system-ui,sans-serif;font-size:12px;font-weight:400;line-height:18px;color:#11110f;right:0;top:5px;position:absolute;">Jun 2022</div>
+            <div style="font-family:Inter,system-ui,sans-serif;font-size:12px;font-weight:400;line-height:20px;color:#11110f;right:0;top:35px;position:absolute;">Shanghai, China</div>
+          </div>
+          <div class="background-entry-rule" style="background-color:#b8b4aa;left:0;top:426px;width:736px;height:1px;position:absolute;"></div>
+
+          <div class="background-entry" style="top:456px;width:736px;height:92px;position:absolute;">
+            <div style="font-family:&quot;Instrument Serif&quot;,system-ui,sans-serif;font-size:20px;font-weight:400;line-height:24px;letter-spacing:0.3px;color:#11110f;-webkit-text-stroke:0.2px #f4f1e9;">Graphic Designer Intern</div>
+            <div style="font-family:Inter,system-ui,sans-serif;font-size:14px;font-weight:400;line-height:20px;color:#11110f;margin-top:10px;">Yezhi Education</div>
+            <div style="font-family:Inter,system-ui,sans-serif;font-size:12px;font-weight:400;line-height:18px;color:#11110f;right:0;top:5px;position:absolute;">Nov 2020 – Apr 2021</div>
+            <div style="font-family:Inter,system-ui,sans-serif;font-size:12px;font-weight:400;line-height:20px;color:#11110f;right:0;top:35px;position:absolute;">Changsha, China</div>
+          </div>
+        </div>
+
+        <div class="background-divider" style="background-color:#b8b4aa;left:864px;top:214px;width:1px;height:548px;position:absolute;"></div>
+        <div class="background-details" style="left:928px;top:214px;width:448px;position:absolute;">
+          <h3 style="font-family:Inter,system-ui,sans-serif;font-size:12px;font-weight:400;line-height:16px;letter-spacing:0.2px;color:#cd3023;">EDUCATION</h3>
+          <div class="background-education-entry" style="top:42px;width:448px;position:absolute;">
+            <div style="font-family:&quot;Instrument Serif&quot;,system-ui,sans-serif;font-size:20px;font-weight:400;line-height:24px;letter-spacing:0.3px;color:#11110f;-webkit-text-stroke:0.2px #f4f1e9;">Master of Design</div>
+            <div style="font-family:Inter,system-ui,sans-serif;font-size:13px;font-weight:400;line-height:18px;color:#11110f;margin-top:4px;">University of New South Wales</div>
+            <div style="font-family:Inter,system-ui,sans-serif;font-size:12px;font-weight:400;line-height:18px;color:#11110f;right:0;top:0;position:absolute;">Sep 2020 – Sep 2022</div>
+          </div>
+          <div class="background-education-entry" style="top:112px;width:448px;position:absolute;">
+            <div style="font-family:&quot;Instrument Serif&quot;,system-ui,sans-serif;font-size:20px;font-weight:400;line-height:24px;letter-spacing:0.3px;color:#11110f;-webkit-text-stroke:0.2px #f4f1e9;">Bachelor of Arts</div>
+            <div style="font-family:Inter,system-ui,sans-serif;font-size:13px;font-weight:400;line-height:18px;color:#11110f;margin-top:4px;">Hunan First Normal University</div>
+            <div style="font-family:Inter,system-ui,sans-serif;font-size:12px;font-weight:400;line-height:18px;color:#11110f;right:0;top:0;position:absolute;">Sep 2014 – Sep 2018</div>
+          </div>
+          <div class="background-detail-rule" style="background-color:#b8b4aa;left:0;top:186px;width:448px;height:1px;position:absolute;"></div>
+
+          <h3 style="font-family:Inter,system-ui,sans-serif;font-size:12px;font-weight:400;line-height:16px;letter-spacing:0.2px;color:#cd3023;left:0;top:220px;position:absolute;">SKILLS</h3>
+          <div class="background-skills-copy" style="font-family:Inter,system-ui,sans-serif;font-size:14px;font-weight:400;line-height:24px;color:#11110f;left:0;top:252px;width:448px;position:absolute;">Photoshop, Illustrator, InDesign,<br>Figma, Canva, CapCut,<br>Google Web Designer, Adobe XD</div>
+          <div class="background-detail-rule" style="background-color:#b8b4aa;left:0;top:348px;width:448px;height:1px;position:absolute;"></div>
+
+          <h3 style="font-family:Inter,system-ui,sans-serif;font-size:12px;font-weight:400;line-height:16px;letter-spacing:0.2px;color:#cd3023;left:0;top:382px;position:absolute;">LANGUAGE</h3>
+          <div class="background-language-copy" style="font-family:Inter,system-ui,sans-serif;font-size:14px;font-weight:400;line-height:24px;color:#11110f;left:0;top:414px;width:448px;position:absolute;">Mandarin (Native), English (Proficient)</div>
+        </div>
+
+        <a id="background-download" href="./Lanqing_Yang_Graphic_Designer_CV.pdf" target="_blank" rel="noopener noreferrer" style="font-family:Inter,system-ui,sans-serif;font-size:14px;font-weight:400;line-height:20px;color:#cd3023;right:32px;bottom:62px;position:absolute;text-decoration:underline;text-underline-offset:4px;">DOWNLOAD CV ↗</a>
+      </section>
     </div>
 <script src="../site-layout.js?v=width-only-20260912"></script>
-<script src="../site.js?v=responsive-20260916"></script>
+<script src="../site.js?v=responsive-20260924-mobile-layout-4"></script>
 <script>
   (function () {
     var title = document.getElementById('about-hover-title');
@@ -179,6 +256,38 @@ svg {
       });
       node.parentNode.replaceChild(fragment, node);
     });
+  })();
+</script>
+<script>
+  (function () {
+    var backgroundSection = document.getElementById('about-background-section');
+    if (!backgroundSection) return;
+    var firstScrollSnapDone = window.scrollY > 4;
+    var firstScrollSnapActive = false;
+    var firstScrollSnapTimer = 0;
+    function snapToBackground() {
+      firstScrollSnapActive = true;
+      firstScrollSnapDone = true;
+      backgroundSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      window.clearTimeout(firstScrollSnapTimer);
+      firstScrollSnapTimer = window.setTimeout(function () {
+        firstScrollSnapActive = false;
+      }, 850);
+    }
+    window.addEventListener('wheel', function (event) {
+      if (window.matchMedia('(max-width: 767px)').matches || event.ctrlKey) return;
+      if (firstScrollSnapActive) {
+        event.preventDefault();
+        return;
+      }
+      if (event.deltaY > 0 && !firstScrollSnapDone && window.scrollY <= 4) {
+        event.preventDefault();
+        snapToBackground();
+      }
+    }, { passive: false });
+    window.addEventListener('scroll', function () {
+      if (!firstScrollSnapActive && window.scrollY <= 2) firstScrollSnapDone = false;
+    }, { passive: true });
   })();
 </script>
 </body></html>

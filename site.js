@@ -14,6 +14,10 @@
     htmlRoot.classList.toggle('portfolio-mobile-page-about', /\/about\//.test(path));
     htmlRoot.classList.toggle('portfolio-mobile-page-work', /\/work-index\//.test(path));
     htmlRoot.classList.toggle('portfolio-mobile-page-project', !(/\/home\//.test(path) || /\/about\//.test(path) || /\/work-index\//.test(path)));
+    htmlRoot.classList.toggle('portfolio-mobile-page-able', /\/project — able australia\/(?:index3\.html)?$/.test(path));
+    htmlRoot.classList.toggle('portfolio-mobile-page-scaled-project', /\/project — (?:custom typeface & editorial series|onemorecase|gege pancake shop|sydney candle co|colour u)\/(?:index\.html)?$/.test(path));
+    htmlRoot.classList.toggle('portfolio-mobile-page-beerfest', /\/project — beerfest australia\/(?:index\.html)?$/.test(path));
+    htmlRoot.classList.toggle('portfolio-mobile-page-sydney-open', /\/project — sydney open 2021\/(?:index\.html)?$/.test(path));
   }
   setPageClass();
   function syncMobileClass() { htmlRoot.classList.toggle('portfolio-mobile', isMobileLayout()); }
@@ -22,7 +26,7 @@
   if (SITE_SCRIPT_URL) {
     var mobileCss = document.createElement('link');
     mobileCss.rel = 'stylesheet';
-    mobileCss.href = new URL('mobile-responsive.css?v=20260916-responsive', SITE_SCRIPT_URL).href;
+    mobileCss.href = new URL('mobile-responsive.css?v=20260929-projects-29', SITE_SCRIPT_URL).href;
     document.head.appendChild(mobileCss);
   }
   var badgeStyle = document.createElement('style');
@@ -73,7 +77,8 @@
     document.body.style.padding = '0';
   }
   H = H || parseFloat(getComputedStyle(root).height) || root.offsetHeight;
-  var fitScreen = root.hasAttribute('data-fit-screen');
+  var fitScreen = root.hasAttribute('data-fit-screen') && !root.hasAttribute('data-scroll-page');
+  var fitFirstScreenHeight = parseFloat(root.getAttribute('data-fit-first-screen')) || 0;
   document.documentElement.style.overflowX = 'hidden';
   document.body.style.overflowX = 'hidden';
   if (fitScreen) {
@@ -175,7 +180,7 @@
       document.documentElement.style.overflowY = 'auto';
       document.body.style.overflowY = 'auto';
       restoreDesktopProjectLayout();
-      if (root.hasAttribute('data-figma-artboard')) {
+      if (root.hasAttribute('data-figma-artboard') && root.dataset.mobileLayout !== 'scaled-project') {
         var mobileArtScale = Math.max(0.1, wrap.clientWidth / BASE);
         root.style.margin = '0';
         root.style.left = '0px';
@@ -199,16 +204,25 @@
     if (fitScreen) {
       s = Math.min(s, Math.max(0.1, (window.innerHeight - 1) / H));
       left = Math.max(0, (wrap.clientWidth - BASE * s) / 2);
+    } else if (fitFirstScreenHeight) {
+      s = Math.min(s, Math.max(0.1, (window.innerHeight - 1) / fitFirstScreenHeight));
+      left = Math.max(0, (wrap.clientWidth - BASE * s) / 2);
     }
     root.style.margin = '0';
     root.style.left = left + 'px';
     root.style.transform = 'scale(' + s + ')';
+    root.style.setProperty('--canvas-viewport-width', (wrap.clientWidth / s) + 'px');
     wrap.style.height = (fitScreen ? Math.min(window.innerHeight - 1, H * s) : H * s) + 'px';
     root.querySelectorAll('[data-fullbleed]').forEach(function (el) {
       if (!el.__bleed) { el.__bleed = document.createElement('div'); el.__bleed.setAttribute('aria-hidden','true'); wrap.insertBefore(el.__bleed,root); }
+      if (getComputedStyle(el).display === 'none') { el.__bleed.style.display = 'none'; return; }
       var bt = Math.round(parseFloat(el.style.top) * s), bh = Math.round(parseFloat(el.style.height) * s);
+      var isRule = el.hasAttribute('data-fullbleed-rule');
+      var isExact = el.hasAttribute('data-fullbleed-exact');
+      var bleedTop = isRule ? bt : (isExact ? bt : bt - 1);
+      var bleedHeight = isRule ? Math.max(1, Math.round(s)) : (isExact ? bh : bh + 2);
       el.__bleed.style.cssText = 'position:absolute;left:0;width:100%;pointer-events:none;background:' +
-        el.dataset.fullbleed + ';top:' + (bt - 1) + 'px;height:' + (bh + 2) + 'px';
+        el.dataset.fullbleed + ';top:' + bleedTop + 'px;height:' + bleedHeight + 'px';
     });
     if (header) { var hs = wrap.clientWidth / BASE; header.style.transform = 'scale(' + hs + ')'; }
   }
@@ -251,6 +265,7 @@
   }
   function prepareMobileProjectLayout() {
     if (!htmlRoot.classList.contains('portfolio-mobile-page-project') || !isMobileLayout() || !root || root.dataset.mobilePrepared === '1') return;
+    if (root.dataset.mobileLayout === 'able' || root.dataset.mobileLayout === 'scaled-project' || root.dataset.mobileLayout === 'beerfest' || root.dataset.mobileLayout === 'sydney-open') return;
     root.dataset.mobilePrepared = '1';
     var children = Array.prototype.slice.call(root.children).filter(function (el) { return el.id !== 'siteheader'; });
     originalProjectOrder = children.map(function (el) { return { el: el, parent: el.parentNode, next: el.nextSibling }; });
@@ -313,6 +328,7 @@
   function canSmoothNavigate(href) {
     var url;
     try { url = new URL(href, location.href); } catch (error) { return false; }
+    if (url.origin === location.origin && url.pathname === location.pathname && url.search === location.search && url.hash) return false;
     return url.origin === location.origin && url.href !== location.href && url.protocol.indexOf('http') === 0;
   }
   function smoothNavigate(href) {
@@ -335,6 +351,7 @@
   var nextName = null;
   for (var n = 0; n < nodes.length; n++) {
     var el = nodes[n];
+    if (el.closest && el.closest('[data-no-auto-link]')) continue;
     if (el.children.length > 1) continue;
     var t = (el.textContent || '').trim();
     if (!t || t.length > 40) continue;
@@ -342,7 +359,9 @@
     if (u === 'GEMMA YANG') go(el, HOME);
     else if (u === 'WORK') go(el, WORK);
     else if (u === 'ABOUT') go(el, ABOUT);
-    else if (u === 'VIEW SELECTED WORK ↗' || u === 'VIEW SELECTED WORK') go(el, WORK);
+    else if (u === 'VIEW SELECTED WORK ↗' || u === 'VIEW SELECTED WORK') {
+      if (!el.closest || !el.closest('#home-selected-cta')) go(el, WORK);
+    }
     else if (u === '← ALL WORK' || u === '<- ALL WORK') go(el, WORK);
     else if (u === 'GEMMAYANG22@GMAIL.COM') go(el, 'mailto:gemmayang22@gmail.com');
     else if (PAGES[u] && here.indexOf(PAGES[u]) === -1) { nextName = u; go(el, projectHref(u)); }
