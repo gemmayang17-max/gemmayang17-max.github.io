@@ -4031,6 +4031,11 @@
   }
 
   /* Keep the GeGe mobile gallery on each image's full intrinsic aspect ratio. */
+  html.portfolio-mobile-page-scaled-project.scaled-project-gege .gege-mobile-gallery {
+    position: relative;
+    z-index: 1;
+  }
+
   html.portfolio-mobile-page-scaled-project.scaled-project-gege .scaled-project-mobile-art-section,
   html.portfolio-mobile-page-scaled-project.scaled-project-gege .gege-mobile-gallery,
   html.portfolio-mobile-page-scaled-project.scaled-project-gege .gege-mobile-portrait-group,
@@ -4059,6 +4064,9 @@
   }
 
   html.portfolio-mobile-page-able #able-next > div:first-child {
+    position: relative !important;
+    inset: auto !important;
+    width: auto !important;
     display: block !important;
     visibility: visible !important;
     opacity: 1 !important;
@@ -4067,6 +4075,9 @@
   }
 
   html.portfolio-mobile-page-able #able-next > div:nth-child(2) {
+    position: relative !important;
+    inset: auto !important;
+    width: auto !important;
     display: block !important;
     visibility: visible !important;
     opacity: 1 !important;
