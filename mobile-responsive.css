@@ -3898,9 +3898,42 @@
   }
 
   html.portfolio-mobile-page-about #siteheader {
+    display: flex !important;
     position: fixed !important;
     inset: 0 0 auto !important;
+    align-items: center !important;
+    gap: clamp(10px, 3.2vw, 22px) !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    height: calc(40px + env(safe-area-inset-top)) !important;
+    padding: env(safe-area-inset-top) 12px 0 !important;
+    overflow: hidden !important;
+    transform: none !important;
     z-index: 5000 !important;
+  }
+
+  html.portfolio-mobile-page-about #siteheader > span[data-mobile-nav] {
+    position: relative !important;
+    inset: auto !important;
+    flex: 0 0 auto !important;
+    width: auto !important;
+    height: auto !important;
+    margin: 0 !important;
+    line-height: 16px !important;
+    font-size: clamp(9px, 2.5vw, 9.6px) !important;
+    white-space: nowrap !important;
+  }
+
+  html.portfolio-mobile-page-about #siteheader > span[data-mobile-nav="home"] { order: 1 !important; }
+  html.portfolio-mobile-page-about #siteheader > span[data-mobile-nav="work"] { order: 2 !important; }
+  html.portfolio-mobile-page-about #siteheader > span[data-mobile-nav="about"] { order: 3 !important; }
+
+  html.portfolio-mobile-page-about #siteheader > span[data-mobile-nav="email"] {
+    order: 5 !important;
+    flex: 0 1 auto !important;
+    min-width: 0 !important;
+    font-size: clamp(7.8px, 2.45vw, 9.6px) !important;
+    text-align: right !important;
   }
 
   html.portfolio-mobile-page-about #viewport > div[data-fit-screen] > span:nth-of-type(1),
@@ -3995,5 +4028,62 @@
     color: var(--ink, #11110f) !important;
     text-align: right !important;
     white-space: nowrap !important;
+  }
+
+  /* Keep the GeGe mobile gallery on each image's full intrinsic aspect ratio. */
+  html.portfolio-mobile-page-scaled-project.scaled-project-gege .scaled-project-mobile-art-section,
+  html.portfolio-mobile-page-scaled-project.scaled-project-gege .gege-mobile-gallery,
+  html.portfolio-mobile-page-scaled-project.scaled-project-gege .gege-mobile-portrait-group,
+  html.portfolio-mobile-page-scaled-project.scaled-project-gege .gege-mobile-portrait-pair {
+    overflow: visible !important;
+  }
+
+  html.portfolio-mobile-page-scaled-project.scaled-project-gege .gege-mobile-gallery img {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    max-height: none !important;
+    height: auto !important;
+    aspect-ratio: auto !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    transform: none !important;
+    clip-path: none !important;
+  }
+
+  /* Keep the Able next-project title visible and let the longer name wrap. */
+  html.portfolio-mobile-page-able #able-next {
+    grid-template-rows: auto auto !important;
+    column-gap: 20px !important;
+    row-gap: 8px !important;
+  }
+
+  html.portfolio-mobile-page-able #able-next > div:first-child {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+  }
+
+  html.portfolio-mobile-page-able #able-next > div:nth-child(2) {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    grid-column: 1 !important;
+    grid-row: 2 !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    height: auto !important;
+    overflow: visible !important;
+    white-space: normal !important;
+    overflow-wrap: anywhere !important;
+    margin: 0 !important;
+  }
+
+  html.portfolio-mobile-page-able #able-next > a {
+    grid-column: 2 !important;
+    grid-row: 1 / span 2 !important;
+    align-self: center !important;
   }
 }
