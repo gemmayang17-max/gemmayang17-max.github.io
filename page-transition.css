@@ -80,3 +80,21 @@ html.portfolio-page-entering::before {
   from { opacity: 1; }
   to { opacity: 0; }
 }
+
+@media (max-width: 767px) {
+  @view-transition {
+    navigation: none;
+  }
+
+  ::view-transition-group(root),
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none !important;
+  }
+
+  html.portfolio-page-leaving::before,
+  html.portfolio-page-entering::before {
+    display: none !important;
+    animation: none !important;
+  }
+}

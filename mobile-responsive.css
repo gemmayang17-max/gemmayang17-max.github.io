@@ -3682,3 +3682,206 @@
     text-align: right !important;
   }
 }
+
+/* Responsive corrections requested for the current mobile proofing pass. */
+@media (max-width: 767px) {
+  /* Keep the home call-to-action directly under its headline and remove the
+     desktop-only rail, location label and record-player composition. */
+  html.portfolio-mobile-page-home #home-selected-cta {
+    position: relative !important;
+    inset: auto !important;
+    display: flex !important;
+    width: min(100%, 210px) !important;
+    height: 46px !important;
+    margin: 0 0 42px !important;
+  }
+
+  html.portfolio-mobile-page-home #home-hero-title {
+    margin-bottom: 26px !important;
+  }
+
+  html.portfolio-mobile-page-home #home-location,
+  html.portfolio-mobile-page-home #home-original-cta,
+  html.portfolio-mobile-page-home #home-vertical-rule,
+  html.portfolio-mobile-page-home #home-category-rule,
+  html.portfolio-mobile-page-home #home-categories,
+  html.portfolio-mobile-page-home #home-turntable {
+    display: none !important;
+  }
+
+  html.portfolio-mobile-page-home #home-intro {
+    margin-bottom: 0 !important;
+  }
+
+  /* These two large name fragments are redundant above the mobile About title;
+     the navigation label remains in the fixed header. */
+  html.portfolio-mobile-page-about #viewport > div[data-fit-screen] > span:nth-of-type(1),
+  html.portfolio-mobile-page-about #viewport > div[data-fit-screen] > span:nth-of-type(2) {
+    display: none !important;
+  }
+
+  html.portfolio-mobile-page-about #siteheader {
+    position: fixed !important;
+    top: 0 !important;
+    z-index: 5000 !important;
+  }
+
+  /* The home previews are authored at a 600×232.6 canvas size. Use container
+     units at every phone width so motion stays inside that same proportion. */
+  html.portfolio-mobile-page-home .selected-work-image {
+    container-type: inline-size;
+  }
+
+  html.portfolio-mobile-page-home .able-preview .able-logo {
+    width: 30.75cqw !important;
+    height: 24.05cqw !important;
+  }
+
+  html.portfolio-mobile-page-home .able-preview .able-word {
+    font-size: 16.333cqw !important;
+    line-height: 1 !important;
+  }
+
+  html.portfolio-mobile-page-home .able-preview .able-lockup {
+    width: 35cqw !important;
+    height: 25.8cqw !important;
+  }
+
+  html.portfolio-mobile-page-home .able-preview .able-name {
+    font-size: 18.8cqw !important;
+    line-height: 1 !important;
+  }
+
+  html.portfolio-mobile-page-home .able-preview .able-australia {
+    top: 18.833cqw !important;
+    font-size: 6.983cqw !important;
+    line-height: 1 !important;
+    letter-spacing: .488cqw !important;
+    text-indent: .488cqw !important;
+  }
+
+  html.portfolio-mobile-page-home .omc-preview .omc-fox {
+    left: 28.767% !important;
+    top: 9.071% !important;
+    width: 42.467% !important;
+    height: 81.857% !important;
+    object-fit: contain !important;
+  }
+
+  /* Project footers share the Typeface composition: project label at left,
+     NEXT anchored on the right. */
+  html.domayne-mobile-ready .domayne-mobile-footer {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) auto !important;
+    gap: 8px 20px !important;
+    height: auto !important;
+    min-height: 0 !important;
+    padding: 44px 20px 54px !important;
+    border-top: 1px solid var(--rule, #b8b4aa);
+  }
+
+  html.domayne-mobile-ready .domayne-mobile-footer > * {
+    position: relative !important;
+    inset: auto !important;
+    width: auto !important;
+    height: auto !important;
+    margin: 0 !important;
+  }
+
+  html.domayne-mobile-ready .domayne-mobile-footer span {
+    grid-column: 1 !important;
+    color: var(--ink-muted, #55544f) !important;
+    font: 400 10px/1.4 var(--sans, Inter, sans-serif) !important;
+  }
+
+  html.domayne-mobile-ready .domayne-mobile-footer span + span {
+    grid-column: 1 !important;
+  }
+
+  html.domayne-mobile-ready .domayne-mobile-footer a {
+    grid-column: 2 !important;
+    grid-row: 1 / span 2 !important;
+    align-self: center !important;
+    justify-self: end !important;
+    font: 400 36px/.95 var(--serif, "Instrument Serif", serif) !important;
+    text-align: right !important;
+  }
+
+  html.portfolio-mobile-page-able .able-mobile-next-section {
+    padding: 0 !important;
+  }
+
+  html.portfolio-mobile-page-able #able-next {
+    position: relative !important;
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) auto !important;
+    gap: 8px 20px !important;
+    width: 100% !important;
+    height: auto !important;
+    padding: 44px 20px 54px !important;
+    overflow: visible !important;
+  }
+
+  html.portfolio-mobile-page-able #able-next > * {
+    position: relative !important;
+    inset: auto !important;
+    width: auto !important;
+    height: auto !important;
+    margin: 0 !important;
+    grid-column: 1 !important;
+    font: 400 10px/1.4 var(--sans, Inter, sans-serif) !important;
+    color: var(--ink-muted, #55544f) !important;
+  }
+
+  html.portfolio-mobile-page-able #able-next > a {
+    grid-column: 2 !important;
+    grid-row: 1 / span 2 !important;
+    align-self: center !important;
+    justify-self: end !important;
+    font: 400 36px/.95 var(--serif, "Instrument Serif", serif) !important;
+    text-align: right !important;
+    color: var(--ink, #11110f) !important;
+  }
+
+  html.portfolio-mobile-page-beerfest .beerfest-mobile-footer {
+    padding: 0 !important;
+    border-top: 0 !important;
+  }
+
+  html.portfolio-mobile-page-beerfest #beerfest-footer {
+    position: relative !important;
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) auto !important;
+    gap: 8px 20px !important;
+    width: 100% !important;
+    height: auto !important;
+    padding: 44px 20px 54px !important;
+    overflow: visible !important;
+  }
+
+  html.portfolio-mobile-page-beerfest #beerfest-footer > * {
+    position: relative !important;
+    inset: auto !important;
+    width: auto !important;
+    height: auto !important;
+    margin: 0 !important;
+    grid-column: 1 !important;
+    font: 400 10px/1.4 var(--sans, Inter, sans-serif) !important;
+    color: rgba(245, 242, 235, .65) !important;
+  }
+
+  html.portfolio-mobile-page-beerfest #beerfest-footer > a {
+    grid-column: 2 !important;
+    grid-row: 1 / span 2 !important;
+    align-self: center !important;
+    justify-self: end !important;
+    font: 400 36px/.95 var(--serif, "Instrument Serif", serif) !important;
+    text-align: right !important;
+    color: #f5f2eb !important;
+  }
+
+  /* Match the two gaps surrounding the rule in the GeGe takeaway pairing. */
+  html.portfolio-mobile-page-scaled-project.scaled-project-gege .gege-mobile-portrait-group {
+    gap: 28px !important;
+  }
+}

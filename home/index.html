@@ -252,7 +252,7 @@ svg {
 }
 </style>
     
-  <link rel="stylesheet" href="../page-transition.css?v=smooth-20260916">
+  <link rel="stylesheet" href="../page-transition.css?v=responsive-mobile-20260929-1">
 </head>
   <body style="display: grid;background-color: #f4f1e9;">
     <div id="home-top" data-fit-screen data-scroll-page data-fit-first-screen="900" style="background-color: #f4f1e9;overflow: hidden;width: 1440px;min-width: 1440px;max-width: 1440px;height: 2784px;min-height: 2784px;max-height: 2784px;position: relative;margin: 0px auto;">
@@ -323,7 +323,7 @@ svg {
       </div>
     </div>
 <script src="../site-layout.js?v=width-only-20260912"></script>
-<script src="../site.js?v=responsive-20260924-mobile-layout-4"></script>
+<script src="../site.js?v=responsive-mobile-20260929-1"></script>
 <script>
   (function () {
     var linkedName = document.getElementById('home-static-name');
@@ -333,6 +333,13 @@ svg {
       staticName.removeAttribute('tabindex');
       staticName.style.cursor = 'default';
       linkedName.parentNode.replaceChild(staticName, linkedName);
+    }
+    if (window.matchMedia && window.matchMedia('(max-width: 767px)').matches) {
+      var heroTitle = document.getElementById('home-hero-title');
+      var selectedCta = document.getElementById('home-selected-cta');
+      if (heroTitle && selectedCta && heroTitle.parentNode) {
+        heroTitle.parentNode.insertBefore(selectedCta, heroTitle.nextSibling);
+      }
     }
     var player = document.getElementById('home-turntable');
     var control = document.getElementById('home-tonearm-control');

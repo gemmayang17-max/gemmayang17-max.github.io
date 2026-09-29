@@ -749,7 +749,6 @@
       var height = parseFloat(node.style.height) || node.offsetHeight || 0;
       return Math.max(maximum, topOf(node) + height);
     }, artworkTop);
-    if (isGeGe) artworkEnd = 3593 + (artworkEnd - 3593) * .05;
     var artworkHeight = Math.max(1, artworkEnd - artworkTop);
     var frame = document.createElement('div');
     frame.className = 'scaled-project-mobile-art-frame';
