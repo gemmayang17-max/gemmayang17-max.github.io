@@ -709,6 +709,7 @@
     });
   } else {
     var gegeGalleryItems = null;
+    var gegeGalleryTop = 0;
     if (isGeGe) {
       var gegeGallerySources = [
         'a022b14e57ba6488ff8729c6d2551158c8508b54.png',
@@ -724,6 +725,11 @@
           return image && decodeURIComponent(image.getAttribute('src') || '').indexOf(source) !== -1;
         });
       }).filter(Boolean);
+      gegeGalleryTop = gegeGalleryItems.reduce(function (top, node) {
+        var imageTop = topOf(node);
+        return imageTop > 0 ? Math.min(top, imageTop) : top;
+      }, Infinity);
+      if (!isFinite(gegeGalleryTop)) gegeGalleryTop = 0;
       artwork = artwork.filter(function (node) {
         var image = node.querySelector('img');
         var source = image && decodeURIComponent(image.getAttribute('src') || '');
@@ -842,7 +848,16 @@
       });
       artSection.appendChild(gegeGallery);
     }
-    fittedArtwork.push({ frame: frame, canvas: canvas, height: artworkHeight, artwork: artwork, artworkTop: artworkTop, textLayer: textLayer });
+      fittedArtwork.push({
+        frame: frame,
+        canvas: canvas,
+        height: artworkHeight,
+        artwork: artwork,
+        artworkTop: artworkTop,
+        textLayer: textLayer,
+        gallery: isGeGe ? gegeGallery : null,
+        galleryTop: gegeGalleryTop
+      });
   }
 
   if (footer) {
@@ -867,8 +882,8 @@
         var mobileOffset = parseFloat(node.dataset.scaledProjectMobileOffset || '0');
         node.style.top = (parseFloat(node.dataset.scaledProjectTop || '0') - item.artworkTop + mobileOffset) + 'px';
       });
+      var addedSpace = 0;
       if (item.textLayer) {
-        var addedSpace = 0;
         var insertions = [];
         Array.prototype.slice.call(item.textLayer.children).sort(function (a, b) {
           return parseFloat(a.dataset.scaledProjectTop) - parseFloat(b.dataset.scaledProjectTop);
@@ -891,6 +906,12 @@
           node.style.top = (originalTop - item.artworkTop + mobileOffset + shift / scale) + 'px';
         });
         item.frame.style.height = Math.round(item.height * scale + addedSpace) + 'px';
+      }
+      if (item.gallery && item.galleryTop > 0) {
+        var fittedHeight = parseFloat(item.frame.style.height) || item.frame.offsetHeight;
+        var intendedTop = (item.galleryTop - item.artworkTop) * scale + addedSpace;
+        var unplannedGap = Math.max(0, fittedHeight - intendedTop);
+        item.gallery.style.marginTop = Math.round(unplannedGap * -0.9) + 'px';
       }
     });
   }

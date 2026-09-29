@@ -3885,3 +3885,115 @@
     gap: 28px !important;
   }
 }
+
+/* Responsive-only repairs for the About reading order and project endings. */
+@media (max-width: 767px) {
+  html.portfolio-mobile-page-about #viewport > div[data-fit-screen] {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0 !important;
+    min-height: 0 !important;
+    padding: calc(64px + env(safe-area-inset-top)) 20px 48px !important;
+  }
+
+  html.portfolio-mobile-page-about #siteheader {
+    position: fixed !important;
+    inset: 0 0 auto !important;
+    z-index: 5000 !important;
+  }
+
+  html.portfolio-mobile-page-about #viewport > div[data-fit-screen] > span:nth-of-type(1),
+  html.portfolio-mobile-page-about #viewport > div[data-fit-screen] > span:nth-of-type(2),
+  html.portfolio-mobile-page-about #viewport > div[data-fit-screen] > div[style*="width: 1px"],
+  html.portfolio-mobile-page-about #viewport > div[data-fit-screen] > div[style*="height: 1px"] {
+    display: none !important;
+  }
+
+  html.portfolio-mobile-page-about #viewport > div[data-fit-screen] > div[style*="aspect-ratio"] {
+    order: 1 !important;
+    flex: none !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    aspect-ratio: 1.43 !important;
+    margin: 0 0 34px !important;
+  }
+
+  html.portfolio-mobile-page-about #about-hover-title {
+    order: 2 !important;
+    flex: none !important;
+    margin: 0 0 24px !important;
+  }
+
+  html.portfolio-mobile-page-about #viewport > div[data-fit-screen] > span:nth-of-type(4) {
+    order: 3 !important;
+    flex: none !important;
+    margin: 0 0 28px !important;
+  }
+
+  html.portfolio-mobile-page-about #viewport > div[data-fit-screen] > span:nth-of-type(5) {
+    order: 4 !important;
+    flex: none !important;
+    margin: 0 !important;
+  }
+
+  html.portfolio-mobile-page-about #about-background-section {
+    order: 5 !important;
+    flex: none !important;
+    margin-top: 48px !important;
+  }
+
+  html.portfolio-mobile-page-able .able-mobile-next-section {
+    display: block !important;
+    width: 100% !important;
+    padding: 0 !important;
+  }
+
+  html.portfolio-mobile-page-able #able-next {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) auto !important;
+    align-items: center !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    padding: 44px 20px 54px !important;
+    overflow: visible !important;
+  }
+
+  html.portfolio-mobile-page-able #able-next > div {
+    position: relative !important;
+    inset: auto !important;
+    display: block !important;
+    grid-column: 1 !important;
+    width: auto !important;
+    height: auto !important;
+    margin: 0 !important;
+    font: 400 10px/1.4 var(--sans, Inter, sans-serif) !important;
+    color: var(--ink-muted, #55544f) !important;
+  }
+
+  html.portfolio-mobile-page-able #able-next > div + div {
+    margin-top: 8px !important;
+  }
+
+  html.portfolio-mobile-page-able #able-next > a {
+    position: relative !important;
+    inset: auto !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    z-index: 1 !important;
+    grid-column: 2 !important;
+    grid-row: 1 / span 2 !important;
+    justify-self: end !important;
+    width: auto !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    font: 400 36px/.95 var(--serif, "Instrument Serif", serif) !important;
+    color: var(--ink, #11110f) !important;
+    text-align: right !important;
+    white-space: nowrap !important;
+  }
+}
