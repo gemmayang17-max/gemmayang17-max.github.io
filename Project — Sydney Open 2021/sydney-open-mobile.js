@@ -1,6 +1,6 @@
 (function () {
   var mq = window.matchMedia && window.matchMedia('(max-width: 767px)');
-  if (!mq || !mq.matches || window.innerWidth > 767) return;
+  if (!mq || !mq.matches) return;
 
   var stage = document.getElementById('stage');
   if (!stage || document.getElementById('sydney-open-mobile')) return;
