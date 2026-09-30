@@ -4,7 +4,7 @@
   function reloadAcrossBreakpoint() { window.location.reload(); }
   if (mq.addEventListener) mq.addEventListener('change', reloadAcrossBreakpoint);
   else if (mq.addListener) mq.addListener(reloadAcrossBreakpoint);
-  if (!mq.matches || window.innerWidth > 767) return;
+  if (!mq.matches) return;
 
   var stage = document.getElementById('stage');
   if (!stage || document.getElementById('able-mobile')) return;
