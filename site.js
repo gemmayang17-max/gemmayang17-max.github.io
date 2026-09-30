@@ -26,7 +26,7 @@
   if (SITE_SCRIPT_URL) {
     var mobileCss = document.createElement('link');
     mobileCss.rel = 'stylesheet';
-    mobileCss.href = new URL('mobile-responsive.css?v=responsive-mobile-20260929-4', SITE_SCRIPT_URL).href;
+    mobileCss.href = new URL('mobile-responsive.css?v=responsive-mobile-20260930-1', SITE_SCRIPT_URL).href;
     document.head.appendChild(mobileCss);
   }
   var badgeStyle = document.createElement('style');

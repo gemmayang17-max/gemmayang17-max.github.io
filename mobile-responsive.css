@@ -4097,4 +4097,34 @@
     grid-row: 1 / span 2 !important;
     align-self: center !important;
   }
+
+  /* The icon is not a navigation label: keep both pause bars in its own box. */
+  html.portfolio-mobile #siteheader #portfolio-audio-toggle .portfolio-audio-icon {
+    position: relative !important;
+    inset: auto !important;
+    display: block !important;
+    width: 12px !important;
+    height: 12px !important;
+    flex: 0 0 12px !important;
+    margin: 0 !important;
+  }
+
+  html.portfolio-mobile-page-about #background-download {
+    display: none !important;
+  }
+
+  html.portfolio-mobile-page-sydney-open .sydney-mobile-intro {
+    min-height: 0;
+    padding-bottom: 0;
+  }
+
+  html.portfolio-mobile-page-sydney-open .sydney-mobile-details {
+    border-top: 0;
+    padding-top: 28px;
+    padding-bottom: 28px;
+  }
+
+  html.portfolio-mobile-page-sydney-open #info .row:last-child {
+    margin-bottom: 0 !important;
+  }
 }

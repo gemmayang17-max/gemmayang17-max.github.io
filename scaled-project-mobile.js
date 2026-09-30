@@ -742,7 +742,10 @@
       });
       if (takeawayRules) {
         Array.prototype.forEach.call(takeawayRules.children, function (child) {
-          if (child.style.top === '1030px' && child.style.height === '1px') child.style.top = '819px';
+          if (child.style.top === '1030px' && child.style.height === '1px') {
+            child.style.top = '819px';
+            child.classList.add('gege-takeaway-end-rule');
+          }
         });
       }
     }
@@ -909,9 +912,11 @@
       }
       if (item.gallery && item.galleryTop > 0) {
         var fittedHeight = parseFloat(item.frame.style.height) || item.frame.offsetHeight;
-        var intendedTop = (item.galleryTop - item.artworkTop) * scale + addedSpace;
-        var unplannedGap = Math.max(0, fittedHeight - intendedTop);
-        item.gallery.style.marginTop = Math.round(unplannedGap * -0.9) + 'px';
+        var endRule = item.canvas.querySelector('.gege-takeaway-end-rule');
+        var intendedTop = endRule
+          ? endRule.getBoundingClientRect().bottom - item.frame.getBoundingClientRect().top + 28
+          : (item.galleryTop - item.artworkTop) * scale + addedSpace;
+        item.gallery.style.marginTop = (intendedTop - fittedHeight) + 'px';
       }
     });
   }
