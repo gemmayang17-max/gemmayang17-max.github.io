@@ -13,7 +13,8 @@
     htmlRoot.classList.toggle('portfolio-mobile-page-home', /\/home\//.test(path));
     htmlRoot.classList.toggle('portfolio-mobile-page-about', /\/about\//.test(path));
     htmlRoot.classList.toggle('portfolio-mobile-page-work', /\/work-index\//.test(path));
-    htmlRoot.classList.toggle('portfolio-mobile-page-project', !(/\/home\//.test(path) || /\/about\//.test(path) || /\/work-index\//.test(path)));
+    htmlRoot.classList.toggle('portfolio-mobile-page-archive', /\/archive\//.test(path));
+    htmlRoot.classList.toggle('portfolio-mobile-page-project', !(/\/home\//.test(path) || /\/about\//.test(path) || /\/work-index\//.test(path) || /\/archive\//.test(path)));
     htmlRoot.classList.toggle('portfolio-mobile-page-able', /\/project — able australia\/(?:index3\.html)?$/.test(path));
     htmlRoot.classList.toggle('portfolio-mobile-page-scaled-project', /\/project — (?:custom typeface & editorial series|onemorecase|gege pancake shop|sydney candle co|colour u)\/(?:index\.html)?$/.test(path));
     htmlRoot.classList.toggle('portfolio-mobile-page-beerfest', /\/project — beerfest australia\/(?:index\.html)?$/.test(path));
@@ -26,7 +27,7 @@
   if (SITE_SCRIPT_URL) {
     var mobileCss = document.createElement('link');
     mobileCss.rel = 'stylesheet';
-    mobileCss.href = new URL('mobile-responsive.css?v=responsive-mobile-20260930-2', SITE_SCRIPT_URL).href;
+    mobileCss.href = new URL('mobile-responsive.css?v=archive-20260930-1', SITE_SCRIPT_URL).href;
     document.head.appendChild(mobileCss);
   }
   var badgeStyle = document.createElement('style');
@@ -50,6 +51,7 @@
   var HOME = '../home/index.html';
   var WORK = '../work-index/index.html';
   var ABOUT = '../about/index.html';
+  var ARCHIVE = '../archive/index.html';
   function projectHref(name) {
     var key = name.trim().toUpperCase();
     var f = PAGES[key];
@@ -106,6 +108,24 @@
       bg = getComputedStyle(document.body).backgroundColor || '#f4f1e9';
     }
     document.body.appendChild(header);
+    var aboutNav = Array.prototype.find.call(header.children, function (child) {
+      return (child.textContent || '').trim().toUpperCase() === 'ABOUT';
+    });
+    if (aboutNav && !Array.prototype.some.call(header.children, function (child) {
+      return (child.textContent || '').trim().toUpperCase() === 'ARCHIVE';
+    })) {
+      var archiveNav = document.createElement('a');
+      archiveNav.textContent = 'ARCHIVE';
+      archiveNav.href = ARCHIVE;
+      archiveNav.className = aboutNav.className.replace(/\bon\b/g, '').trim();
+      archiveNav.style.cssText = aboutNav.style.cssText;
+      archiveNav.style.color = '#11110f';
+      archiveNav.style.textAlign = 'left';
+      archiveNav.style.position = 'absolute';
+      archiveNav.style.width = '70px';
+      archiveNav.setAttribute('data-mobile-nav', 'archive');
+      aboutNav.insertAdjacentElement('afterend', archiveNav);
+    }
     /* half-height bar: keep every child vertically centred in the new 40px strip */
     var HBAR = 40, rule = null;
     var kidsH = [];
@@ -138,6 +158,7 @@
     if (nav['GEMMA YANG']) nav['GEMMA YANG'].setAttribute('data-mobile-nav', 'home');
     if (nav.WORK) nav.WORK.setAttribute('data-mobile-nav', 'work');
     if (nav.ABOUT) nav.ABOUT.setAttribute('data-mobile-nav', 'about');
+    if (nav.ARCHIVE) nav.ARCHIVE.setAttribute('data-mobile-nav', 'archive');
     if (emailLink) emailLink.setAttribute('data-mobile-nav', 'email');
     var isHome = /\/home\/(?:index\.html)?$/i.test(decodeURIComponent(location.pathname));
     function placeNav(el, left, width) {
@@ -149,10 +170,12 @@
       if (nav['GEMMA YANG']) nav['GEMMA YANG'].style.display = 'none';
       placeNav(nav.WORK, 32, 60);
       placeNav(nav.ABOUT, 118, 70);
+      placeNav(nav.ARCHIVE, 204, 70);
     } else {
       placeNav(nav['GEMMA YANG'], 32, 160);
       placeNav(nav.WORK, 182, 60);
       placeNav(nav.ABOUT, 268, 70);
+      placeNav(nav.ARCHIVE, 354, 70);
     }
     placeNav(emailLink, 1164, 244);
     if (emailLink) emailLink.style.textAlign = 'right';
@@ -362,6 +385,7 @@
     if (u === 'GEMMA YANG') go(el, HOME);
     else if (u === 'WORK') go(el, WORK);
     else if (u === 'ABOUT') go(el, ABOUT);
+    else if (u === 'ARCHIVE') go(el, ARCHIVE);
     else if (u === 'VIEW SELECTED WORK ↗' || u === 'VIEW SELECTED WORK') {
       if (!el.closest || !el.closest('#home-selected-cta')) go(el, WORK);
     }
