@@ -4,7 +4,8 @@
   function reload() { window.location.reload(); }
   if (mq.addEventListener) mq.addEventListener('change', reload);
   else if (mq.addListener) mq.addListener(reload);
-  if (!mq.matches || window.innerWidth > 767) return;
+  // Overflowing desktop artwork can inflate innerWidth before mobile CSS loads.
+  if (!mq.matches) return;
 
   var path = decodeURIComponent(location.pathname);
   var fathers = /Domayne Father.s Day/i.test(path);

@@ -20,7 +20,7 @@
   var isCandle = /sydney candle co/.test(path);
   var isColourU = /colour u/.test(path);
 
-  if (!mq.matches || window.innerWidth > 767 || document.getElementById('scaled-project-mobile')) return;
+  if (!mq.matches || document.getElementById('scaled-project-mobile')) return;
 
   var children = Array.prototype.slice.call(root.children);
   var editorial = children.find(function (node) {

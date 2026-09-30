@@ -4127,4 +4127,21 @@
   html.portfolio-mobile-page-sydney-open #info .row:last-child {
     margin-bottom: 0 !important;
   }
+
+  /* Allow the serif descenders without moving the following content. */
+  html.portfolio-mobile-page-sydney-open .sydney-mobile-intro {
+    padding-bottom: 12px;
+    margin-bottom: -12px;
+  }
+
+  /* The preceding section already supplies the single 1px #b8b4aa rule. */
+  html.domayne-mobile-ready .domayne-mobile-footer {
+    border-top: 0;
+  }
+
+  html.domayne-mobile-digital .domayne-mobile-icons img {
+    width: 85%;
+    justify-self: center;
+    align-self: center;
+  }
 }
