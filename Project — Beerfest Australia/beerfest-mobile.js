@@ -7,7 +7,7 @@
 
   var stage = document.getElementById('stage');
   if (!stage) return;
-  if (!mq.matches || window.innerWidth > 767 || document.getElementById('beerfest-mobile')) return;
+  if (!mq.matches || document.getElementById('beerfest-mobile')) return;
   stage.dataset.mobileLayout = 'beerfest';
 
   function make(tag, className, parent) {
