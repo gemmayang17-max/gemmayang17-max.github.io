@@ -13,8 +13,9 @@
     htmlRoot.classList.toggle('portfolio-mobile-page-home', /\/home\//.test(path));
     htmlRoot.classList.toggle('portfolio-mobile-page-about', /\/about\//.test(path));
     htmlRoot.classList.toggle('portfolio-mobile-page-work', /\/work-index\//.test(path));
-    htmlRoot.classList.toggle('portfolio-mobile-page-archive', /\/archive\//.test(path));
-    htmlRoot.classList.toggle('portfolio-mobile-page-project', !(/\/home\//.test(path) || /\/about\//.test(path) || /\/work-index\//.test(path) || /\/archive\//.test(path)));
+    var isArchive = /\/(?:archive|archive-gateway|illustration)\//.test(path);
+    htmlRoot.classList.toggle('portfolio-mobile-page-archive', isArchive);
+    htmlRoot.classList.toggle('portfolio-mobile-page-project', !(/\/home\//.test(path) || /\/about\//.test(path) || /\/work-index\//.test(path) || isArchive));
     htmlRoot.classList.toggle('portfolio-mobile-page-able', /\/project — able australia\/(?:index3\.html)?$/.test(path));
     htmlRoot.classList.toggle('portfolio-mobile-page-scaled-project', /\/project — (?:custom typeface & editorial series|onemorecase|gege pancake shop|sydney candle co|colour u)\/(?:index\.html)?$/.test(path));
     htmlRoot.classList.toggle('portfolio-mobile-page-beerfest', /\/project — beerfest australia\/(?:index\.html)?$/.test(path));
@@ -51,7 +52,7 @@
   var HOME = '../home/index.html';
   var WORK = '../work-index/index.html';
   var ABOUT = '../about/index.html';
-  var ARCHIVE = '../archive/index.html';
+  var ARCHIVE = '../archive-gateway/index.html';
   function projectHref(name) {
     var key = name.trim().toUpperCase();
     var f = PAGES[key];
