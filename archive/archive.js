@@ -24,11 +24,22 @@
     { file: '21.jpg', caption: 'Low Tide' }
   ];
   var illustrations = [
-    { file: '01-cake.png', caption: 'Toast Cake' },
-    { file: '02-horse.png', caption: 'Little Horse' },
-    { file: '03-garden.png', caption: 'Garden Study' },
-    { file: '04-hillside.png', caption: 'Hillside' },
-    { file: '05-tree.png', caption: 'Night Tree' }
+    { file: '瑞士蛋糕卷.png', caption: 'Swiss Roll' },
+    { file: '可露丽.png', caption: 'Canelé' },
+    { file: 'cheese cake.png', caption: 'Cheesecake' },
+    { file: '玉米吐司.png', caption: 'Corn Toast' },
+    { file: '面包.png', caption: 'Bread' },
+    { file: '一碗梨.png', caption: 'A Bowl of Pears' },
+    { file: '一串西红柿.png', caption: 'Tomatoes on the Vine' },
+    { file: '新鲜蔬菜.png', caption: 'Fresh Vegetables' },
+    { file: '豆荚和花.png', caption: 'Peas and Flowers' },
+    { file: '花店入口.jpg', caption: 'Flower Shop Entrance' },
+    { file: '茶杯兔.png', caption: 'Teacup Rabbit' },
+    { file: '小马黄.png.png', caption: 'Little Horse' },
+    { file: '马乐园.png', caption: 'Horse Playground' },
+    { file: '豹子.png', caption: 'Leopard' },
+    { file: '山坡.png', caption: 'Hillside' },
+    { file: '树和风.png', caption: 'Trees and Wind' }
   ];
   var isPhotography = document.body.dataset.gallery !== 'illustration';
   var items = isPhotography ? photographs : illustrations;
