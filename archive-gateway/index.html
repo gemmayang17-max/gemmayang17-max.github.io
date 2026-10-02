@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Inter:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../page-transition.css?v=archive-gateway-20261001-1">
   <link rel="stylesheet" href="gateway.css?v=archive-gateway-20261001-1">
-  <noscript><style>.gateway.is-pending .gateway-choice{opacity:1;pointer-events:auto}</style></noscript>
+  <noscript><style>.gateway.is-pending .gateway-choice span{opacity:1;clip-path:inset(0);transform:none}</style></noscript>
 </head>
 <body>
   <div id="siteheader">
@@ -21,19 +21,21 @@
     <a href="mailto:gemmayang22@gmail.com" style="left:1164px;width:244px">GEMMAYANG22@GMAIL.COM</a>
     <div class="hr"></div>
   </div>
+
   <div id="viewport"><main id="stage"></main></div>
-  <section class="gateway is-pending" aria-label="Choose an archive collection">
-    <div class="horse-lane" aria-hidden="true">
-      <picture class="horse-run">
-        <source media="(prefers-reduced-motion: reduce)" srcset="horse-still.png">
-        <img src="horse.gif" alt="" width="1280" height="218" fetchpriority="high">
-      </picture>
-    </div>
-    <nav class="gateway-choices" aria-label="Archive collections">
-      <a class="gateway-choice gateway-choice-illustration" href="../illustration/index.html">Illustration</a>
-      <a class="gateway-choice gateway-choice-photography" href="../archive/index.html">Photography</a>
-    </nav>
-  </section>
+    <section class="gateway is-pending" aria-label="Choose an archive collection">
+      <div class="horse-lane" aria-hidden="true">
+        <picture class="horse-run">
+          <source media="(prefers-reduced-motion: reduce)" srcset="horse-still.png">
+          <img src="horse.gif" alt="" width="1280" height="218" fetchpriority="high">
+        </picture>
+      </div>
+      <nav class="gateway-choices" aria-label="Archive collections">
+        <a class="gateway-choice gateway-choice-illustration" href="../illustration/index.html"><span>Illustration</span></a>
+        <a class="gateway-choice gateway-choice-photography" href="../archive/index.html"><span>Photography</span></a>
+      </nav>
+    </section>
+
   <script src="../site-layout.js?v=width-only-20260912"></script>
   <script src="../site.js?v=archive-gateway-20261001-1"></script>
   <script src="gateway.js?v=archive-gateway-20261001-1"></script>
