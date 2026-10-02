@@ -4164,6 +4164,13 @@
   html.portfolio-mobile #siteheader > span[data-mobile-nav="email"] {
     order: 6 !important;
     flex: 0 1 auto !important;
-    font-size: clamp(7px, 2.25vw, 9.6px) !important;
+    font-size: 0 !important;
+    letter-spacing: 0 !important;
+  }
+  html.portfolio-mobile #siteheader > a[data-mobile-nav="email"]::after,
+  html.portfolio-mobile #siteheader > span[data-mobile-nav="email"]::after {
+    content: "EMAIL";
+    font-size: clamp(9px, 2.5vw, 9.6px);
+    line-height: 16px;
   }
 }

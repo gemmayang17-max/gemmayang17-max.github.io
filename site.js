@@ -174,9 +174,9 @@
       placeNav(nav.ARCHIVE, 204, 70);
     } else {
       placeNav(nav['GEMMA YANG'], 32, 160);
-      placeNav(nav.WORK, 182, 60);
-      placeNav(nav.ABOUT, 268, 70);
-      placeNav(nav.ARCHIVE, 354, 70);
+      placeNav(nav.WORK, 151, 60);
+      placeNav(nav.ABOUT, 233, 70);
+      placeNav(nav.ARCHIVE, 319, 70);
     }
     placeNav(emailLink, 1164, 244);
     if (emailLink) emailLink.style.textAlign = 'right';
